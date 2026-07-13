@@ -1,0 +1,16 @@
+{
+  "name": "@frontvalencia/quality",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Shared quality tooling for Front Valencia monorepo",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.0",
+    "lint-staged": "^15.2.0",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "prettier": "^3.4.0"
+  }
+}

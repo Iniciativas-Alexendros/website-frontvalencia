@@ -46,7 +46,6 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,mjs,cjs}": ["prettier --write"],
-    "*.astro": ["prettier --write"],
     "*.json": ["prettier --write"],
     "*.css": ["prettier --write"],
     "*.md": ["prettier --write"]
