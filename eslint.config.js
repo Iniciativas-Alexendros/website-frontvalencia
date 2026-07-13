@@ -7,8 +7,11 @@ export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['**/*.{ts,tsx}'],
+    plugins: { 'react-hooks': reactHooks },
+    languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
     rules: {
+      ...reactHooks.configs.recommended.rules,
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/consistent-type-imports': 'error',
@@ -20,6 +23,6 @@ export default [
     rules: {},
   },
   {
-    ignores: ['node_modules/', 'dist/', '.astro/', '.next/', 'content/', '*.d.ts'],
+    ignores: ['node_modules/', 'dist/', '.astro/', '.next/', 'content/', '**/*.d.ts'],
   },
 ]

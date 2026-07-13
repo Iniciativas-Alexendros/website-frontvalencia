@@ -33,7 +33,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'yarn preview',
+    command: 'pnpm preview --filter=web',
     url: 'http://localhost:4321',
     reuseExistingServer: !process.env.CI,
   },

@@ -34,18 +34,24 @@ export async function seed(payload: Payload): Promise<void> {
   // ── 2. Admin user ─────────────────────────────────────────────
   logger.info('Seeding admin user…')
 
-  try {
-    await payload.create({
-      collection: 'users',
-      data: {
-        email: 'admin@frontvalencia.com',
-        password: 'admin123',
-        name: 'Admin',
-        roles: ['admin'],
-      },
-    })
-  } catch {
-    logger.warn('Admin user already exists, skipping')
+  const adminPassword = process.env.SEED_ADMIN_PASSWORD
+  if (!adminPassword && process.env.NODE_ENV === 'production') {
+    logger.warn('SEED_ADMIN_PASSWORD not set — skipping admin user creation in production')
+  } else {
+    try {
+      await payload.create({
+        collection: 'users',
+        data: {
+          email: 'admin@frontvalencia.com',
+          password: adminPassword || 'admin123',
+          name: 'Admin',
+          roles: ['admin'],
+        },
+      })
+      logger.info('Admin user created — change password after first login')
+    } catch {
+      logger.warn('Admin user already exists, skipping')
+    }
   }
 
   // ── 3. Menu categories ────────────────────────────────────────

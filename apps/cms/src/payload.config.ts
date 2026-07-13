@@ -22,8 +22,13 @@ import { revalidateWebhook } from './hooks/revalidateWebhook'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+const secret = process.env.PAYLOAD_SECRET
+if (!secret || secret.length < 32) {
+  throw new Error('PAYLOAD_SECRET must be at least 32 characters. Use: openssl rand -base64 32')
+}
+
 export default buildConfig({
-  secret: process.env.PAYLOAD_SECRET ?? '',
+  secret,
   admin: {
     user: Users.slug,
     meta: { titleSuffix: ' — FRONT CMS' },

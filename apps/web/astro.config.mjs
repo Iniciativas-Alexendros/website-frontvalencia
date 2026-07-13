@@ -26,7 +26,7 @@ export default defineConfig({
     sitemap({
       i18n: {
         defaultLocale: 'es',
-        locales: { es: 'es' },
+        locales: { es: 'es', en: 'en' },
       },
       filter: (page) => !page.includes('/admin') && !page.includes('/api/'),
     }),
