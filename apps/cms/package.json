@@ -1,0 +1,57 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Payload CMS for Front Valencia — menu, space, events, allergens, site config",
+  "exports": {
+    ".": "./src/index.ts",
+    "./payload-types": "./src/payload-types.ts"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev -p 3001",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start -p 3001",
+    "lint": "next lint --dir src",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "db:push": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
+    "db:studio": "cross-env NODE_OPTIONS=--no-deprecation payload studio",
+    "content:seed": "cross-env NODE_OPTIONS=--no-deprecation payload run scripts/seed.ts",
+    "preview": "pnpm build && pnpm start",
+    "clean": "rm -rf .next .payload payload-types.ts.bak"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "^3.27.0",
+    "@payloadcms/next": "^3.27.0",
+    "@payloadcms/plugin-redirects": "^3.27.0",
+    "@payloadcms/plugin-seo": "^3.27.0",
+    "@payloadcms/richtext-lexical": "^3.27.0",
+    "@payloadcms/storage-s3": "^3.27.0",
+    "@payloadcms/ui": "^3.27.0",
+    "cross-env": "^7.0.3",
+    "graphql": "^16.10.0",
+    "lexical": "^0.21.0",
+    "next": "^16.2.10",
+    "payload": "^3.27.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "sharp": "^0.35.3",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "^15.1.6",
+    "typescript": "^5.8.0",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=22.12.0",
+    "pnpm": ">=8.15.0"
+  }
+}
