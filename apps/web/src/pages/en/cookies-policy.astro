@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import Footer from '../../components/sections/Footer.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Cookie Policy — FRONT Valencia"
+  description="Cookie and tracking technology policy at FRONT."
+>
+  <Header lang="en" />
+  <main id="main-content" class="pt-16">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-black uppercase tracking-tight text-text-primary mb-12">Cookie Policy</h1>
+
+      <div class="space-y-8 text-text-secondary">
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">What are cookies?</h2>
+          <p>Cookies are small text files that a website stores on your device when you visit it. They allow the site to remember your actions and preferences for a specified period.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Types of cookies we use</h2>
+          <ul class="space-y-2">
+            <li><strong class="text-text-primary">Technical (necessary):</strong> Essential for the website to function and to manage reservations.</li>
+            <li><strong class="text-text-primary">Analytics:</strong> Allow us to measure and analyse browsing (Metricool, with prior consent).</li>
+            <li><strong class="text-text-primary">Marketing:</strong> To show personalised advertising (Meta Pixel, with prior consent).</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Consent management</h2>
+          <p>You can accept, reject or configure the use of cookies via the banner that appears when you first access the site, or at any time by contacting hello@frontvalencia.com.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Third parties</h2>
+          <p>The main third parties that may install cookies are CoverManager (reservations), Metricool (analytics) and Meta (advertising).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

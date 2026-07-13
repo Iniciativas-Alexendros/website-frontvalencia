@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import Footer from '../../components/sections/Footer.astro';
+---
+
+<BaseLayout
+  lang="es"
+  title="Página no encontrada — FRONT Valencia"
+  description="La página que buscas no existe."
+>
+  <Header lang="es" />
+  <main id="main-content" class="pt-16">
+    <section class="min-h-[70vh] flex items-center justify-center px-4 py-20">
+      <div class="text-center max-w-xl">
+        <p class="text-xs uppercase tracking-[0.4em] text-terracotta-400 mb-6">Error 404</p>
+        <h1 class="text-5xl sm:text-6xl font-black uppercase tracking-tight text-text-primary mb-6">Página no encontrada</h1>
+        <p class="text-text-secondary mb-10">La página que buscas no existe o ha sido movida. Vuelve a la portada o explora nuestras secciones.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/es/" class="inline-flex items-center justify-center px-8 py-3 bg-terracotta-500 hover:bg-terracotta-400 text-white font-semibold text-sm uppercase tracking-widest transition-colors">
+            Ir al inicio
+          </a>
+          <a href="/es/carta" class="inline-flex items-center justify-center px-8 py-3 border border-concrete-600 hover:border-text-primary text-concrete-200 hover:text-text-primary font-semibold text-sm uppercase tracking-widest transition-colors">
+            Ver la carta
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang="es" />
+</BaseLayout>

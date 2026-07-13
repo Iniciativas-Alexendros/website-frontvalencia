@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import MenuSection from '../../components/sections/MenuSection.astro';
+import Footer from '../../components/sections/Footer.astro';
+import { safeGetMenu } from '../../lib/content';
+
+const menuData = await safeGetMenu('es');
+const categories = menuData.categories;
+const allergenLegend = menuData.allergenLegend ?? [];
+---
+
+<BaseLayout
+  lang="es"
+  title="Carta — FRONT Valencia"
+  description="Descubre nuestra carta: desayunos, tapas de Vicente Patiño, pescado y carne a la brasa, arroces en llauna y dulces."
+>
+  <Header lang="es" />
+  <main id="main-content" class="pt-16">
+    <MenuSection categories={categories} allergenLegend={allergenLegend} lang="es" />
+  </main>
+  <Footer lang="es" />
+</BaseLayout>

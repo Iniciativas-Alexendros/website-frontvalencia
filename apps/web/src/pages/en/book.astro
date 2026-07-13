@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import ReservasSection from '../../components/sections/ReservasSection.astro';
+import Footer from '../../components/sections/Footer.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Book — FRONT Valencia"
+  description="Book your table at FRONT. Weekday lunch menu, full menu available daily and group menus."
+>
+  <Header lang="en" />
+  <main id="main-content" class="pt-16">
+    <ReservasSection lang="en" />
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

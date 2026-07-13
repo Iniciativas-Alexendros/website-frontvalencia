@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import Footer from '../../components/sections/Footer.astro';
+---
+
+<BaseLayout
+  lang="es"
+  title="Condiciones de Reserva — FRONT Valencia"
+  description="Términos y condiciones para realizar reservas en FRONT."
+>
+  <Header lang="es" />
+  <main id="main-content" class="pt-16">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-black uppercase tracking-tight text-text-primary mb-12">Condiciones de Reserva</h1>
+
+      <div class="space-y-8 text-text-secondary">
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Tiempo de cortesía</h2>
+          <p>Guardaremos tu mesa hasta <strong class="text-text-primary">15 minutos después de la hora reservada</strong> por cortesía; pasado este tiempo, quedará liberada.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Gestión de reservas</h2>
+          <p>No gestionamos reservas a través de redes sociales. Todas las reservas deben realizarse a través de nuestro sistema oficial (CoverManager) o contactando directamente con el restaurante.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Grupos de más de 8 personas</h2>
+          <p>Para grupos de más de 8 personas, contáctanos en <a href="mailto:reservas@frontvalencia.com" class="text-terracotta-400 hover:text-terracotta-300 underline">reservas@frontvalencia.com</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Eventos privados y de empresa</h2>
+          <p>Para eventos privados y de empresa, escríbenos a <a href="mailto:eventos@frontvalencia.com" class="text-terracotta-400 hover:text-terracotta-300 underline">eventos@frontvalencia.com</a> o llámanos al <a href="tel:+34965020349" class="text-terracotta-400 hover:text-terracotta-300">+34 965 020 349</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Cancelaciones</h2>
+          <p>Si necesitas cancelar o modificar tu reserva, por favor hazlo con al menos 24 horas de antelación a través del enlace que recibirás en tu email de confirmación.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Menú del día y menús de grupo</h2>
+          <p>El menú del día está disponible de lunes a viernes (13:00-16:00). Los menús de grupo están disponibles bajo reserva previa para grupos de 8 o más personas.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang="es" />
+</BaseLayout>
