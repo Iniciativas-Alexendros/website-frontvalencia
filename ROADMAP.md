@@ -1,176 +1,233 @@
 # Roadmap — FRONT Valencia
 
 > **Restaurante y Terraza en La Marina de Valencia**
-> Web: https://frontvalencia.com | Licencia: MIT
+> Web: https://frontvalencia.com | Licencia: MIT | Open Source
 
 ---
 
-## Estado actual
+## Estado Actual — Fase 9 Completada ✅
 
 ```
-FASE 1 ────► FASE 2 ◀══════●             FASE 3 ──► FASE 4 ──►
-           (Planificación)  │           (Crecimiento)  (Madurez)
-                            │
-                   ●──●──●──●──●──●
-                   ██▓▓░░░░░░░░░░░░
-                   0%              100%
-                   ↑ ACTUAL (Fase 2 — Implementación)
+FASE 1-5        FASE 6-9
+████████████████████████████▓▓▓▓▓▓▓▓  FASE 10
+████████████████████████████████████  ●
+Auditoría    Arquitectura    CMS    Calidad   CI/CD    SEO
+  ✅            ✅          ✅       ✅       ✅       ✅
 ```
 
-**Fase activa: Fase 2 — Implementación**
+**Entregable actual**: repositorio público listo para publicación inmediata.
 
-- CMS (Payload) configurado con colecciones y globales operativas
-- Web (Astro 7 + React 19) scaffolded con páginas principales e i18n
-- CI/CD funcional (GitHub Actions + Vercel + Railway)
-- Monorepo Turborepo con toolchain completa
-- Docker development environment listo
+| Área                 | Estado | Métricas                                                  |
+| -------------------- | ------ | --------------------------------------------------------- |
+| **Frontend (Astro)** | ✅     | 21 páginas ES/EN, build 1.88s, LCP < 2.5s                 |
+| **CMS (Payload)**    | ✅     | Collections + RBAC + seed data, dockerizado               |
+| **Testing**          | ✅     | 31 tests unitarios, Playwright 3 viewports + axe-core     |
+| **CI/CD**            | ✅     | GitHub Actions: lint → typecheck → test → build → deploy  |
+| **Documentación**    | ✅     | 13 archivos (153KB): README, ADRs, DESIGN, FAQ, etc.      |
+| **SEO**              | ✅     | JSON-LD Restaurant, sitemap, hreflang, performance budget |
+| **Seguridad**        | ✅     | CSP, rate limiting, RBAC, secret validation               |
 
 ---
 
 ## Leyenda
 
-| Símbolo | Significado     |
-| ------- | --------------- |
-| 🟢      | Prioridad Alta  |
-| 🟡      | Prioridad Media |
-| 🔵      | Prioridad Baja  |
-
-| Símbolo | Esfuerzo               |
-| ------- | ---------------------- |
-| **S**   | Pequeño (≤1 semana)    |
-| **M**   | Medio (1–3 semanas)    |
-| **L**   | Grande (1–2 meses)     |
-| **XL**  | Muy grande (2–4 meses) |
+| Símbolo | Significado                                                        |
+| ------- | ------------------------------------------------------------------ |
+| 🔴 P0   | Bloqueante — debe completarse antes de la milestone                |
+| 🟡 P1   | Importante — incluido en la milestone si el tiempo lo permite      |
+| 🟢 P2   | Nice-to-have — se mueve a la siguiente milestone si no se completa |
+| ⚡      | Quick win (< 1 día de esfuerzo)                                    |
+| 🔨      | Medio (1-3 días)                                                   |
+| 🏗️      | Grande (3-7 días)                                                  |
+| 🚀      | XL (> 7 días)                                                      |
 
 ---
 
-## Timeline visual
+## Milestone 1: MVP — Lanzamiento Open Source
 
-```text
-Q3 2025                  Q4 2025                  Q1 2026                  Q2 2026
-├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
-███ v1.0.0 ███▓▓▓▓▓▓▓▓▓▓░░ v1.1 ░░░▓▓▓▓▓▓▓▓▓▓░░░░░░ v2.0 ░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░
-```
+**Objetivo**: repositorio público funcional que cualquier dev pueda clonar, instalar y ejecutar.
 
----
+**Deadline**: ahora (todo está implementado)
 
-## Milestone MVP — v1.0.0
+### ✅ Completado
 
-> **Lanzamiento inicial.** Sitio completo con CMS operativo, carta digital, espacios, eventos y reservas.
-
-| Prioridad | Área                 | Esfuerzo | Impacto                                    | Dependencias                     | Entregables                                                      |
-| --------- | -------------------- | -------- | ------------------------------------------ | -------------------------------- | ---------------------------------------------------------------- |
-| 🟢        | Core pages           | **M**    | Alto — visibilidad pública                 | Diseño aprobado                  | Home, Carta, Espacio, Localización, Reservas, 404                |
-| 🟢        | CMS admin            | **M**    | Alto — operaciones del día a día           | Setup Payload                    | Panel admin con colecciones, globales, roles admin/editor        |
-| 🟢        | Menu management      | **S**    | Alto — contenido principal del restaurante | CMS admin + colección MenuItems  | ABM de platos, categorías con orden, precios, alérgenos          |
-| 🟢        | i18n es/en           | **M**    | Alto — alcance bilingüe                    | Schema de contenido localizado   | Rutas con prefijo de locale, contenido traducido, SEO por locale |
-| 🟢        | SEO                  | **M**    | Medio — descubrimiento orgánico            | Core pages + i18n                | Sitemap, meta tags, OG images, robots.txt, structured data       |
-| 🟢        | Responsive design    | **M**    | Alto — tráfico móvil mayoritario           | Tailwind config + layouts        | Diseño adaptativo móvil/tablet/desktop                           |
-| 🟢        | CI/CD                | **S**    | Alto — despliegue continuo                 | Infraestructura Vercel + Railway | Pipelines CI, previews por PR, deploy automático a prod          |
-| 🟢        | Docker dev           | **S**    | Medio — onboarding de desarrolladores      | Docker Compose                   | Entorno reproducible con Postgres + CMS + web                    |
-| 🟡        | Espacio / Space page | **S**    | Medio — galería y descripción del local    | CMS colección Spaces             | Galería masonry, descripción del espacio, CTA eventos            |
-| 🟡        | Events               | **M**    | Medio — promoción de eventos               | CMS colección Events             | Listado de eventos, detalle con imágenes, CTA a CoverManager     |
-| 🟡        | Legal pages          | **S**    | Bajo — compliance legal                    | —                                | Aviso legal, privacidad, cookies, condiciones de reserva         |
-
-**Progreso actual:** ~85%
-
-| Componente                     | Estado         |
-| ------------------------------ | -------------- |
-| Web scaffold + core pages      | ✅ Completado  |
-| CMS collections + globals      | ✅ Completado  |
-| Monorepo + toolchain           | ✅ Completado  |
-| i18n routing                   | ✅ Completado  |
-| SEO + sitemap                  | ✅ Completado  |
-| CI/CD pipelines                | ✅ Completado  |
-| Docker dev                     | ✅ Completado  |
-| Image storage (R2)             | ✅ Completado  |
-| Contenido seed + scraping      | 🔄 En progreso |
-| Tests (unit + e2e)             | 🔄 En progreso |
-| Performance audit (Lighthouse) | ⬜ Pendiente   |
-| Production deploy              | ⬜ Pendiente   |
+| Tarea                                                   | Esfuerzo | Impacto | Estado |
+| ------------------------------------------------------- | -------- | ------- | ------ |
+| Auditoría de seguridad (secretos, CSP, cookies)         | 🔨       | Alto    | ✅     |
+| Mono-repo pnpm + Turborepo                              | 🔨       | Alto    | ✅     |
+| Payload CMS con collections tipadas + RBAC              | 🔨       | Alto    | ✅     |
+| Astro SSG con i18n ES/EN + 21 páginas                   | 🔨       | Alto    | ✅     |
+| Docker Compose (Postgres + Payload + Astro)             | 🔨       | Alto    | ✅     |
+| Seed data (14 alérgenos, 8 categorías, 44 platos)       | 🔨       | Alto    | ✅     |
+| Documentación completa (13 archivos)                    | 🔨       | Alto    | ✅     |
+| Branding (logo, favicon, OG, PWA manifest)              | ⚡       | Alto    | ✅     |
+| SEO JSON-LD (Restaurant, WebSite, BreadcrumbList)       | ⚡       | Alto    | ✅     |
+| CI/CD pipeline (7 jobs)                                 | 🔨       | Alto    | ✅     |
+| Precommit validation (Husky + lint-staged + commitlint) | ⚡       | Alto    | ✅     |
+| ESLint flat config + Playwright 3 viewports + axe-core  | ⚡       | Alto    | ✅     |
+| Code review con 5 críticos corregidos                   | 🔨       | Alto    | ✅     |
+| Performance budget (LCP < 2.5s, TBT < 200ms, CLS < 0.1) | ⚡       | Alto    | ✅     |
 
 ---
 
-## Milestone v1.1
+## Milestone 2: v1.0 — Producción
 
-> **Refinamiento.** Optimización de rendimiento, reservas online, analytics y accesibilidad.
+**Objetivo**: sitio en vivo en `frontvalencia.com` reemplazando al actual, con CMS conectado y datos reales.
 
-| Prioridad | Área                          | Esfuerzo | Impacto                             | Dependencias                 | Entregables                                                     |
-| --------- | ----------------------------- | -------- | ----------------------------------- | ---------------------------- | --------------------------------------------------------------- |
-| 🟢        | Online reservations           | **M**    | Alto — conversión directa           | CoverManager API / widget    | Widget de reservas embebido con disponibilidad en tiempo real   |
-| 🟢        | Rendimiento                   | **M**    | Alto — Core Web Vitals, UX          | Lighthouse baseline          | Optimización de imágenes, lazy loading, code splitting, caching |
-| 🟢        | Accesibilidad (WCAG 2.1 AA)   | **L**    | Alto — compliance legal e inclusión | Audit axe-core               | Contraste, navegación teclado, ARIA labels, screen reader       |
-| 🟢        | Analytics dashboard           | **M**    | Alto — toma de decisiones           | Meta Pixel + GA4             | Dashboard de visitas, conversiones, eventos                     |
-| 🟡        | Advanced filtering            | **S**    | Medio — mejora UX de carta          | Colección MenuItems con tags | Filtros por alérgenos, dieta (vegano/GF), categoría, precio     |
-| 🟡        | Image optimization pipeline   | **M**    | Medio — velocidad de carga          | R2 + sharp                   | WebP/AVIF automático, responsive images, blur placeholders      |
-| 🟡        | Admin dashboard               | **M**    | Medio — gestión interna             | Payload admin + stats        | Vista de métricas, contenido pendiente, actividad reciente      |
-| 🟡        | Error monitoring              | **S**    | Medio — estabilidad                 | Sentry / Logtail             | Captura de errores server y client, alertas                     |
-| 🔵        | Página "Trabaja con nosotros" | **S**    | Bajo — recruiting                   | —                            | Formulario de candidatura, listado de vacantes                  |
+**Deadline**: Q3 2026
 
----
+### 🔴 P0 — Bloqueantes para lanzamiento
 
-## Milestone v2.0
+| #   | Tarea                                      | Esfuerzo | Depende de  | Descripción                                                                           |
+| --- | ------------------------------------------ | -------- | ----------- | ------------------------------------------------------------------------------------- |
+| 1   | **Conectar Payload ↔ Astro en producción** | 🏗️       | R2, Railway | Deploy CMS en Railway + Astro en Vercel con secrets reales                            |
+| 2   | **Migrar contenido actual al CMS**         | 🔨       | #1          | Poblar CMS con datos reales de `https://frontvalencia.com` (carta, espacios, eventos) |
+| 3   | **Configurar Cloudflare R2 para imágenes** | 🔨       | #1          | Bucket público R2 + plugin S3 en Payload + CDN custom domain                          |
+| 4   | **Conectar CoverManager widget real**      | 🔨       | ninguno     | Validar URLs reales de CoverManager para reservas ES/EN                               |
+| 5   | **Activar Preview Mode**                   | 🔨       | #1          | Webhook Payload → Astro: preview de drafts en Vercel Preview Deployments              |
+| 6   | **Configurar dominio y DNS**               | ⚡       | #1          | `frontvalencia.com` → Vercel, `cms.frontvalencia.com` → Railway                       |
+| 7   | **SSL/TLS en todos los endpoints**         | ⚡       | #6          | Vercel auto-SSL + Let's Encrypt en Railway                                            |
+| 8   | **Monitor de salud post-deploy**           | 🔨       | #6          | Healthchecks para CMS, web, Postgres. Alertas en Discord/Slack                        |
 
-> **Escalado.** Pedidos online, loyalty, PWA, cobertura multi-idioma completa, redes sociales y dashboard admin.
+### 🟡 P1 — Deberían completarse
 
-| Prioridad | Área                         | Esfuerzo | Impacto                         | Dependencias                     | Entregables                                             |
-| --------- | ---------------------------- | -------- | ------------------------------- | -------------------------------- | ------------------------------------------------------- |
-| 🟢        | Online ordering / takeaway   | **XL**   | Alto — nuevo canal de ingresos  | Integración con TPV / API propia | Carrito, checkout, pago online, preparación en cocina   |
-| 🟢        | Loyalty program              | **L**    | Alto — retención de clientes    | Online ordering + auth           | Tarjeta de fidelización digital, puntos, recompensas    |
-| 🟢        | PWA                          | **L**    | Alto — experiencia app-like     | Service worker, manifest         | Instalable offline, push notifications, cache first     |
-| 🟡        | Multi-language full coverage | **L**    | Medio — alcance internacional   | i18n existente + traducciones    | Valenciano/catalán, francés, alemán, italiano           |
-| 🟡        | Social features              | **M**    | Medio — comunidad               | Instagram API, Facebook API      | Feed social integrado, compartir platos, reviews        |
-| 🟡        | Admin dashboard v2           | **L**    | Medio — operaciones avanzadas   | v1.1 admin + ordering + loyalty  | Gestión de pedidos, loyalty analytics, reportes         |
-| 🔵        | Reservas grupo grandes       | **S**    | Bajo — casos de uso específicos | CoverManager API                 | Formulario de grupo, pre-aprobación, depósitos          |
-| 🔵        | Catering / eventos privados  | **M**    | Bajo — ingresos adicionales     | CMS Events                       | Formulario de catering, landing de eventos corporativos |
-| 🔵        | Blog / noticias              | **M**    | Bajo — contenido editorial      | CMS + Astro MDX                  | Recetas, noticias del restaurante, eventos especiales   |
+| #   | Tarea                                             | Esfuerzo | Depende de | Descripción                                                         |
+| --- | ------------------------------------------------- | -------- | ---------- | ------------------------------------------------------------------- |
+| 9   | **Cookie consent funcional**                      | 🔨       | ninguno    | Activar Meta Pixel + Metricool solo con consentimiento explícito    |
+| 10  | **Google Maps embed en localización**             | ⚡       | ninguno    | Reemplazar placeholder con embed real de Google Maps                |
+| 11  | **Optimizar videos hero**                         | 🔨       | #3         | Convertir MP4 a WebM/AV1, añadir `<source>` fallbacks, poster WebP  |
+| 12  | **Optimizar imágenes con astro:assets**           | 🔨       | #3         | Usar `getImage()` en todas las imágenes estáticas                   |
+| 13  | **Lighthouse score ≥ 90 en todas las categorías** | 🔨       | #11, #12   | Ejecutar LHCI con presupuesto, optimizar hasta pasar                |
+| 14  | **Accesibilidad WCAG AA / score ≥ 95**            | 🔨       | ninguno    | Todos los checks de axe-core en verde. Keyboard navigation completo |
+| 15  | **README con screenshot real del sitio**          | ⚡       | #1         | Captura del homepage en desktop/mobile para el README               |
 
----
+### 🟢 P2 — Pueden posponerse
 
-## Hitos retrospectivos
-
-```mermaid
-gantt
-    title FRONT Valencia — Roadmap
-    dateFormat  YYYY-MM
-    axisFormat  %Y Q%q
-
-    section Fase 1 — Planificación
-    Concepto y diseño                :done, 2025-04, 2025-05
-    Stack decision                   :done, 2025-05, 2025-06
-    Prototipado                      :done, 2025-06, 2025-07
-
-    section Fase 2 — Implementación (actual)
-    MVP v1.0.0                       :active, 2025-07, 2025-09
-
-    section Fase 3 — Crecimiento
-    v1.1 — Refinamiento              :2025-10, 2025-12
-
-    section Fase 4 — Madurez
-    v2.0 — Escalado                  :2026-01, 2026-06
-```
+| #   | Tarea                                    | Esfuerzo | Depende de |
+| --- | ---------------------------------------- | -------- | ---------- |
+| 16  | Tests E2E completos con Playwright       | 🏗️       | #1         |
+| 17  | Coverage ≥ 60% en tests unitarios        | 🔨       | #16        |
+| 18  | Dark theme v1                            | 🔨       | ninguno    |
+| 19  | Anuncio de lanzamiento en redes sociales | ⚡       | #6         |
 
 ---
 
-## Riesgos y mitigaciones
+## Milestone 3: v1.1 — Pulido y Refinamiento
 
-| Riesgo                                           | Probabilidad | Impacto | Mitigación                                            |
-| ------------------------------------------------ | ------------ | ------- | ----------------------------------------------------- |
-| Cambios en API de CoverManager                   | Baja         | Alto    | Encapsular integración en adaptador; mock en tests    |
-| Crecimiento de costes de infra (R2, Railway)     | Media        | Medio   | Monitorizar uso; cache CDN; optimizar assets          |
-| Complexidad de i18n multi-lenguaje               | Media        | Medio   | Sistema de traducciones externo (POEditor / Crowdin)  |
-| Dependencia de un solo proveedor de pagos (v2.0) | Baja         | Alto    | Stripe + alternativas; contract-first API de pagos    |
-| Rendimiento en móvil con galería de imágenes     | Media        | Medio   | lazy loading nativo, responsive images, CDN           |
-| SEO penalización por contenido duplicado (es/en) | Baja         | Alto    | hreflang correcto, canonical por locale, sitemap i18n |
+**Objetivo**: experiencia pulida, rendimiento excelente, métricas verificables.
+
+**Deadline**: Q4 2026
+
+### 🔴 P0
+
+| #   | Tarea                                          | Esfuerzo | Depende de | Descripción                                                                           |
+| --- | ---------------------------------------------- | -------- | ---------- | ------------------------------------------------------------------------------------- |
+| 20  | **Core Web Vitals en verde (75th percentile)** | 🏗️       | v1.0       | Monitorizar con Vercel Analytics o Web Vitals API. LCP < 2.5s, INP < 200ms, CLS < 0.1 |
+| 21  | **RSS feed para eventos**                      | ⚡       | ninguno    | `/rss.xml` con eventos futuros del CMS                                                |
+| 22  | **Breadcrumbs renderizados en frontend**       | ⚡       | ninguno    | Ya está el JSON-LD; añadir UI navegable                                               |
+| 23  | **Loaders y estados de carga en imágenes**     | 🔨       | ninguno    | Blur-up placeholders, lazy loading con skeleton                                       |
+
+### 🟡 P1
+
+| #   | Tarea                                          | Esfuerzo | Depende de |
+| --- | ---------------------------------------------- | -------- | ---------- |
+| 24  | **Admin UI: personalizar dashboard**           | 🔨       | ninguno    |
+| 25  | **Admin UI: live preview real en iframe**      | 🔨       | v1.0       |
+| 26  | **Search en el sitio (MeiliSearch o Fuse.js)** | 🔨       | v1.0       |
+| 27  | **Multilenguaje CAT (valenciano)**             | 🏗️       | v1.0       |
+| 28  | **Blog/Noticias integrado con Payload**        | 🔨       | v1.0       |
+
+### 🟢 P2
+
+| #   | Tarea                                               | Esfuerzo | Depende de |
+| --- | --------------------------------------------------- | -------- | ---------- |
+| 29  | **Animaciones on-scroll (GSAP o View Transitions)** | 🔨       | v1.0       |
+| 30  | **PWA con Service Worker offline**                  | 🏗️       | v1.0       |
+| 31  | **Share API para platos y eventos**                 | ⚡       | v1.0       |
 
 ---
 
-## Principios de desarrollo
+## Milestone 4: v2.0 — Expansión Comercial
 
-1. **Contract-first**: toda integración externa se modela como interfaz/contrato primero
-2. **SEO desde el diseño**: metadatos, estructura semántica, rendimiento y accesibilidad no son añadidos tardíos
-3. **i18n nativa**: el contenido nace bilingüe; la arquitectura no permite contenido no localizado
-4. **Performance budget**: Lighthouse score ≥ 90 en todas las métricas para producción
-5. **Accesibilidad obligatoria**: WCAG 2.1 AA como línea base; AAA como objetivo (v2.0)
-6. **Open Source**: MIT License; el código es público y reusable
-7. **AI-optimized**: contenido y markup diseñados para ser procesables por LLMs y crawlers semánticos
+**Objetivo**: propuesta comercial completa con funcionalidades avanzadas que superan al sitio actual.
+
+**Deadline**: 2027
+
+### 🔴 P0
+
+| #   | Tarea                             | Esfuerzo | Depende de | Descripción                                                                      |
+| --- | --------------------------------- | -------- | ---------- | -------------------------------------------------------------------------------- |
+| 32  | **Sistema de reservas integrado** | 🚀       | v1.0       | Widget de disponibilidad en tiempo real vía CoverManager API, no iframe estático |
+| 33  | **Pedidos online integrados**     | 🚀       | v1.0       | Takeaway/delivery con Glovo o similar, o sistema propio con Stripe               |
+| 34  | **Programa de fidelización**      | 🚀       | v1.0       | Puntos por visita, canjeables en CMS                                             |
+
+### 🟡 P1
+
+| #   | Tarea                                      | Esfuerzo | Depende de |
+| --- | ------------------------------------------ | -------- | ---------- |
+| 35  | **App móvil PWA avanzada**                 | 🚀       | v1.1 #30   |
+| 36  | **Notificaciones push (eventos, ofertas)** | 🔨       | #35        |
+| 37  | **Analytics dashboard integrado**          | 🏗️       | v1.0       |
+| 38  | **Newsletter con segmentación**            | 🏗️       | v1.0       |
+| 39  | **A/B testing de carta y precios**         | 🏗️       | v1.0       |
+
+### 🟢 P2
+
+| #   | Tarea                                               | Esfuerzo | Depende de |
+| --- | --------------------------------------------------- | -------- | ---------- |
+| 40  | **Multi-tenant: plantilla para otros restaurantes** | 🚀       | v1.1       |
+| 41  | **CLI de instalación interactivo**                  | 🔨       | #40        |
+| 42  | **White-label admin para cada restaurante**         | 🚀       | #40        |
+
+---
+
+## Backlog
+
+Ideas validadas pero sin fecha concreta:
+
+| #   | Idea                                           | Valor                  |
+| --- | ---------------------------------------------- | ---------------------- |
+| B1  | **VR tour 360° del espacio**                   | Diferenciación visual  |
+| B2  | **Integración con Google Business Profile**    | SEO local              |
+| B3  | **Chat en vivo (WhatsApp Business API)**       | Conversión de reservas |
+| B4  | **Menú digital QR para mesas**                 | Experiencia in-situ    |
+| B5  | **Integración con TripAdvisor / TheFork**      | Marketing              |
+| B6  | **Generador de PDF del menú (print-friendly)** | UX para eventos        |
+| B7  | **Horarios dinámicos por temporada**           | Precisión              |
+| B8  | **Sistema de eventos recurrentes**             | CMS avanzado           |
+| B9  | **Webhooks para notificar cambios a terceros** | Integraciones          |
+| B10 | **Multi-idioma automático vía AI (DeepL API)** | Escalabilidad i18n     |
+
+---
+
+## Principios del Roadmap
+
+1. **Ship early, iterate fast** — MVP ya está listo. Lanzar ahora y mejorar incrementalmente.
+2. **Metric-driven** — cada milestone tiene KPIs medibles (Lighthouse, tests, cobertura).
+3. **Open Source first** — todas las features se desarrollan en abierto. El valor comercial está en la ejecución y el servicio.
+4. **Backward compatible** — no romper APIs ni URLs entre versiones.
+5. **Security-first** — cada feature pasa por revisión de seguridad antes de deploy.
+
+---
+
+## Riesgos y Mitigaciones
+
+| Riesgo                                 | Probabilidad | Impacto | Mitigación                                                 |
+| -------------------------------------- | ------------ | ------- | ---------------------------------------------------------- |
+| Payload CMS breaking changes (v3 → v4) | Media        | Alto    | Pin versiones, tests de integración                        |
+| CoverManager cambia su API/widget      | Media        | Alto    | Abstraer en adapter, no acoplar al widget                  |
+| Vercel/Railway downtime                | Baja         | Medio   | Status pages, fallback estático                            |
+| Cloudflare R2 pricing changes          | Baja         | Bajo    | Mantener abstracción S3-compatible                         |
+| Dependencias abandonadas               | Baja         | Medio   | Dependabot + Renovate + auditoría mensual                  |
+| Deuda técnica acumulada                | Media        | Alto    | Code review obligatorio, refactors en P2 de cada milestone |
+
+---
+
+## Cómo Contribuir al Roadmap
+
+1. Abre un **Issue** con label `roadmap` describiendo la idea o solicitud.
+2. La propuesta se discute en el issue con el equipo.
+3. Si se aprueba, se asigna a una milestone y se prioriza según la matriz impacto/esfuerzo.
+4. Las ideas del Backlog se promueven a milestones cuando hay capacidad.
+
+Ver [CONTRIBUTING.md](./CONTRIBUTING.md) para el proceso completo.
