@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" fill="#f5f5f0">
+  <rect x="0" y="6" width="36" height="4" rx="2" fill="#d4634a"/>
+
+  <text x="0" y="80" font-family="Geist,'Helvetica Neue','Inter',Arial,sans-serif" font-weight="900" font-size="68" fill="#f5f5f0" letter-spacing="-0.03em">FRONT</text>
+
+  <rect x="0" y="94" width="400" height="1" fill="rgba(255,255,255,0.08)"/>
+</svg>
