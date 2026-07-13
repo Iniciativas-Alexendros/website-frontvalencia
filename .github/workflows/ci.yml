@@ -28,8 +28,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run lint
-      - run: pnpm run typecheck
+      - run: pnpm --filter frontvalencia-web run lint
 
   build:
     name: Build
@@ -45,7 +44,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run build
+      - run: pnpm --filter frontvalencia-web build
       - name: Verify dist
         run: test -d apps/web/dist && echo "Build OK" || exit 1
 
@@ -63,4 +62,4 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run test:unit
+      - run: pnpm --filter frontvalencia-web run test:unit

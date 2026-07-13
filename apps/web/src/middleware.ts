@@ -1,5 +1,4 @@
 import { defineMiddleware } from 'astro/middleware'
-import { parseLocale } from './lib/i18n'
 
 const SECURITY_HEADERS = {
   'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload',
@@ -56,13 +55,6 @@ export const onRequest = defineMiddleware(async (context, next) => {
     response.headers.set(key, value)
   }
   response.headers.set('Content-Security-Policy', CSP)
-
-  // — Redirigir / → /es/ (default locale) —
-  if (url.pathname === '/') {
-    const locale = context.cookies.get('locale')?.value
-    const target = locale && ['es', 'en'].includes(locale) ? locale : 'es'
-    return context.redirect(`/${target}/`, 302)
-  }
 
   return response
 })

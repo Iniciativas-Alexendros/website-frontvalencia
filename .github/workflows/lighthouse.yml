@@ -15,7 +15,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build --filter=web
+      - run: pnpm --filter frontvalencia-web build
       - name: Lighthouse CI
         run: npx lhci autorun
         env:
