@@ -74,9 +74,15 @@ async function sendOTLP(spans: TelemetrySpan[], metrics: Metric[], errors: Error
     attributes: [
       { key: 'service.name', value: { stringValue: SERVICE_NAME } },
       { key: 'service.version', value: { stringValue: SERVICE_VERSION } },
-      { key: 'deployment.environment', value: { stringValue: import.meta.env.MODE || 'production' } },
+      {
+        key: 'deployment.environment',
+        value: { stringValue: import.meta.env.MODE || 'production' },
+      },
       { key: 'url.path', value: { stringValue: location.pathname } },
-      { key: 'user_agent.original', value: { stringValue: navigator.userAgent } },
+      {
+        key: 'user_agent.original',
+        value: { stringValue: navigator.userAgent },
+      },
     ],
   }
 
@@ -171,9 +177,18 @@ async function sendOTLP(spans: TelemetrySpan[], metrics: Metric[], errors: Error
                 severityText: 'ERROR',
                 body: { stringValue: e.message },
                 attributes: [
-                  { key: 'error.source', value: { stringValue: e.source || '' } },
-                  { key: 'error.lineno', value: { intValue: String(e.lineno || 0) } },
-                  { key: 'error.colno', value: { intValue: String(e.colno || 0) } },
+                  {
+                    key: 'error.source',
+                    value: { stringValue: e.source || '' },
+                  },
+                  {
+                    key: 'error.lineno',
+                    value: { intValue: String(e.lineno || 0) },
+                  },
+                  {
+                    key: 'error.colno',
+                    value: { intValue: String(e.colno || 0) },
+                  },
                   { key: 'error.stack', value: { stringValue: e.stack || '' } },
                   { key: 'url.path', value: { stringValue: e.url } },
                 ],
@@ -237,7 +252,7 @@ function observeWebVitals(metrics: Metric[]): void {
         timestamp: now(),
       })
     }
-  }).observe({ type: 'event', buffered: true, durationThreshold: 40 })
+  }).observe({ type: 'event', buffered: true })
 
   // TTFB
   new PerformanceObserver((list) => {
