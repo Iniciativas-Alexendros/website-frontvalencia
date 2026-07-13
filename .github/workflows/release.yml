@@ -1,48 +1,41 @@
-name: Release
+name: Release — Changesets PR / Publish
+
 on:
   push:
     branches: [main]
 
-permissions:
-  contents: write
-  pull-requests: write
-  issues: write
-
 concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  NODE_VERSION: '22'
+  PNPM_VERSION: '8.15.0'
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - uses: pnpm/action-setup@v4
         with:
-          version: 8.15.0
-
+          version: ${{ env.PNPM_VERSION }}
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: pnpm
-
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm build
-          version: pnpm changeset version
-          commit: 'chore: version packages'
-          title: 'Release: version packages'
+          publish: pnpm exec changeset tag && pnpm exec changeset publish
+          commit: 'ci: version packages'
+          title: 'ci: version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate Release Notes
-        if: steps.changesets.outputs.published == 'true'
-        run: |
-          npx changeset tag
-          echo "published=true" >> $GITHUB_OUTPUT

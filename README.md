@@ -2,8 +2,6 @@
 
 **Restaurante y Terraza en La Marina de Valencia**
 
-![Homepage screenshot](public/images/screenshot-hero.svg)
-
 Este proyecto es la web del restaurante FRONT Valencia, situado en La Marina, frente al mar. Una web moderna, rápida, bilingüe (español e inglés) y fácil de mantener, pensada para que cualquier persona del equipo —sin saber programar— pueda modificar la carta, los horarios o las fotos desde un panel sencillo.
 
 ---
@@ -21,6 +19,8 @@ Este proyecto es la web del restaurante FRONT Valencia, situado en La Marina, fr
 ![code style](https://img.shields.io/badge/code_style-prettier-ff69b4)
 ![Accessibility](https://img.shields.io/badge/Accessibility-%3E%3D_AA-28a745)
 ![SEO](https://img.shields.io/badge/SEO-100-6f42c1)
+
+![Homepage — FRONT Valencia](public/images/home-screenshot.jpg)
 
 ---
 
