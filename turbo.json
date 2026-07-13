@@ -1,0 +1,81 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "PAYLOAD_SECRET",
+    "DATABASE_URI",
+    "DATABASE_DIRECT_URL",
+    "PAYLOAD_PREVIEW_SECRET",
+    "PAYLOAD_PUBLIC_SERVER_URL",
+    "PAYLOAD_API_URL",
+    "NEXT_PUBLIC_SITE_URL",
+    "PUBLIC_SITE_URL",
+    "R2_ENDPOINT",
+    "R2_BUCKET",
+    "R2_ACCESS_KEY_ID",
+    "R2_SECRET_ACCESS_KEY",
+    "R2_PUBLIC_URL",
+    "PUBLIC_RESERVAS_ES_URL",
+    "PUBLIC_RESERVAS_EN_URL",
+    "PUBLIC_META_PIXEL_ID",
+    "PUBLIC_GOOGLE_MAPS_EMBED_URL",
+    "NODE_ENV"
+  ],
+  "globalDependencies": ["tsconfig.json", ".env.*", "tailwind.config.*"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build", "//#generate:types"],
+      "outputs": ["dist/**", ".astro/**", ".next/**", "!.next/cache/**", "build/**"]
+    },
+    "//#generate:types": {
+      "cache": true,
+      "outputs": [
+        "apps/cms/src/payload-types.ts",
+        "packages/types/src/index.d.ts",
+        "packages/types/src/payload-types.d.ts"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^//#generate:types"],
+      "outputs": []
+    },
+    "typecheck": {
+      "dependsOn": ["^//#generate:types"],
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"],
+      "env": ["NODE_ENV=test"]
+    },
+    "test:unit": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/unit/**"]
+    },
+    "test:e2e": {
+      "dependsOn": ["^build"],
+      "outputs": ["test-results/**", "playwright-report/**"]
+    },
+    "db:push": {
+      "cache": false
+    },
+    "db:studio": {
+      "cache": false,
+      "persistent": true
+    },
+    "content:seed": {
+      "cache": false,
+      "outputs": [".payload/**"]
+    },
+    "preview": {
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

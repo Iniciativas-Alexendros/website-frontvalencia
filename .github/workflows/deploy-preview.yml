@@ -1,0 +1,28 @@
+name: Deploy Preview
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+jobs:
+  deploy-web:
+    name: Deploy Frontend (Vercel)
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@v4
+      - uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_WEB }}
+          working-directory: ./apps/web
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+
+  deploy-cms:
+    name: Deploy CMS (Preview)
+    runs-on: ubuntu-latest
+    if: false
+    steps:
+      - name: CMS Preview Deploy placeholder
+        run: echo "Configure Railway/Render deploy via API"
