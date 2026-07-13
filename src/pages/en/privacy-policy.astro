@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import Footer from '../../components/sections/Footer.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Privacy Policy — FRONT Valencia"
+  description="Privacy policy and personal data processing at FRONT."
+>
+  <Header lang="en" />
+  <main id="main-content" class="pt-16">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-black uppercase tracking-tight text-text-primary mb-12">Privacy Policy</h1>
+
+      <div class="space-y-8 text-text-secondary">
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Data controller</h2>
+          <p>TODO-CONTENT: Data controller information (company name, tax ID, address) pending client confirmation.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Purpose</h2>
+          <p>Personal data collected through this website (newsletter form, reservations) will be processed to manage the relationship with the user and send commercial communications if authorised.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Legal basis</h2>
+          <p>The legal basis for processing your data is the consent of the data subject.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Recipients</h2>
+          <p>Data will not be transferred to third parties, except under legal obligation or to provide the requested service (CoverManager for reservations, Metricool and Meta for analytics, with prior consent).</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Your rights</h2>
+          <p>You may exercise your rights of access, rectification, erasure, objection, restriction and portability by emailing hello@frontvalencia.com.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Retention</h2>
+          <p>Data will be retained while the contractual relationship is maintained or until the user requests its deletion.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

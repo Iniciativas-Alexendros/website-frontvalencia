@@ -1,0 +1,72 @@
+{
+  "name": "FRONT",
+  "tagline": "Restaurante y Terraza La Marina de Valencia",
+  "description": "Frente al mar, junto al Reloj del Puerto, en el edificio más brutalista de Valencia. Gastronomía mediterránea, brasas, arroces, música, cócteles y vistas.",
+  "ogImage": "https://frontvalencia.com/foto-logo.jpg",
+  "ogLocale": "es_ES",
+  "contact": {
+    "phone": "+34 965 020 349",
+    "whatsapp": "+34965020349",
+    "email": "hello@frontvalencia.com",
+    "reservationsEmail": "reservas@frontvalencia.com",
+    "eventsEmail": "eventos@frontvalencia.com"
+  },
+  "location": {
+    "address": "C/Travesía",
+    "city": "Valencia",
+    "postalCode": "46024",
+    "area": "La Marina de Valencia, The Terminal Hub",
+    "mapsUrl": "https://maps.app.goo.gl/FVnSVDYfv5XnNiU16",
+    "transport": {
+      "bus": [
+        "Doctor J.J. Dòmine - Edifici del Rellotge: Líneas 4, 19, 92, 95, 99",
+        "Avinguda del Port - Joan Verdeguer: Líneas 4, 30, 95, C3",
+        "Manuel Soto Enginyer - Estació: Líneas 4, 19, 30, 92, 95, 99"
+      ],
+      "parking": "Parking público de pago gestionado por el Ayuntamiento de Valencia. Acceso a través del Tinglado nº 5.",
+      "bikeParking": "Parking bicis disponible"
+    }
+  },
+  "hours": {
+    "weekday": "Lunes a Viernes: 9:00 a 19:00",
+    "weekend": "Sábados, Domingos y Festivos: 11:30 a 19:00",
+    "nights": "Noches de viernes y sábados hasta la 1:30h",
+    "nightsNote": "Desde el 8 de abril"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/frontvalencia"
+  },
+  "externalLinks": {
+    "club": "https://front.feending.io/",
+    "careers": "https://grupoelalto-1738067471.teamtailor.com/",
+    "reservations": {
+      "provider": "CoverManager",
+      "es": "https://www.covermanager.com/reservation/module_restaurant/restaurante-front-valencia/spanish",
+      "en": "https://www.covermanager.com/reservation/module_restaurant/restaurante-front-valencia/english"
+    }
+  },
+  "legal": {
+    "copyright": "2024 © FRONT THE TERMINAL BAR All Rights Reserved",
+    "legalAdvice": "/legal-advice",
+    "privacyPolicy": "/privacy-policy",
+    "cookiesPolicy": "/cookies-policy"
+  },
+  "seo": {
+    "es": {
+      "homeTitle": "FRONT | Restaurante y Terraza La Marina de Valencia",
+      "homeDescription": "Frente al mar, junto al Reloj del Puerto, en el edificio más brutalista de Valencia. Gastronomía mediterránea, brasas, arroces, música, cócteles y vistas.",
+      "cartaTitle": "Carta — FRONT Valencia",
+      "espacioTitle": "Espacio — FRONT Valencia",
+      "localizacionTitle": "Localización — FRONT Valencia",
+      "reservasTitle": "Reservas — FRONT Valencia"
+    },
+    "en": {
+      "homeTitle": "FRONT | Restaurant & Terrace La Marina de Valencia",
+      "homeDescription": "By the sea, next to the Port Clock, in the most brutalist building in Valencia. Mediterranean cuisine, grills, rice, music, cocktails and views.",
+      "menuTitle": "Menu — FRONT Valencia",
+      "spaceTitle": "Space — FRONT Valencia",
+      "locationTitle": "Location — FRONT Valencia",
+      "bookTitle": "Book — FRONT Valencia"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import Hero from '../../components/sections/Hero.astro';
+import MenuSection from '../../components/sections/MenuSection.astro';
+import EspacioSection from '../../components/sections/EspacioSection.astro';
+import LocalizacionSection from '../../components/sections/LocalizacionSection.astro';
+import ReservasSection from '../../components/sections/ReservasSection.astro';
+import ClubBanner from '../../components/sections/ClubBanner.astro';
+import Footer from '../../components/sections/Footer.astro';
+import CookieConsent from '../../components/islands/CookieConsent';
+import { safeGetMenu, safeGetSite } from '../../lib/content';
+
+const menuData = await safeGetMenu('es');
+const siteData = await safeGetSite();
+const categories = menuData.categories;
+const allergenLegend = menuData.allergenLegend ?? [];
+---
+
+<BaseLayout
+  lang="es"
+  title="FRONT | Restaurante y Terraza La Marina de Valencia"
+  description="Frente al mar, junto al Reloj del Puerto, en el edificio más brutalista de Valencia. Gastronomía mediterránea, brasas, arroces, música, cócteles y vistas."
+>
+  <Header lang="es" />
+  <main id="main-content">
+    <Hero lang="es" />
+    <MenuSection categories={categories} allergenLegend={allergenLegend} lang="es" />
+    <EspacioSection lang="es" />
+    <ClubBanner lang="es" />
+    <LocalizacionSection lang="es" />
+    <ReservasSection lang="es" />
+  </main>
+  <Footer lang="es" />
+  <CookieConsent lang="es" client:idle />
+</BaseLayout>

@@ -1,0 +1,57 @@
+{
+  "home-es": {
+    "route": "/",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:00:44.545Z"
+  },
+  "carta-es": {
+    "route": "/carta",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:00:53.121Z"
+  },
+  "espacio-es": {
+    "route": "/espacio",
+    "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://frontvalencia.com/espacio\", waiting until \"networkidle\"\u001b[22m\n",
+    "timestamp": "2026-07-13T04:01:23.122Z"
+  },
+  "localizacion-es": {
+    "route": "/localizacion",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:01:34.260Z"
+  },
+  "reservas-es": {
+    "route": "/reservas",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:01:48.517Z"
+  },
+  "condiciones-reserva-es": {
+    "route": "/condiciones-reserva",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:01:54.577Z"
+  },
+  "home-en": {
+    "route": "/en",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:02:00.426Z"
+  },
+  "menu-en": {
+    "route": "/en/menu",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:02:21.244Z"
+  },
+  "space-en": {
+    "route": "/en/space",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:02:27.086Z"
+  },
+  "location-en": {
+    "route": "/en/location",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:02:32.923Z"
+  },
+  "book-en": {
+    "route": "/en/book",
+    "error": "Error: page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:303:30), <anonymous>:1:43)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "timestamp": "2026-07-13T04:02:38.941Z"
+  }
+}

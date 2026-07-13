@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import Footer from '../../components/sections/Footer.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Booking Conditions — FRONT Valencia"
+  description="Terms and conditions for making reservations at FRONT."
+>
+  <Header lang="en" />
+  <main id="main-content" class="pt-16">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-black uppercase tracking-tight text-text-primary mb-12">Booking Conditions</h1>
+
+      <div class="space-y-8 text-text-secondary">
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Courtesy hold</h2>
+          <p>We will hold your table for <strong class="text-text-primary">15 minutes past the reserved time</strong> as a courtesy; after that, it will be released.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Reservation management</h2>
+          <p>We do not manage reservations through social media. All reservations must be made through our official system (CoverManager) or by contacting the restaurant directly.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Groups over 8 people</h2>
+          <p>For groups of more than 8 people, contact us at <a href="mailto:reservas@frontvalencia.com" class="text-terracotta-400 hover:text-terracotta-300 underline">reservas@frontvalencia.com</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Private and corporate events</h2>
+          <p>For private and corporate events, write to <a href="mailto:eventos@frontvalencia.com" class="text-terracotta-400 hover:text-terracotta-300 underline">eventos@frontvalencia.com</a> or call <a href="tel:+34965020349" class="text-terracotta-400 hover:text-terracotta-300">+34 965 020 349</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Cancellations</h2>
+          <p>If you need to cancel or modify your reservation, please do so at least 24 hours in advance via the link in your confirmation email.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">Daily menu and group menus</h2>
+          <p>The daily menu is available Monday to Friday (13:00-16:00). Group menus are available by prior reservation for groups of 8 or more.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

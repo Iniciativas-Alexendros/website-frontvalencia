@@ -1,0 +1,147 @@
+{
+  "route": "/",
+  "lang": "es",
+  "title": "FRONT | Restaurante y Terraza La Marina de Valencia",
+  "description": "Frente al mar, junto al Reloj del Puerto, en el edificio más brutalista de Valencia. Gastronomía mediterránea, brasas, arroces, música, cócteles y vistas.",
+  "ogImage": "https://frontvalencia.com/foto-logo.jpg",
+  "ogLocale": "es_ES",
+  "headings": {
+    "h3": [
+      "Conéctate a la innovación\n¡Suscríbete para enterarte de todo!"
+    ]
+  },
+  "body": "ES|EN\nCARTA\nESPACIO\nLOCALIZACIÓN\nTHE CLUB \nCONTACTO\nTALENTO\nRESERVA\n✕\nConéctate a la innovación\n¡Suscríbete para enterarte de todo!\n/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */ \nAVISO LEGAL\nPOLÍTICA DE PRIVACIDAD\nPOLÍTICA DE COOKIES\n\n2024 © FRONT THE TERMINAL BAR All Rights Reserved",
+  "links": [
+    {
+      "href": "/carta",
+      "text": "Carta",
+      "rel": ""
+    },
+    {
+      "href": "/espacio",
+      "text": "ESPACIO",
+      "rel": ""
+    },
+    {
+      "href": "/localizacion",
+      "text": "Localización",
+      "rel": ""
+    },
+    {
+      "href": "https://front.feending.io/",
+      "text": "The club",
+      "rel": ""
+    },
+    {
+      "href": "/footer",
+      "text": "CONTACTO",
+      "rel": ""
+    },
+    {
+      "href": "https://grupoelalto-1738067471.teamtailor.com/",
+      "text": "Talento",
+      "rel": ""
+    },
+    {
+      "href": "/reservas",
+      "text": "RESERVA",
+      "rel": ""
+    },
+    {
+      "href": "/carta",
+      "text": "CARTA",
+      "rel": ""
+    },
+    {
+      "href": "/espacio",
+      "text": "ESPACIO",
+      "rel": ""
+    },
+    {
+      "href": "/localizacion",
+      "text": "LOCALIZACIÓN",
+      "rel": ""
+    },
+    {
+      "href": "https://front.feending.io/",
+      "text": "THE CLUB",
+      "rel": ""
+    },
+    {
+      "href": "/footer",
+      "text": "CONTACTO",
+      "rel": ""
+    },
+    {
+      "href": "https://grupoelalto-1738067471.teamtailor.com/",
+      "text": "TALENTO",
+      "rel": ""
+    },
+    {
+      "href": "/reservas",
+      "text": "RESERVA",
+      "rel": ""
+    },
+    {
+      "href": "/legal-advice",
+      "text": "AVISO LEGAL",
+      "rel": ""
+    },
+    {
+      "href": "/privacy-policy",
+      "text": "POLÍTICA DE PRIVACIDAD",
+      "rel": ""
+    },
+    {
+      "href": "/cookies-policy",
+      "text": "POLÍTICA DE COOKIES",
+      "rel": ""
+    }
+  ],
+  "images": [
+    {
+      "src": "logo-icon.png",
+      "alt": "logo-from"
+    },
+    {
+      "src": "/the-club-icon.svg",
+      "alt": ""
+    },
+    {
+      "src": "arrow-b.png",
+      "alt": ""
+    },
+    {
+      "src": "/LOGO_MV_SVG.svg",
+      "alt": "logo-from"
+    },
+    {
+      "src": "from-logo.svg",
+      "alt": "FRONT LA MARINA DE VALENCIA"
+    },
+    {
+      "src": "/the-club-icon.svg",
+      "alt": ""
+    },
+    {
+      "src": "arrow-b.png",
+      "alt": ""
+    },
+    {
+      "src": "arrow.png",
+      "alt": ""
+    }
+  ],
+  "videos": [
+    {
+      "poster": null,
+      "src": null
+    },
+    {
+      "poster": null,
+      "src": null
+    }
+  ],
+  "iframes": [],
+  "timestamp": "2026-07-13T04:09:27.901Z"
+}

@@ -1,0 +1,135 @@
+{
+  "route": "/espacio",
+  "lang": "es",
+  "title": "FRONT | Restaurante y Terraza La Marina de Valencia",
+  "description": "Frente al mar, junto al Reloj del Puerto, en el edificio más brutalista de Valencia. Gastronomía mediterránea, brasas, arroces, música, cócteles y vistas.",
+  "ogImage": "https://frontvalencia.com/foto-logo.jpg",
+  "ogLocale": "es_ES",
+  "headings": {
+    "h2": [
+      "ESPACIO",
+      "Comer frente al mar, dentro de una joya brutalista.",
+      "COMER FRENTE AL MAR, DENTRO DE UNA JOYA BRUTALISTA."
+    ]
+  },
+  "body": "ES|EN\nESPACIO\n✕\nCOMER FRENTE AL MAR, DENTRO DE UNA JOYA BRUTALISTA.\nCONTACTO\n\nLa Marina de Valencia vibra con un nuevo actor en su ecosistema de innovación. No es un proyecto tech más: es diseño, gastronomía y creatividad disruptiva. Grupo El Alto y Groovelives Team se han unido para dar vida a FRONT, el nuevo espacio gastronómico que marca tendencia en The Terminal Hub.\n\nGroovelives Team, expertos en crear experiencias donde se cruzan música, arte y cultura, junto a El Alto, con más de 40 años de trayectoria en gastronomía sostenible, presentan una propuesta que va más allá de la comida. FRONT se integra con la arquitectura brutalista del edificio y lo transforma en un lugar para disfrutar frente al mar, conectar y formar parte de la Valencia creativa.\n\n¿Tienes un evento privado en mente? Contáctanos eventos@frontvalencia.com\n\nDESCARGA PDF \n\nACCESO TERRAZA FIN DE SEMANA\n\nCOCKTAILS BAR\n\nACCESO LUNES A VIERNES PUERTA PRINCIPAL\n\nTERRAZA CUBIERTA\n\nLOUNGE",
+  "links": [
+    {
+      "href": "/carta",
+      "text": "Carta",
+      "rel": ""
+    },
+    {
+      "href": "/espacio",
+      "text": "ESPACIO",
+      "rel": ""
+    },
+    {
+      "href": "/localizacion",
+      "text": "Localización",
+      "rel": ""
+    },
+    {
+      "href": "https://front.feending.io/",
+      "text": "The club",
+      "rel": ""
+    },
+    {
+      "href": "/footer",
+      "text": "CONTACTO",
+      "rel": ""
+    },
+    {
+      "href": "https://grupoelalto-1738067471.teamtailor.com/",
+      "text": "Talento",
+      "rel": ""
+    },
+    {
+      "href": "/reservas",
+      "text": "RESERVA",
+      "rel": ""
+    },
+    {
+      "href": "mailto:eventos@frontvalencia.com",
+      "text": "CONTACTO",
+      "rel": ""
+    },
+    {
+      "href": "#",
+      "text": "DESCARGA PDF",
+      "rel": ""
+    },
+    {
+      "href": "mailto:eventos@frontvalencia.com",
+      "text": "CONTACTO",
+      "rel": ""
+    },
+    {
+      "href": "#",
+      "text": "DESCARGA PDF",
+      "rel": ""
+    },
+    {
+      "href": "#",
+      "text": "Política de Privacidad",
+      "rel": ""
+    }
+  ],
+  "images": [
+    {
+      "src": "logo-icon.png",
+      "alt": "logo-from"
+    },
+    {
+      "src": "/the-club-icon.svg",
+      "alt": ""
+    },
+    {
+      "src": "arrow-b.png",
+      "alt": ""
+    },
+    {
+      "src": "/LOGO_MV_SVG.svg",
+      "alt": "logo-from"
+    },
+    {
+      "src": "arrow-b.png",
+      "alt": ""
+    },
+    {
+      "src": "arrow-b.png",
+      "alt": ""
+    },
+    {
+      "src": " https://back.frontvalencia.com/api/uploads/20250603T102244575Z318312.png",
+      "alt": "Rectangle 96.png"
+    },
+    {
+      "src": " https://back.frontvalencia.com/api/uploads/20250603T102244574Z053853.png",
+      "alt": "Rectangle 97.png"
+    },
+    {
+      "src": " https://back.frontvalencia.com/api/uploads/20250603T102244576Z478444.png",
+      "alt": "Rectangle 98.png"
+    },
+    {
+      "src": " https://back.frontvalencia.com/api/uploads/20250603T102244573Z421318.png",
+      "alt": "EXT.png"
+    },
+    {
+      "src": " https://back.frontvalencia.com/api/uploads/20250603T104453482Z883001.jpg",
+      "alt": "GENERAL 3.jpg"
+    },
+    {
+      "src": " https://back.frontvalencia.com/api/uploads/20250617T124119805Z002864.pdf",
+      "alt": "FRONT-ESPACIO.pdf"
+    },
+    {
+      "src": "arrow-b.png",
+      "alt": ""
+    }
+  ],
+  "videos": [],
+  "iframes": [],
+  "timestamp": "2026-07-13T04:09:36.778Z"
+}

@@ -1,0 +1,191 @@
+{
+  "route": "/carta",
+  "lang": "es",
+  "title": "FRONT | Restaurante y Terraza La Marina de Valencia",
+  "description": "Frente al mar, junto al Reloj del Puerto, en el edificio más brutalista de Valencia. Gastronomía mediterránea, brasas, arroces, música, cócteles y vistas.",
+  "ogImage": "https://frontvalencia.com/foto-logo.jpg",
+  "ogLocale": "es_ES",
+  "headings": {
+    "h2": [
+      "CARTA",
+      "CARTA",
+      "|\nBEBIDAS",
+      "|\nDESTACADOS",
+      "DESAYUNO FRENTE AL MAR",
+      "ESMORZARET",
+      "CARTA",
+      "MENÚ DEL DÍA\nDisponible de Lunes a Viernes",
+      "MENÚ DE GRUPO",
+      "Resultados"
+    ],
+    "h3": [
+      "9:00H",
+      "9:00H",
+      "FROM 13H",
+      "ENSALADAS DE LA HUERTA",
+      "LAS TAPAS DE VICENTE PATIÑO",
+      "PARA PICAR CON SABOR A BRASA",
+      "EL PESCADO A LA BRASA",
+      "LA CARNE A LA BRASA",
+      "GUARNICIONES",
+      "LOS ARROCES EN LLAUNA (MÍN. 2PAX)",
+      "EL DULCE ANTES DE ZARPAR",
+      "13H-16H",
+      "Todo el día",
+      "*ALÉRGENOS"
+    ],
+    "h4": [
+      "PAN ARTESANAL, INTEGRAL O SIN GLUTEN",
+      "Pan artesanal, Integral o sin gluten",
+      "€",
+      "1",
+      "CROISSANT",
+      "2,95€",
+      "2",
+      "TOSTADA ARTESANAL, MANTEQUILLA ECOLÓGICA Y MERMELADA CASERA ( 1 | 3 | 7 )",
+      "3,25€",
+      "3",
+      "TOSTADA MEDITERRÁNEA, TOMATE FRESCO Y ACEITE DE OLIVA EXTRA ( 1 | 7 )",
+      "3,50€",
+      "4",
+      "TOSTADA CLÁSICA DE JAMÓN IBÉRICO CON TOMATE RALLADO ( 1 )",
+      "6,00€",
+      "5",
+      "TOSTADA DE SALMÓN NORUEGO, AGUACATE, QUESO CREMA AL ENELDO Y BROTES ( 1 | 4 | 7)",
+      "8,20€",
+      "PAN ARTESANO",
+      "Pan artesano",
+      "€",
+      "1",
+      "TORTILLA DEL DÍA ( 3 )",
+      "7,00€",
+      "2",
+      "ENCEBOLLADO DE HABITAS, LONGANIZA Y SALSA DE CHIMICHURRI ( 1 | 12 )",
+      "7,50€",
+      "3",
+      "MAGRO CON TOMATE Y ALL I OLI ( 3 )",
+      "8,00€",
+      "4",
+      "LOMO ASADO, PATATAS 'AL MONTÓN' Y AJO ( 12 )",
+      "8,00€",
+      "5",
+      "ATÚN, TOMATE, ANCHOAS Y ACEITUNAS ( 1 | 4)",
+      "8,00€",
+      "6",
+      "PEPITO DE TERNERA CON MANTEQUILLA ESPECIADA ( 1 | 7 )",
+      "9,75€",
+      "€",
+      "1",
+      "LA CLÁSICA CÉSAR CON POLLO CRUJIENTE ( 1 | 3 | 4 | 7)",
+      "13,50€",
+      "2",
+      "MEDITERRÁNEA POKE BOWL ( 1 | 4 | 6 | 11 )",
+      "14,30€",
+      "3",
+      "HUERTA Y MAR: TOMATE, MOZARELLA, VENTRESCA, NECTARINA Y PIPARRAS ( 4 | 7 )"
+    ]
+  },
+  "body": "ES|EN\nCARTA\n✕\nBUSCAR\nCARTA\n|\nBEBIDAS\n|\nDESTACADOS\n9:00H\nDESAYUNO FRENTE AL MAR\nPAN ARTESANAL, INTEGRAL O SIN GLUTEN\n€\n1\nCROISSANT\n\n2,95€\n2\nTOSTADA ARTESANAL, MANTEQUILLA ECOLÓGICA Y MERMELADA CASERA ( 1 | 3 | 7 )\n\n3,25€\n3\nTOSTADA MEDITERRÁNEA, TOMATE FRESCO Y ACEITE DE OLIVA EXTRA ( 1 | 7 )\n\n3,50€\n4\nTOSTADA CLÁSICA DE JAMÓN IBÉRICO CON TOMATE RALLADO ( 1 )\n\n6,00€\n5\nTOSTADA DE SALMÓN NORUEGO, AGUACATE, QUESO CREMA AL ENELDO Y BROTES ( 1 | 4 | 7)\n\n8,20€\n9:00H\nESMORZARET\nPAN ARTESANO\n€\n1\nTORTILLA DEL DÍA ( 3 )\n\n7,00€\n2\nENCEBOLLADO DE HABITAS, LONGANIZA Y SALSA DE CHIMICHURRI ( 1 | 12 )\n\n7,50€\n3\nMAGRO CON TOMATE Y ALL I OLI ( 3 )\n\n8,00€\n4\nLOMO ASADO, PATATAS 'AL MONTÓN' Y AJO ( 12 )\n\n8,00€\n5\nATÚN, TOMATE, ANCHOAS Y ACEITUNAS ( 1 | 4)\n\n8,00€\n6\nPEPITO DE TERNERA CON MANTEQUILLA ESPECIADA ( 1 | 7 )\n\n9,75€\nFROM 13H\nCARTA\nENSALADAS DE LA HUERTA\n€\n1\nLA CLÁSICA CÉSAR CON POLLO CRUJIENTE ( 1 | 3 | 4 | 7)\n\n13,50€\n2\nMEDITERRÁNEA POKE BOWL ( 1 | 4 | 6 | 11 )\n\n14,30€\n3\nHUERTA Y MAR: TOMATE, MOZARELLA, VENTRESCA, NECTARINA Y PIPARRAS ( 4 | 7 )\n\n15,50€\n4\nTRICOLOR DE TOMATES DULCES, BURRATA Y PESTO ( 7 | 8 )\n\n16,25€\nLAS TAPAS DE VICENTE PATIÑO\n€\n1\nCROQUETA DE JAMÓN (UD) ( 1 | 3 | 7 )\n\n3,30€\n2\nGILDA FRONT ( 4 )\n\n5,00€\n3\nQUÉ ENSALADILLA ( 3 | 4 )\n\n13,00€\n4\nLAS BRAVAS SUFLADAS DE FRONT, CREMOSAS Y CROCANTES ( 3 )\n\n11,00€\n5\nSEPIA CON MAHONESA DE LIMA Y AJÍ AMARILLO ( 13 | 14 )\n\n16,00€\n6\nMENESTRA DE VERDURAS CRUJIENTES CON MAYONESA DE SRIRACHA ( 3 )\n\n12,00€\n7\nSEPIA ENCEBOLLADA Y PATATAS PAJAS CON AJO Y PEREJIL ( 14 )\n\n16,00€\n8\nFRITURA DE PESCADO CON SALSA TÁRTARA Y CEBOLLA ROJA ENCURTIDAS ( 1 | 3 | 4 )\n\n14,00€\n9\nTITAINA DEL CABANYAL CON DADOS DE ATÚN EN SEMI SALAZÓN Y PRALINÉ DE FRUTOS SECOS ( 4 | 8 )\n\n15,00€\n10\nALBÓNDIGAS DE BACALAO CON CREMOSO DE AJO A LA BRASA ( 1 | 3 | 4 )\n\n3,25€\n11\nMAGRO CON TOMATE (HUERTA DE MARAVELLA), PATATA Y EMULSIÓN DE PIMIENTO ENCURTIDO ( 3 )\n\n13,25€\n12\nCEVICHE DE CABALLA SOASADA ( 4 )\n\n16,00€\n13\nCOCA DE DACSA, TITAINA, HUEVO Y ANCHOAS ( 3 | 4 )\n\n11,00€\n14\nCOCA DE DACSA, MORTADELLA, BURRATA, TOMATE SECO Y PISTACHOS ( 7 | 8 )\n\n12,00€\nPARA PICAR CON SABOR A BRASA\n€\n1\nBERENJENA A LA LLAMA ( 3 SI LLEVA SALSA )\n\n12,00€\n2\nGAMBA BLANCA AL AJILLO ( 2 )\n\n21,50€\n3\nALCACHOFA DE LA HUERTA (EN TEMPORADA) PVP CONSULTAR\n\n4\nPRODUCTO: CLOTXINA VALENCIANA, BERBERECHOS, NAVAJAS, CONSULTAR PVP SEGÚN MERCADO ( 14 )\n\n5\nCALAMAR A LA BRASA O ESTILO ANDALUZ ( 1 | 14 )\n\n22,00€\nEL PESCADO A LA BRASA\n€\n1\nDE LONJA DEL DÍA - PVP SEGÚN MERCADO ( 4 )\n\n2\nBACALAO CONFITADO,ESGARRAET Y EMULSIÓN DE KALAMATA ( 3 | 4)\n\n21,50€\nLA CARNE A LA BRASA\n€\n1\nCHULETA DE CERDO DE CASTAÑA\n\n17,50€\n2\nCACHOPO FRONT DE PLUMA IBÉRICA ( 1 | 3 | 7)\n\n21,50€\n3\nLOMO BAJO DE TERNERA\n\n24,50€\n4\nHAMBURGUESA DE VACA MADURA ( 1 | Y 7 SI LLEVA QUESO )\n\n14,95€\n5\nCANELÓN DE POLLO DE CORRAL ( 1 | 3 | 7 )\n\n16,50€\nGUARNICIONES\n€\n1\nCREMOSO DE PATATAS ( 7 )\n\n5,00€\n2\nENSALADA VERDE Y CEBOLLETA\n\n4,50€\n3\nPIMIENTOS DEL PIQUILLO CONFITADOS\n\n5,00€\n4\nPAN FOCACCIA ARTESANAL ( 1 )\n\n4,00€\nLOS ARROCES EN LLAUNA (MÍN. 2PAX)\n€\n1\nSENYORET (PESCADO DE LONJA Y MARISCO) ( 2 | 4 | 14 )\n\n19,90€\n2\nCHULETA DE CERDO DE CASTAÑA, PIMIENTOS DEL PIQUILLO Y AJO ASADO A LA BRASA\n\n21,00€\nEL DULCE ANTES DE ZARPAR\n€\n1\nFLAN AHUMADO DE VAINILLA ( 3 | 7 )\n\n6,50€\n2\nPIÑA A LA BRASA, HELADO DE CARAMELO, CROCANTI DE GALLETA ( 1 | 7 )\n\n6,00€\n3\nLA TARTA DE QUESO DE FRONT ( 1 | 3 | 7 )\n\n7,25€\n4\nTOCINO DE CIELO CON SORBETE DE CÍTRICOS ( 3 )\n\n7,25€\n5\nTURRÓN XL ( 3 | 8 )\n\n8,00€\n6\nTORRIJA DE BRIOCHE CARAMELIZADA ( 1 | 3 | 7)\n\n7,50€\n7\nBROWNIE CON POLVO DE NOCILLA Y HELADO DE YOGUR ( 1 | 3 | 6 | 7 | 8 )\n\n7,50€\n13H-16H\nMENÚ DEL DÍA\nDisponible de Lunes a Viernes\n€\n1\nBOCADOS DEL CHEF - A ELEGIR -\n\n1. Ceviche, maíz tostado y boniato I 2. Croquetas de jamón\n\n2\nENTRANTES - A COMPARTIR -\n\n1.Clotxina valenciana al vapor | 2. Patatas bravas en tempura\n\n3\nPRINCIPAL - A ELEGIR -\n\n1. Arroz de carrillera y pimientos del piquillo (min. 2 pax) | 2. Bacalao confitado con esgarradet y emulsión de kalamata | 3. Magro en salsa con patatas al montón y emulsión de pimiento\n\n4\nPOSTRE -A ELEGIR -\n\n1. Brownie con helado de yogur y polvo de nocilla | 2. Piña asada con helado de caramelo I 3. Fruta de temporada\n\n5\nSERVICIO DE AGUA Y PAN INCLUIDO.\n\n25,00€\nTodo el día\nMENÚ DE GRUPO\n€\n1\nMENÚ DE GRUPO LA DÁRSENA, DOCK Y ALTAMAR.\n\n2\nMENÚ LA DÁRSENA\n\n3\nSNACK EN MESA\n\nAlmendras trufadas y servicio de cesta de pan tostado con alioli y tomate .\n\n4\nENTRANTE PARA COMPARTIR\n\nChipironcitos fritos con huevo de corral.\n\n5\nENTRANTE INDIVIDUAL\n\nEnsaladilla marinera con quisquilla fresca.\n\n6\nPRINCIPAL\n\nArroz de panceta y calabaza con alcachofitas.\n\n7\nPOSTRE\n\nTarta de queso casera con esencia de fresa.\n\n8\nMENÚ DOCK\n\n9\nENTRANTE CENTRO MESA\n\nTomate dulce tricolor con burrata, pesto cítrico de albahaca y pimiento al caramelo | Ceviche de lubina con cebollada morada, camote, gamba cristal y ají amarillo.\n\n10\nENTRANTE INDIVIDUAL\n\nTosta de ensaladilla marinera con ventresca, anchoa y piparra.\n\n11\nPRINCIPAL A ELEGIR\n\n1. Meloso de chipirones y alcachofa | 2. Corvina a la brasa con crema de boniato | 3. Picaña con patatas asadas a la brasa, tirabeques y chimichurri.\n\n12\nPOSTRE\n\nTorrija caramelizada con frutos del bosque y helado de leche merengada.\n\n13\nMENÚ ALTAMAR\n\n14\nENTRANTE CENTRO MESA\n\n1. Steak tartar de vaca con patatas crujientes y tostas artesanales | 2. Gamba blanca al ajillo.\n\n15\nENTRANTE INDIVIDUAL\n\nAlcachofa a la brasa con salsa de pimientos asados y avellana.\n\n16\nPRINCIPAL A ELEGIR\n\n1. Meloso de pollo de corral, setas y ajetes tiernos | 2. Corvina a la brasa con verduras salteadas al teriyaki | 3. Carrilleras ibéricas con parmenier de patata trufada.\n\n17\nPOSTRE\n\nTarta de queso con esencia de fresa.\n\n18\n*INCLUYE UNA BEBIDA.\n\n19\n*OPCIÓN BEBIDA INCLUYE: VINO BLANCO Y TINTO D.O. VALENCIA/ D.O. RIOJA, AGUA, CERVEZA, REFRESCOS, CAFÉ E INFUSIONES. EL SERVICIO DE BEBIDAS COMENZARÁ CON EL INICIO DE LA COMIDA Y FINALIZARÁ CON EL SERVICIO DE CAFÉ.\n\n20\nMÁS INFORMACIÓN EN HELLO@FRONTVALENCIA.COM\n\n*ALÉRGENOS\n(1) GLUTEN(2) CRUSTÁCEOS(3) HUEVOS(4) PESCADO(5) CACAHUETES(6) SOJA(7) LÁCTEOS(8) FRUTOS DE CÁSCARA(9) APIO(10) MOSTAZA(11) GRANOS DE SÉSAMO(12) DIÓXIDO DE AZUFRE Y SULFITOS(13) MOLUSCOS(14) ALTRAMUCES\nNOTAS\n\nEcológica\n\nSin gluten\n\nVegano\n\nPicante",
+  "links": [
+    {
+      "href": "/carta",
+      "text": "Carta",
+      "rel": ""
+    },
+    {
+      "href": "/espacio",
+      "text": "ESPACIO",
+      "rel": ""
+    },
+    {
+      "href": "/localizacion",
+      "text": "Localización",
+      "rel": ""
+    },
+    {
+      "href": "https://front.feending.io/",
+      "text": "The club",
+      "rel": ""
+    },
+    {
+      "href": "/footer",
+      "text": "CONTACTO",
+      "rel": ""
+    },
+    {
+      "href": "https://grupoelalto-1738067471.teamtailor.com/",
+      "text": "Talento",
+      "rel": ""
+    },
+    {
+      "href": "/reservas",
+      "text": "RESERVA",
+      "rel": ""
+    }
+  ],
+  "images": [
+    {
+      "src": "logo-icon.png",
+      "alt": "logo-from"
+    },
+    {
+      "src": "/the-club-icon.svg",
+      "alt": ""
+    },
+    {
+      "src": "arrow-b.png",
+      "alt": ""
+    },
+    {
+      "src": "/LOGO_MV_SVG.svg",
+      "alt": "logo-from"
+    },
+    {
+      "src": "arrow.png",
+      "alt": "flecha decorativa"
+    },
+    {
+      "src": "arrow.png",
+      "alt": "flecha decorativa"
+    },
+    {
+      "src": "https://www.dropbox.com/scl/fi/x69pa9mslrw54el8q3ych/prueba.jpg&raw=1",
+      "alt": "TOSTADA ARTESANAL, MANTEQUILLA ECOLÓGICA Y MERMELADA CASERA  ( 1 | 3 | 7 )"
+    },
+    {
+      "src": "arrow.png",
+      "alt": "flecha decorativa"
+    },
+    {
+      "src": "arrow.png",
+      "alt": "flecha decorativa"
+    },
+    {
+      "src": "arrow.png",
+      "alt": "flecha decorativa"
+    },
+    {
+      "src": "arrow.png",
+      "alt": "flecha decorativa"
+    },
+    {
+      "src": "assets/icons/ecologico-icon.svg",
+      "alt": "[object Object]"
+    },
+    {
+      "src": "assets/icons/no-gluten-icon.svg",
+      "alt": "[object Object]"
+    },
+    {
+      "src": "assets/icons/vegan-icon.svg",
+      "alt": "[object Object]"
+    },
+    {
+      "src": "assets/icons/spicy-icon.svg",
+      "alt": "[object Object]"
+    }
+  ],
+  "videos": [],
+  "iframes": [],
+  "timestamp": "2026-07-13T04:09:32.240Z"
+}
