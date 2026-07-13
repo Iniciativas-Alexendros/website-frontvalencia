@@ -1,0 +1,10 @@
+{
+  "name": "tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Scripts de mantenimiento para Front Valencia",
+  "type": "module",
+  "dependencies": {
+    "tsx": "^4.19.0"
+  }
+}

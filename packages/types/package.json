@@ -1,0 +1,15 @@
+{
+  "name": "@frontvalencia/types",
+  "version": "1.0.0",
+  "description": "Tipos compartidos para el ecosistema Front Valencia",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": ["src/index.d.ts"]
+    }
+  }
+}
