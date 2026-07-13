@@ -59,7 +59,13 @@ Thumbs.db
 # contentocado — datos scrapeados (no se commitean)
 content/routes/
 content/_network-*.json
+content/content/
 assets/raw/
+apps/web/content/
+apps/web/assets/raw/
 
 # screenshots de prueba
 .screenshots/
+
+# old files
+package.old.json
