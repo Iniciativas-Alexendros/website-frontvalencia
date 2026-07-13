@@ -69,3 +69,7 @@ apps/web/assets/raw/
 
 # old files
 package.old.json
+.vercel
+
+# Playwright MCP artifacts
+.playwright-mcp/

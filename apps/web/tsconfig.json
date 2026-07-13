@@ -6,6 +6,6 @@
     "jsxImportSource": "react",
     "allowImportingTsExtensions": true
   },
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "node_modules", "scripts"]
+  "include": [".astro/types.d.ts", "src", "*.astro", "*.ts"],
+  "exclude": ["dist", "node_modules", "coverage"]
 }

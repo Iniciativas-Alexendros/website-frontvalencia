@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/sections/Header.astro';
-import Hero from '../../components/sections/Hero.astro';
-import MenuSection from '../../components/sections/MenuSection.astro';
-import EspacioSection from '../../components/sections/EspacioSection.astro';
-import LocalizacionSection from '../../components/sections/LocalizacionSection.astro';
-import ReservasSection from '../../components/sections/ReservasSection.astro';
-import ClubBanner from '../../components/sections/ClubBanner.astro';
-import Footer from '../../components/sections/Footer.astro';
+import Header from '../../components/sections/Header';
+import Hero from '../../components/sections/Hero';
+import MenuSection from '../../components/sections/MenuSection';
+import EspacioSection from '../../components/sections/EspacioSection';
+import LocalizacionSection from '../../components/sections/LocalizacionSection';
+import ReservasSection from '../../components/sections/ReservasSection';
+import ClubBanner from '../../components/sections/ClubBanner';
+import Footer from '../../components/sections/Footer';
 import CookieConsent from '../../components/islands/CookieConsent';
 import { safeGetMenu, safeGetSite } from '../../lib/content';
 
@@ -22,15 +22,15 @@ const allergenLegend = menuData.allergenLegend ?? [];
   title="FRONT | Restaurant & Terrace La Marina de Valencia"
   description="By the sea, next to the Port Clock, in the most brutalist building in Valencia. Mediterranean cuisine, grills, rice, music, cocktails and views."
 >
-  <Header lang="en" />
+  <Header lang="en" client:load site={siteData} />
   <main id="main-content">
     <Hero lang="en" />
     <MenuSection categories={categories} allergenLegend={allergenLegend} lang="en" />
     <EspacioSection lang="en" />
     <ClubBanner lang="en" />
-    <LocalizacionSection lang="en" />
-    <ReservasSection lang="en" />
+    <LocalizacionSection lang="en" site={siteData} />
+    <ReservasSection lang="en" site={siteData} />
   </main>
-  <Footer lang="en" />
+  <Footer lang="en" client:load />
   <CookieConsent lang="en" client:idle />
 </BaseLayout>

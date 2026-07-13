@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/sections/Header.astro';
-import MenuSection from '../../components/sections/MenuSection.astro';
-import Footer from '../../components/sections/Footer.astro';
-import { safeGetMenu } from '../../lib/content';
+import Header from '../../components/sections/Header';
+import MenuSection from '../../components/sections/MenuSection';
+import Footer from '../../components/sections/Footer';
+import { safeGetMenu, safeGetSite } from '../../lib/content';
 
 const menuData = await safeGetMenu('en');
+const siteData = await safeGetSite();
 const categories = menuData.categories;
 const allergenLegend = menuData.allergenLegend ?? [];
 ---
@@ -15,9 +16,9 @@ const allergenLegend = menuData.allergenLegend ?? [];
   title="Menu — FRONT Valencia"
   description="Discover our menu: breakfasts, Vicente Patiño's tapas, grilled fish and meat, tray-baked rice and sweets."
 >
-  <Header lang="en" />
+  <Header lang="en" client:load site={siteData} />
   <main id="main-content" class="pt-16">
     <MenuSection categories={categories} allergenLegend={allergenLegend} lang="en" />
   </main>
-  <Footer lang="en" />
+  <Footer lang="en" client:load />
 </BaseLayout>

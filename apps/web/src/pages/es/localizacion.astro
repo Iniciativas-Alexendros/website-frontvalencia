@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/sections/Header.astro';
-import LocalizacionSection from '../../components/sections/LocalizacionSection.astro';
-import Footer from '../../components/sections/Footer.astro';
+import Header from '../../components/sections/Header';
+import LocalizacionSection from '../../components/sections/LocalizacionSection';
+import Footer from '../../components/sections/Footer';
+import { safeGetSite } from '../../lib/content';
+
+const siteData = await safeGetSite();
 ---
 
 <BaseLayout
@@ -10,9 +13,9 @@ import Footer from '../../components/sections/Footer.astro';
   title="Localización — FRONT Valencia"
   description="Frente al mar, junto al Reloj del Puerto, en La Marina de Valencia. Cómo llegar, horarios y transporte."
 >
-  <Header lang="es" />
+  <Header lang="es" client:load site={siteData} />
   <main id="main-content" class="pt-16">
-    <LocalizacionSection lang="es" />
+    <LocalizacionSection lang="es" site={siteData} />
   </main>
-  <Footer lang="es" />
+  <Footer lang="es" client:load />
 </BaseLayout>

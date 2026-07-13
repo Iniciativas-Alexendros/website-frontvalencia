@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/sections/Header.astro';
-import Footer from '../../components/sections/Footer.astro';
+import Header from '../../components/sections/Header';
+import Footer from '../../components/sections/Footer';
+import { safeGetSite } from '../../lib/content';
+
+const siteData = await safeGetSite();
 ---
 
 <BaseLayout
@@ -9,7 +12,7 @@ import Footer from '../../components/sections/Footer.astro';
   title="Política de Privacidad — FRONT Valencia"
   description="Política de privacidad y tratamiento de datos personales de FRONT."
 >
-  <Header lang="es" />
+  <Header lang="es" client:load site={siteData} />
   <main id="main-content" class="pt-16">
     <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
       <h1 class="text-4xl sm:text-5xl font-black uppercase tracking-tight text-text-primary mb-12">Política de Privacidad</h1>
@@ -47,5 +50,5 @@ import Footer from '../../components/sections/Footer.astro';
       </div>
     </section>
   </main>
-  <Footer lang="es" />
+  <Footer lang="es" client:load />
 </BaseLayout>
