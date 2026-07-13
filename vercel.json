@@ -8,6 +8,9 @@
       "devCommand": "pnpm dev",
       "installCommand": "pnpm install",
       "outputDirectory": "dist",
+      "env": {
+        "PUBLIC_SITE_URL": "https://website-frontvalencia.vercel.app"
+      },
       "headers": [
         {
           "source": "/(.*)",
