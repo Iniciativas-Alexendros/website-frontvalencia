@@ -1,5 +1,7 @@
 # Política de Seguridad — FRONT Valencia
 
+© Alejandro Domingo Agustí
+
 ## Versiones compatibles
 
 Actualmente solo la versión publicada en producción (`main`) recibe actualizaciones de seguridad.

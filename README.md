@@ -1,6 +1,12 @@
 # FRONT Valencia
 
-**Restaurante y Terraza en La Marina de Valencia** — Sitio web corporativo con menú interactivo, gestión de espacios, eventos, reservas y administración de contenido.
+**Restaurante y Terraza en La Marina de Valencia**
+
+![Homepage screenshot](public/images/screenshot-hero.svg)
+
+Este proyecto es la web del restaurante FRONT Valencia, situado en La Marina, frente al mar. Una web moderna, rápida, bilingüe (español e inglés) y fácil de mantener, pensada para que cualquier persona del equipo —sin saber programar— pueda modificar la carta, los horarios o las fotos desde un panel sencillo.
+
+---
 
 ![Astro](https://img.shields.io/badge/Astro-7.0-FF5D01?logo=astro&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)
@@ -18,270 +24,118 @@
 
 ---
 
-## ⚡ Quick start
+## ¿Qué hace esta web?
+
+- **Carta digital** bilingüe con alérgenos, etiquetas (eco, sin gluten, vegano, picante) y precios
+- **Gestión de espacios** con galería de fotos, descripciones y contacto para eventos privados
+- **Eventos** con fecha, hora, imágenes y enlace de reserva
+- **Reservas** integradas con CoverManager
+- **Localización** con mapa, transporte público y horarios
+- **Páginas legales** (aviso legal, privacidad, cookies, condiciones de reserva)
+- **Panel de administración** sencillo para editar todo sin tocar código
+
+---
+
+## ⚡ Empezar en 3 pasos
 
 ```bash
-git clone https://github.com/alexendros/frontvalencia.git
-cd frontvalencia
+git clone https://github.com/Alexendros/website-frontvalencia.git
+cd website-frontvalencia
 pnpm install
 cp .env.example .env              # edita las variables (ver sección entorno)
 pnpm dev                           # arranca CMS + web simultáneamente
 ```
 
-| Servicio  | URL                         |
-| --------- | --------------------------- |
-| Admin CMS | http://localhost:3001/admin |
-| Web       | http://localhost:4321/es/   |
+Abre [http://localhost:4321/es/](http://localhost:4321/es/) para ver la web.
+Abre [http://localhost:3001/admin](http://localhost:3001/admin) para el panel de administración (requiere Postgres).
 
 ---
 
-## 🏗️ Arquitectura
+## 🏗️ Cómo está construido
 
-Monorepo gestionado con **Turborepo + pnpm workspaces**. Dos aplicaciones independientes que comparten types y tooling:
+La web está dividida en dos partes que trabajan juntas:
 
-```
-┌─────────────────────────────────────────────────┐
-│                    MONOREPO                      │
-│  ┌─────────────────┐      ┌──────────────────┐  │
-│  │   apps/cms       │      │   apps/web        │  │
-│  │  Payload CMS 3   │◄────►│  Astro 7 + React  │  │
-│  │  + Next.js 15    │ API  │  + Tailwind 4     │  │
-│  └────────┬─────────┘      └────────┬─────────┘  │
-│           │                         │            │
-│  ┌────────▼─────────────────────────▼─────────┐  │
-│  │        packages / types                    │  │
-│  └───────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────┘
-```
+| Parte                       | Qué hace                                              | Tecnología    |
+| --------------------------- | ----------------------------------------------------- | ------------- |
+| **Web pública**             | Lo que ve el cliente: páginas, carta, fotos, reservas | Astro + React |
+| **Panel de administración** | Donde el equipo edita la carta, fotos y contenidos    | Payload CMS   |
 
-- **CMS** (`apps/cms`): Payload CMS 3 sobre Next.js 15. Sirve API REST/GraphQL, admin panel y gestión de contenido localizado.
-- **Web** (`apps/web`): Astro 7 con React 19 y Tailwind CSS v4. Generación estática (SSG) con rutas híbridas (ISR). Consume la API de Payload.
-- **Shared** (`packages/types`): Tipos TypeScript compartidos entre CMS y web garantizando contract-first.
+Cuando alguien del restaurante cambia un plato desde el panel, la web se actualiza automáticamente.
 
----
+**Tecnologías principales:**
 
-## 🛠️ Tech stack
-
-| Capa           | Tecnología                                            | Propósito                              |
-| -------------- | ----------------------------------------------------- | -------------------------------------- |
-| **Frontend**   | [Astro](https://astro.build) 7                        | SSG/ISR, islands architecture          |
-|                | [React](https://react.dev) 19                         | Componentes interactivos               |
-|                | [Tailwind CSS](https://tailwindcss.com) v4            | Estilos utility-first + Vite plugin    |
-|                | [Geist](https://geist.dev)                            | Tipografía (Vercel)                    |
-| **CMS**        | [Payload CMS](https://payloadcms.com) 3               | Headless CMS, auto-generación de API   |
-|                | [Next.js](https://nextjs.org) 15                      | Servidor del admin panel               |
-|                | [Lexical](https://lexical.dev)                        | Editor rich text                       |
-| **Base datos** | [PostgreSQL](https://postgresql.org)                  | Base de datos principal                |
-| **DevOps**     | [Turborepo](https://turbo.build/repo) 2               | Orquestación de builds en monorepo     |
-|                | [pnpm](https://pnpm.io) 8                             | Package manager (workspaces)           |
-|                | [Docker](https://docker.com)                          | Entorno de desarrollo local            |
-| **CI/CD**      | [GitHub Actions](https://github.com/features/actions) | Pipeline CI/CD multi-stage             |
-| **Deploy**     | [Vercel](https://vercel.com)                          | Frontend web (static + serverless)     |
-|                | [Railway](https://railway.app)                        | CMS + Base de datos (Postgres)         |
-|                | [Cloudflare R2](https://cloudflare.com/r2)            | Almacenamiento de imágenes (S3-compat) |
-
-### Plugins de Payload
-
-| Plugin                         | Uso                            |
-| ------------------------------ | ------------------------------ |
-| `@payloadcms/plugin-seo`       | Meta tags y preview SEO        |
-| `@payloadcms/plugin-redirects` | Redirecciones 301 gestionables |
-| `@payloadcms/richtext-lexical` | Editor enriquecido (Lexical)   |
-| `@payloadcms/storage-s3`       | Upload directo a Cloudflare R2 |
-| `@payloadcms/db-postgres`      | Adaptador PostgreSQL           |
+- **Astro** — genera páginas estáticas ultrarrápidas (SSG)
+- **React** — componentes interactivos (consentimiento de cookies, selector de idioma)
+- **Tailwind CSS** — estilos mantenibles y consistentes
+- **Payload CMS** — panel de edición para el equipo del restaurante
+- **PostgreSQL** — base de datos para el CMS
+- **TypeScript** — todo el código está tipado para evitar errores
+- **pnpm + Turborepo** — monorepo que organiza el código en módulos independientes
+- **Docker** — entorno de desarrollo que arranca con un solo comando
 
 ---
 
-## 🔐 Variables de entorno
+## 🚀 Despliegue
 
-Copia `.env.example` a `.env` y completa los valores.
+| Componente       | Plataforma           | Cuándo se despliega              |
+| ---------------- | -------------------- | -------------------------------- |
+| Web pública      | Vercel               | Automático al publicar en `main` |
+| Panel CMS        | Railway o Render     | Automático al publicar en `main` |
+| Base de datos    | Railway (PostgreSQL) | Gestionado                       |
+| Fotos e imágenes | Cloudflare R2        | Al subirlas desde el panel CMS   |
 
-```
-# Base de datos (Postgres)
-DATABASE_URI           postgresql://user:pass@host:5432/frontvalencia
-DATABASE_DIRECT_URL    URL directa para migraciones (opcional)
+Cada cambio en `main` ejecuta automáticamente:
 
-# Payload CMS
-PAYLOAD_SECRET         Clave secreta (openssl rand -base64 32)
-PAYLOAD_PREVIEW_SECRET Clave para preview mode (misma en CMS y web)
-PAYLOAD_API_URL        URL pública de la API de Payload
-PAYLOAD_PUBLIC_SERVER_URL URL interna del servidor CMS
-
-# Web (Astro)
-PUBLIC_SITE_URL        URL pública del sitio (ej: https://frontvalencia.com)
-
-# Cloudflare R2 (media storage)
-R2_ENDPOINT            Endpoint S3 de R2
-R2_BUCKET              Nombre del bucket
-R2_ACCESS_KEY_ID       Access Key ID
-R2_SECRET_ACCESS_KEY   Secret Access Key
-R2_PUBLIC_URL          URL pública del bucket o custom domain
-
-# Servicios externos
-PUBLIC_RESERVAS_ES_URL  URL de CoverManager (español)
-PUBLIC_RESERVAS_EN_URL  URL de CoverManager (inglés)
-PUBLIC_META_PIXEL_ID    Meta Pixel ID (opcional, con cookie consent)
-PUBLIC_GOOGLE_MAPS_EMBED_URL Embed de Google Maps (opcional)
-```
-
-> El root `.env.example` contiene TODAS las variables. Cada app tiene su propio `.env.example` de referencia.
+- Revisión de formato y tipos
+- Tests automáticos
+- Construcción de la web
+- Despliegue a producción
 
 ---
 
-## 📁 Estructura del proyecto
+## 📋 Scripts
 
-```
-frontvalencia/
-├── apps/
-│   ├── cms/                          # Payload CMS + Next.js
-│   │   ├── src/
-│   │   │   ├── access/               # Control de acceso
-│   │   │   ├── collections/          # Allergens, Events, Media, Menu, Space, Users
-│   │   │   ├── globals/              # SiteConfig
-│   │   │   ├── hooks/                # Hooks (revalidateWebhook)
-│   │   │   ├── plugins/              # r2-storage
-│   │   │   ├── payload.config.ts     # Configuración principal de Payload
-│   │   │   └── index.ts              # Entrypoint
-│   │   ├── Dockerfile                # Docker multi-stage para Railway
-│   │   └── next.config.mjs
-│   │
-│   └── web/                          # Astro + React + Tailwind
-│       ├── src/
-│       │   ├── components/           # Componentes .astro y .tsx
-│       │   ├── layouts/              # Layouts base (con y sin locale)
-│       │   ├── lib/
-│       │   │   ├── payload.ts        # Cliente API para Payload
-│       │   │   ├── i18n.ts           # Utilidades de internacionalización
-│       │   │   ├── content.ts        # Loader de contenido local
-│       │   │   ├── analytics.ts      # Gestión de consentimiento de cookies
-│       │   │   └── telemetry.ts      # Telemetry helpers
-│       │   ├── pages/
-│       │   │   ├── es/               # 10 rutas en español
-│       │   │   │   ├── index.astro
-│       │   │   │   ├── carta.astro
-│       │   │   │   ├── espacio.astro
-│       │   │   │   ├── localizacion.astro
-│       │   │   │   ├── reservas.astro
-│       │   │   │   └── ...
-│       │   │   ├── en/               # Rutas en inglés
-│       │   │   └── index.astro       # Redirección / → /es/
-│       │   ├── content/              # Colecciones de Astro Content
-│       │   │   ├── menu/             # JSON de menú por idioma
-│       │   │   └── site.json         # Configuración local del sitio
-│       │   ├── styles/               # CSS global
-│       │   └── middleware.ts         # Security headers, CSP, preview, i18n redirect
-│       ├── public/
-│       ├── astro.config.mjs
-│       └── package.json
-│
-├── packages/
-│   └── types/                        # Tipos TypeScript compartidos
-│       └── src/
-│           ├── api/                  # Tipos de respuesta API
-│           ├── domain/               # Tipos de dominio (Menu, Space, Event...)
-│           └── payload-types.d.ts    # Tipos generados por Payload
-│
-├── .github/
-│   └── workflows/
-│       ├── ci.yml                    # Lint, typecheck, test, build, Lighthouse, a11y, SEO
-│       ├── deploy-preview.yml        # Preview deployments
-│       └── deploy-prod.yml           # Deploy a Vercel + Railway
-│
-├── tests/
-│   ├── e2e/                          # Playwright tests
-│   └── unit/                         # Vitest unit tests
-│
-├── tools/
-│   └── scripts/                      # Scrape, validate-env, seed
-│
-├── turbo.json                        # Turborepo pipeline
-├── vitest.config.ts
-├── playwright.config.ts
-└── package.json
-```
+| Comando          | Descripción                                          |
+| ---------------- | ---------------------------------------------------- |
+| `pnpm dev`       | Desarrollo en paralelo (CMS en :3001 + Web en :4321) |
+| `pnpm build`     | Construye todo para producción                       |
+| `pnpm test`      | Ejecuta todos los tests                              |
+| `pnpm lint`      | Revisa formato y estilo de código                    |
+| `pnpm typecheck` | Verifica que los tipos TypeScript son correctos      |
 
 ---
 
-## 📜 Scripts disponibles
-
-| Comando               | Descripción                                         |
-| --------------------- | --------------------------------------------------- |
-| `pnpm dev`            | Dev en paralelo (CMS :3001 + Web :4321)             |
-| `pnpm dev:cms`        | Solo CMS                                            |
-| `pnpm dev:web`        | Solo Web                                            |
-| `pnpm build`          | Build completo (ambas apps)                         |
-| `pnpm build:cms`      | Build solo CMS                                      |
-| `pnpm build:web`      | Build solo Web                                      |
-| `pnpm lint`           | Lint en todas las apps                              |
-| `pnpm typecheck`      | TypeScript check                                    |
-| `pnpm test`           | Tests unitarios + e2e                               |
-| `pnpm test:unit`      | Solo tests unitarios (Vitest)                       |
-| `pnpm test:e2e`       | Solo tests e2e (Playwright)                         |
-| `pnpm generate:types` | Regenera tipos de Payload + packages/types          |
-| `pnpm db:push`        | Ejecuta migraciones de Payload                      |
-| `pnpm db:studio`      | Abre Payload Studio (GUI de base de datos)          |
-| `pnpm preview`        | Preview del build completo                          |
-| `pnpm clean`          | Limpia builds, caches y node_modules                |
-| `pnpm scrape`         | Scrapea contenido externo (ej: PDFs de carta)       |
-| `pnpm validate:env`   | Valida que las variables de entorno estén presentes |
-
----
-
-## 🐳 Docker (desarrollo local)
+## 🐳 Entorno de desarrollo con Docker
 
 ```bash
-# Arrancar todo el stack (Postgres + CMS + Web)
-pnpm docker:dev
-
-# Production-like (con variables de producción)
-pnpm docker:prod
-
-# Parar y limpiar volúmenes
-pnpm docker:down
-
-# Reset completo (destroy + rebuild)
-pnpm docker:reset
+pnpm docker:dev       # Arranca Postgres + CMS + Web
+pnpm docker:down      # Para todo y limpia
+pnpm docker:reset     # Reinicia desde cero
 ```
-
-El CMS dispone de un `Dockerfile` multi-stage (build → runtime) para despliegues en contenedor. Usa `node:22-alpine` como imagen base y `next start` como runtime.
-
-La base de datos Postgres se provisiona vía `docker-compose` (referencia) o como servicio gestionado en Railway.
 
 ---
 
-## 🚀 Deployment
+## 📂 Estructura del proyecto
 
-### Producción
-
-| Componente | Plataforma    | Trigger                       |
-| ---------- | ------------- | ----------------------------- |
-| Frontend   | Vercel        | Push a `main` (GitHub Action) |
-| CMS        | Railway       | Push a `main` (deploy hook)   |
-| Base datos | Railway (PG)  | Gestionado                    |
-| Media      | Cloudflare R2 | Upload vía Payload admin      |
-
-Flujo de CI/CD:
-
-1. Push/PR a `main` o `develop` → GitHub Actions ejecuta:
-
-   - Lint & Format
-   - TypeScript check
-   - Tests unitarios + e2e
-   - Build check
-   - Lighthouse CI (performance, accesibilidad, SEO, best practices)
-   - Accessibility audit (axe-core)
-   - SEO validation (HTML validate)
-
-2. Si el push es a `main`:
-   - **Frontend**: Build + deploy a Vercel (producción)
-   - **CMS**: Build + deploy a Railway vía deploy hook
-
-### Preview
-
-Las PRs generan previews automáticos:
-
-- **Web**: Vercel Preview (URL única por PR)
-- **CMS**: Railway preview environment
+```
+website-frontvalencia/
+├── apps/
+│   ├── cms/                    # Panel de administración (Payload CMS)
+│   │   └── src/
+│   │       ├── collections/    # Carta, alérgenos, espacios, eventos, usuarios
+│   │       ├── globals/        # Configuración general del sitio
+│   │       ├── access/         # Control de permisos (admin, editor)
+│   │       └── plugins/        # Almacenamiento de imágenes (Cloudflare R2)
+│   └── web/                    # Web pública (Astro + React)
+│       └── src/
+│           ├── pages/          # Rutas: es/ (español) + en/ (inglés)
+│           ├── components/     # Componentes visuales reutilizables
+│           ├── lib/            # Cliente de API, utilidades i18n
+│           └── middleware.ts   # Seguridad, redirecciones, preview
+├── packages/types/             # Tipos TypeScript compartidos
+├── docs/                       # Documentación técnica y decisiones
+└── .github/workflows/          # Automatización de calidad y despliegue
+```
 
 ---
 
@@ -290,18 +144,18 @@ Las PRs generan previews automáticos:
 Las contribuciones son bienvenidas. Por favor:
 
 1. Crea un fork
-2. Rama desde `develop`: `git checkout -b feat/mi-feature`
-3. Sigue los patrones de código existentes (TypeScript estricto, sin comentarios superfluos)
+2. Rama desde `main`: `git checkout -b feat/mi-mejora`
+3. Sigue el estilo de código existente (TypeScript estricto)
 4. Añade tests para funcionalidades nuevas
 5. Verifica: `pnpm typecheck && pnpm lint && pnpm test`
-6. Abre un Pull Request contra `develop`
+6. Abre un Pull Request
 
-[Más información →](https://github.com/alexendros/frontvalencia/pulls)
+Lee [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles.
 
 ---
 
 ## 📄 Licencia
 
-**MIT** — Copyright © 2025 FRONT Valencia.
+**MIT** — Copyright © 2025 Alejandro Domingo Agustí.
 
-El código es de código abierto. Los assets gráficos, imágenes, logotipos y nombres comerciales son propiedad de FRONT Valencia y no están cubiertos por esta licencia.
+El código es de código abierto. Los assets gráficos, imágenes, logotipos y nombres comerciales de FRONT Valencia no están cubiertos por esta licencia.

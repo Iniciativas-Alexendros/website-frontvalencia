@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap'
 import mdx from '@astrojs/mdx'
 
 export default defineConfig({
-  site: 'https://frontvalencia.com',
+  site: process.env.PUBLIC_SITE_URL || 'http://localhost:4321',
   base: '/',
 
   output: 'static',

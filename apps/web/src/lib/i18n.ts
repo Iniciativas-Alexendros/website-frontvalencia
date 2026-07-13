@@ -8,10 +8,11 @@ export const LOCALE_CONFIG: Record<Locale, { label: string; labelEn: string; hre
 }
 
 /** Genera enlace para el locale alternativo (hreflang) dada la URL actual */
-export function getAlternateHref(locale: Locale, path: string): string {
+export function getAlternateHref(locale: Locale, path: string, site?: string): string {
   const prefix = path.startsWith('/es/') ? '/en/' : '/es/'
   const altPath = path.replace(/^\/(es|en)\//, prefix)
-  return `https://frontvalencia.com${altPath}`
+  const base = site || process.env.PUBLIC_SITE_URL || 'http://localhost:4321'
+  return `${base}${altPath}`
 }
 
 /** Parsea el locale de la URL actual */

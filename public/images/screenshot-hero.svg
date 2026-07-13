@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#242424"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <g stroke="#fff" stroke-width="1" opacity="0.02">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+  </g>
+
+  <rect x="440" y="295" width="320" height="4" rx="2" fill="#d4634a"/>
+
+  <text x="600" y="265" text-anchor="middle" font-family="'Helvetica Neue','Inter',Arial,sans-serif" font-weight="900" font-size="160" fill="#f0efeb" letter-spacing="-0.03em">FRONT</text>
+
+  <text x="600" y="340" text-anchor="middle" font-family="'Helvetica Neue','Inter',Arial,sans-serif" font-weight="400" font-size="18" fill="#999" letter-spacing="0.25em">RESTAURANTE Y TERRAZA</text>
+
+  <text x="600" y="365" text-anchor="middle" font-family="'Helvetica Neue','Inter',Arial,sans-serif" font-weight="300" font-size="14" fill="#777" letter-spacing="0.15em">LA MARINA DE VALENCIA</text>
+</svg>
