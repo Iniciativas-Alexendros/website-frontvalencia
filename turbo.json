@@ -21,7 +21,7 @@
     "NODE_ENV"
   ],
   "globalDependencies": ["tsconfig.json", ".env.*", "tailwind.config.*"],
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build", "//#generate:types"],
       "outputs": ["dist/**", ".astro/**", ".next/**", "!.next/cache/**", "build/**"]
