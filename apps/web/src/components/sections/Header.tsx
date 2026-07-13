@@ -33,7 +33,7 @@ export default function Header({ lang, isHome = false, site }: Props) {
   const clubUrl = site?.externalLinks?.club ?? 'https://front.feending.io/'
 
   const [mobileOpen, setMobileOpen] = useState(false)
-  const headerRef = useRef<HTMLHeaderElement>(null)
+  const headerRef = useRef<HTMLHeadElement>(null)
   const menuRef = useRef<HTMLDivElement>(null)
 
   // Mobile menu toggle

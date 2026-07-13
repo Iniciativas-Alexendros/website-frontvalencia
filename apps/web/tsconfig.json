@@ -1,0 +1,11 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "allowImportingTsExtensions": true
+  },
+  "include": [".astro/types.d.ts", "src", "*.astro", "*.ts"],
+  "exclude": ["dist", "node_modules", "coverage"]
+}

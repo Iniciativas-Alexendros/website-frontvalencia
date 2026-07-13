@@ -34,7 +34,7 @@ const alternateEn = Astro.url.pathname.replace(/^\/es/, '/en') || '/en/';
 <!doctype html>
 <html lang={lang}>
   <head>
-    <meta charSet="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="title" content={title} />
     <meta name="description" content={description} />
@@ -63,11 +63,11 @@ const alternateEn = Astro.url.pathname.replace(/^\/es/, '/en') || '/en/';
     <meta name="msapplication-TileColor" content="#d4634a" />
 
     {canonical && <link rel="canonical" href={canonical} />}
-    <link rel="alternate" hrefLang="es" href={new URL(alternateEs, Astro.site).href} />
-    <link rel="alternate" hrefLang="en" href={new URL(alternateEn, Astro.site).href} />
-    <link rel="alternate" hrefLang="x-default" href={new URL('/es/', Astro.site).href} />
+    <link rel="alternate" hreflang="es" href={new URL(alternateEs, Astro.site).href} />
+    <link rel="alternate" hreflang="en" href={new URL(alternateEn, Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/es/', Astro.site).href} />
     <!-- Critical font preload for LCP headings -->
-    <link rel="preload" as="font" href="/fonts/Geist-Bold.woff2" type="font/woff2" crossOrigin="anonymous" />
+    <link rel="preload" as="font" href="/fonts/Geist-Bold.woff2" type="font/woff2" crossorigin="anonymous" />
     <ClientRouter />
     <title>{title}</title>
     <StructuredData lang={lang} page={page} />
@@ -76,7 +76,7 @@ const alternateEn = Astro.url.pathname.replace(/^\/es/, '/en') || '/en/';
     </script>
   </head>
   <body>
-    <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:bg-terracotta-500 focus:text-white focus:px-4 focus:py-2">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:bg-terracotta-500 focus:text-white focus:px-4 focus:py-2">
       {lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}
     </a>
     <slot />
