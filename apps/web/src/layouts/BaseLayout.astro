@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import Analytics from '@vercel/analytics/astro';
 import '../styles/tokens.css';
 import '../styles/fonts.css';
 import StructuredData from '../components/seo/StructuredData.astro';
@@ -71,6 +72,7 @@ const alternateEn = Astro.url.pathname.replace(/^\/es/, '/en') || '/en/';
     <ClientRouter />
     <title>{title}</title>
     <StructuredData lang={lang} page={page} />
+    <Analytics />
     <script>
       import('../lib/telemetry.ts');
     </script>
