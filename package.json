@@ -1,6 +1,7 @@
 {
   "name": "frontvalencia",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "description": "FRONT Valencia — Restaurante y Terraza en La Marina de Valencia. TypeScript monorepo (Payload CMS + Astro).",
   "packageManager": "pnpm@8.15.0",
