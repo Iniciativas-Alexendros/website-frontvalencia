@@ -8,12 +8,7 @@ import { seoPlugin } from '@payloadcms/plugin-seo'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
 
 // Collections
-import { Users } from './collections/Users'
-import { MenuItem, MenuCategory } from './collections/Menu'
-import { Allergens } from './collections/Allergens'
-import { Space } from './collections/Space'
-import { Events } from './collections/Events'
-import { Media } from './collections/Media'
+import { Users, MenuItem, MenuCategory, Allergens, Space, Events, Media } from './collections'
 
 // Globals
 import { SiteConfig } from './globals/SiteConfig'

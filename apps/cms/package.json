@@ -19,7 +19,7 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "db:push": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
     "db:studio": "cross-env NODE_OPTIONS=--no-deprecation payload studio",
-    "content:seed": "cross-env NODE_OPTIONS=--no-deprecation payload run scripts/seed.ts",
+    "content:seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed.ts",
     "preview": "pnpm build && pnpm start",
     "clean": "rm -rf .next .payload payload-types.ts.bak"
   },
