@@ -233,9 +233,9 @@ export default function ReservasSection({ lang, site }: Props) {
           />
 
           {/* Modal */}
-          <div className="relative w-full max-w-2xl bg-concrete-900 border border-concrete-700 shadow-2xl max-h-[90vh] flex flex-col">
+          <div className="relative w-full max-w-3xl bg-concrete-900 border border-concrete-700 shadow-2xl max-h-[90vh] flex flex-col overflow-hidden">
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-concrete-800 shrink-0">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-concrete-800 shrink-0 bg-concrete-900">
               <div>
                 <h3 className="text-lg font-bold uppercase tracking-wide text-text-primary">{reservasText.heading}</h3>
                 <p className="text-xs text-text-muted mt-0.5">{reservasText.ctaSubtitle}</p>
@@ -252,7 +252,7 @@ export default function ReservasSection({ lang, site }: Props) {
             </div>
 
             {/* Iframe container */}
-            <div className="relative flex-1 min-h-0">
+            <div className="relative flex-1 min-h-0 bg-white">
               {!iframeLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center bg-concrete-900 z-10">
                   <div className="text-center">
@@ -265,7 +265,7 @@ export default function ReservasSection({ lang, site }: Props) {
                 title={reservasText.heading}
                 src={widgetSrc}
                 className="w-full h-full border-0"
-                style={{ minHeight: '500px' }}
+                style={{ minHeight: '600px' }}
                 referrerPolicy="no-referrer"
                 onLoad={() => setIframeLoaded(true)}
               />

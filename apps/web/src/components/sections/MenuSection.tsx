@@ -64,6 +64,25 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
 
   // Extract text inside parentheses from category name for styling
   const renderCategoryName = (name: string, isRice: boolean) => {
+    // Handle VICENTE PATIÑO link
+    if (name.includes('VICENTE PATIÑO')) {
+      const parts = name.split('VICENTE PATIÑO')
+      return (
+        <span>
+          {parts[0]}
+          <a
+            href="https://www.saiti.es/vicente-patino/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-terracotta-400 transition-colors underline underline-offset-4 decoration-terracotta-400/40 hover:decoration-terracotta-400"
+          >
+            VICENTE PATIÑO
+          </a>
+          {parts[1]}
+        </span>
+      )
+    }
+
     if (!isRice) return <span>{name}</span>
 
     // For rice category, find text in parentheses and style it
