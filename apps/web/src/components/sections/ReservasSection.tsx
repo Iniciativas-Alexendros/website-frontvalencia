@@ -106,16 +106,18 @@ export default function ReservasSection({ lang, site }: Props) {
           src={widgetSrc}
           className="w-full border-0 relative z-10"
           style={{ height: '750px' }}
-          loading="lazy"
           referrerPolicy="no-referrer"
           scrolling="no"
           onLoad={() => {
             const skeleton = document.getElementById('reservas-skeleton')
-            if (skeleton) {
-              skeleton.style.display = 'none'
-            }
+            if (skeleton) skeleton.style.display = 'none'
           }}
         ></iframe>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `setTimeout(function(){var s=document.getElementById('reservas-skeleton');if(s&&s.style.display!=='none')s.style.display='none';},5000);`,
+          }}
+        />
       </div>
 
       {/* Info */}
