@@ -8,18 +8,22 @@ export default function Hero({ lang }: Props) {
   const heroText =
     lang === 'es'
       ? {
-          line1: 'COMER BIEN',
-          line2: 'FRENTE AL MAR',
+          line1: 'ASSABORIX VALÈNCIA',
+          line1sub: 'Saborear Valencia',
+          line2: 'FRONT AL MEDITERRANI',
+          line2sub: 'Frente al Mediterráneo',
           tag: 'Restaurante y Terraza en La Marina de Valencia',
           cta1: 'Ver Carta',
-          cta2: 'Reservar',
+          cta2: 'Contactar',
         }
       : {
           line1: 'EAT WELL',
+          line1sub: 'Comer bien',
           line2: 'BY THE SEA',
+          line2sub: 'Frente al mar',
           tag: 'Restaurant & Terrace at La Marina de Valencia',
           cta1: 'View Menu',
-          cta2: 'Book a Table',
+          cta2: 'Contact',
         }
 
   const parallaxRef = useRef<HTMLDivElement>(null)
@@ -131,8 +135,14 @@ export default function Hero({ lang }: Props) {
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-text-primary leading-[0.95]">
             {heroText.line1}
           </span>
-          <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-terracotta-400 leading-[0.95] mt-2">
+          <span className="block text-xs sm:text-sm font-light italic tracking-[0.25em] text-concrete-400 mt-1.5">
+            {heroText.line1sub}
+          </span>
+          <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-terracotta-400 leading-[0.95] mt-3">
             {heroText.line2}
+          </span>
+          <span className="block text-xs sm:text-sm font-light italic tracking-[0.25em] text-concrete-400 mt-1.5">
+            {heroText.line2sub}
           </span>
         </h1>
 
@@ -151,28 +161,12 @@ export default function Hero({ lang }: Props) {
             {heroText.cta1}
           </a>
           <a
-            href="#reservas"
+            href="#localizacion"
             className="inline-flex items-center justify-center px-8 py-3 border border-concrete-200 hover:border-text-primary text-concrete-100 hover:text-text-primary font-semibold text-sm uppercase tracking-widest transition-all duration-300 hover:px-12"
           >
             {heroText.cta2}
           </a>
         </div>
-
-        {/* Scroll indicator (clickable, subtle animation) */}
-        <a
-          href="#carta"
-          className="absolute bottom-8 group"
-          aria-label={lang === 'es' ? 'Desplázate hacia abajo' : 'Scroll down'}
-        >
-          <svg
-            className="w-6 h-6 text-concrete-300 group-hover:text-terracotta-400 transition-all duration-500 group-hover:translate-y-1 animate-pulse-slow"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
       </div>
     </section>
   )

@@ -6,7 +6,6 @@ import MenuSection from '../../components/sections/MenuSection';
 import EspacioSection from '../../components/sections/EspacioSection';
 import LocalizacionSection from '../../components/sections/LocalizacionSection';
 import ReservasSection from '../../components/sections/ReservasSection';
-import ClubBanner from '../../components/sections/ClubBanner';
 import Footer from '../../components/sections/Footer';
 import CookieConsent from '../../components/islands/CookieConsent';
 import { safeGetMenu, safeGetSite } from '../../lib/content';
@@ -27,7 +26,6 @@ const allergenLegend = menuData.allergenLegend ?? [];
     <Hero lang="es" />
     <MenuSection categories={categories} allergenLegend={allergenLegend} lang="es" />
     <EspacioSection lang="es" />
-    <ClubBanner lang="es" />
     <LocalizacionSection lang="es" site={siteData} />
     <ReservasSection lang="es" site={siteData} client:load />
   </main>

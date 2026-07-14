@@ -110,21 +110,33 @@ export default function CookieConsent({ lang }: Props) {
           </div>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto shrink-0">
             <button
-              onClick={() => saveConsent({ necessary: true, analytics: false, marketing: false })}
-              className="px-4 py-2.5 text-sm font-medium text-concrete-200 hover:text-text-primary border border-concrete-600 hover:border-concrete-400 transition-colors"
+              onClick={() =>
+                saveConsent({
+                  necessary: true,
+                  analytics: false,
+                  marketing: false,
+                })
+              }
+              className="px-4 py-2.5 text-sm font-medium text-concrete-200 hover:text-text-primary border border-concrete-600 hover:border-concrete-400 transition-colors uppercase tracking-wider"
             >
               {t.rejectAll}
             </button>
             <button
               onClick={() => setShowConfig(!showConfig)}
               aria-expanded={showConfig}
-              className="px-4 py-2.5 text-sm font-medium text-concrete-200 hover:text-text-primary border border-concrete-600 hover:border-concrete-400 transition-colors"
+              className="px-4 py-2.5 text-sm font-medium text-concrete-200 hover:text-text-primary border border-concrete-600 hover:border-concrete-400 transition-colors uppercase tracking-wider"
             >
               {t.configure}
             </button>
             <button
-              onClick={() => saveConsent({ necessary: true, analytics: true, marketing: true })}
-              className="px-6 py-2.5 text-sm font-semibold text-white bg-terracotta-500 hover:bg-terracotta-400 transition-colors uppercase tracking-wider"
+              onClick={() =>
+                saveConsent({
+                  necessary: true,
+                  analytics: true,
+                  marketing: true,
+                })
+              }
+              className="px-4 py-2.5 text-sm font-medium text-concrete-200 hover:text-text-primary border border-concrete-600 hover:border-terracotta-400 hover:text-terracotta-400 transition-colors uppercase tracking-wider"
             >
               {t.acceptAll}
             </button>
@@ -161,7 +173,7 @@ export default function CookieConsent({ lang }: Props) {
             <div className="sm:col-span-3">
               <button
                 onClick={() => saveConsent(consent)}
-                className="px-6 py-2.5 text-sm font-semibold text-white bg-terracotta-500 hover:bg-terracotta-400 transition-colors uppercase tracking-wider"
+                className="px-4 py-2.5 text-sm font-medium text-concrete-200 hover:text-text-primary border border-concrete-600 hover:border-terracotta-400 hover:text-terracotta-400 transition-colors uppercase tracking-wider"
               >
                 {t.save}
               </button>

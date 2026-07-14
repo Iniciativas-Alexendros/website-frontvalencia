@@ -6,7 +6,7 @@
       "items": [
         { "number": 1, "name": "CROISSANT", "price": "2,95€", "allergens": [1, 3, 7] },
         { "number": 2, "name": "TOSTADA ARTESANAL, MANTEQUILLA ECOLÓGICA Y MERMELADA CASERA", "price": "3,25€", "allergens": [1, 3, 7], "tags": ["ecologico"] },
-        { "number": 3, "name": "TOSTADA MEDITERRÁNEA, TOMATE FRESCO Y ACEITE DE OLIVA EXTRA", "price": "3,50€", "allergens": [1, 7] },
+        { "number": 3, "name": "TOSTADA MEDITERRÁNEA, TOMATE FRESCO Y ACEITE DE OLIVA EXTRA", "price": "3,50€", "allergens": [1, 7], "tags": ["vegano"] },
         { "number": 4, "name": "TOSTADA CLÁSICA DE JAMÓN IBÉRICO CON TOMATE RALLADO", "price": "6,00€", "allergens": [1] },
         { "number": 5, "name": "TOSTADA DE SALMÓN NORUEGO, AGUACATE, QUESO CREMA AL ENELDO Y BROTES", "price": "8,20€", "allergens": [1, 4, 7] }
       ]
@@ -28,7 +28,7 @@
         { "number": 1, "name": "LA CLÁSICA CÉSAR CON POLLO CRUJIENTE", "price": "13,50€", "allergens": [1, 3, 4, 7] },
         { "number": 2, "name": "MEDITERRÁNEA POKE BOWL", "price": "14,30€", "allergens": [1, 4, 6, 11] },
         { "number": 3, "name": "HUERTA Y MAR: TOMATE, MOZARELLA, VENTRESCA, NECTARINA Y PIPARRAS", "price": "15,50€", "allergens": [4, 7] },
-        { "number": 4, "name": "TRICOLOR DE TOMATES DULCES, BURRATA Y PESTO", "price": "16,25€", "allergens": [7, 8] }
+        { "number": 4, "name": "TRICOLOR DE TOMATES DULCES, BURRATA Y PESTO", "price": "16,25€", "allergens": [7, 8], "tags": ["vegetariano"] }
       ]
     },
     {
@@ -37,7 +37,7 @@
         { "number": 1, "name": "CROQUETA DE JAMÓN (UD)", "price": "3,30€", "allergens": [1, 3, 7] },
         { "number": 2, "name": "GILDA FRONT", "price": "5,00€", "allergens": [4] },
         { "number": 3, "name": "QUÉ ENSALADILLA", "price": "13,00€", "allergens": [3, 4] },
-        { "number": 4, "name": "LAS BRAVAS SUFLADAS DE FRONT, CREMOSAS Y CROCANTES", "price": "11,00€", "allergens": [3] },
+        { "number": 4, "name": "LAS BRAVAS SUFLADAS DE FRONT, CREMOSAS Y CROCANTES", "price": "11,00€", "allergens": [3], "tags": ["vegetariano"] },
         { "number": 5, "name": "SEPIA CON MAHONESA DE LIMA Y AJÍ AMARILLO", "price": "16,00€", "allergens": [13, 14] },
         { "number": 6, "name": "MENESTRA DE VERDURAS CRUJIENTES CON MAYONESA DE SRIRACHA", "price": "12,00€", "allergens": [3], "tags": ["picante"] },
         { "number": 7, "name": "SEPIA ENCEBOLLADA Y PATATAS PAJAS CON AJO Y PEREJIL", "price": "16,00€", "allergens": [14] },
@@ -53,17 +53,17 @@
     {
       "name": "PARA PICAR CON SABOR A BRASA",
       "items": [
-        { "number": 1, "name": "BERENJENA A LA LLAMA", "price": "12,00€", "note": "Si lleva salsa contiene huevo (3)" },
+        { "number": 1, "name": "BERENJENA A LA LLAMA", "price": "12,00€" },
         { "number": 2, "name": "GAMBA BLANCA AL AJILLO", "price": "21,50€", "allergens": [2] },
-        { "number": 3, "name": "ALCACHOFA DE LA HUERTA (EN TEMPORADA)", "note": "PVP consultar" },
-        { "number": 4, "name": "CLOTXINA VALENCIANA, BERBERECHOS, NAVAJAS", "note": "Consultar PVP según mercado", "allergens": [14] },
-        { "number": 5, "name": "CALAMAR A LA BRASA O ESTILO ANDALUZ", "price": "22,00€", "allergens": [1, 14] }
+        { "number": 3, "name": "ALCACHOFA DE LA HUERTA (EN TEMPORADA)", "price": "Precio según mercado" },
+        { "number": 4, "name": "CLOTXINA VALENCIANA, BERBERECHOS, NAVAJAS", "price": "Precio según mercado", "allergens": [13] },
+        { "number": 5, "name": "CALAMAR A LA BRASA O ESTILO ANDALUZ", "price": "22,00€", "allergens": [1, 13] }
       ]
     },
     {
       "name": "EL PESCADO A LA BRASA",
       "items": [
-        { "number": 1, "name": "DE LONJA DEL DÍA", "note": "PVP según mercado", "allergens": [4] },
+        { "number": 1, "name": "DE LONJA DEL DÍA", "price": "Precio según mercado", "allergens": [4] },
         { "number": 2, "name": "BACALAO CONFITADO, ESGARRAET Y EMULSIÓN DE KALAMATA", "price": "21,50€", "allergens": [3, 4] }
       ]
     },
@@ -73,7 +73,7 @@
         { "number": 1, "name": "CHULETA DE CERDO DE CASTAÑA", "price": "17,50€" },
         { "number": 2, "name": "CACHOPO FRONT DE PLUMA IBÉRICA", "price": "21,50€", "allergens": [1, 3, 7] },
         { "number": 3, "name": "LOMO BAJO DE TERNERA", "price": "24,50€" },
-        { "number": 4, "name": "HAMBURGUESA DE VACA MADURA", "price": "14,95€", "allergens": [1], "note": "Si lleva queso contiene lácteos (7)" },
+        { "number": 4, "name": "HAMBURGUESA DE VACA MADURA", "price": "14,95€", "allergens": [1] },
         { "number": 5, "name": "CANELÓN DE POLLO DE CORRAL", "price": "16,50€", "allergens": [1, 3, 7] }
       ]
     },
@@ -81,8 +81,8 @@
       "name": "GUARNICIONES",
       "items": [
         { "number": 1, "name": "CREMOSO DE PATATAS", "price": "5,00€", "allergens": [7] },
-        { "number": 2, "name": "ENSALADA VERDE Y CEBOLLETA", "price": "4,50€" },
-        { "number": 3, "name": "PIMIENTOS DEL PIQUILLO CONFITADOS", "price": "5,00€" },
+        { "number": 2, "name": "ENSALADA VERDE Y CEBOLLETA", "price": "4,50€", "tags": ["vegano"] },
+        { "number": 3, "name": "PIMIENTOS DEL PIQUILLO CONFITADOS", "price": "5,00€", "tags": ["vegano"] },
         { "number": 4, "name": "PAN FOCACCIA ARTESANAL", "price": "4,00€", "allergens": [1] }
       ]
     },
@@ -106,33 +106,33 @@
       ]
     },
     {
-      "name": "MENÚ DEL DÍA",
-      "note": "Disponible de Lunes a Viernes",
+      "name": "MENÚ SEMANAL DEL CHEF JOSE",
+      "price": "25,00€",
       "items": [
-        { "number": 1, "name": "BOCADOS DEL CHEF - A ESCOGER -", "description": "1. Ceviche, maíz tostado y boniato\n2. Croquetas de jamón" },
-        { "number": 2, "name": "ENTRANTES - A COMPARTIR -", "description": "1. Clotxina valenciana al vapor\n2. Patatas bravas en tempura" },
-        { "number": 3, "name": "PRINCIPAL - A ESCOGER -", "description": "1. Arroz de carrillera y pimientos del piquillo (min. 2 pax)\n2. Bacalao confitado con esgarradet y emulsión de kalamata\n3. Magro en salsa con patatas al montón y emulsión de pimiento" },
-        { "number": 4, "name": "POSTRE - A ESCOGER -", "description": "1. Brownie con helado de yogur y polvo de nocilla\n2. Piña asada con helado de caramelo\n3. Fruta de temporada" },
-        { "number": 5, "name": "SERVICIO DE AGUA Y PAN INCLUIDO" }
+        { "name": "BOCADOS DEL CHEF - A ESCOGER -", "description": "1. Ceviche, maíz tostado y boniato\n2. Croquetas de jamón" },
+        { "name": "ENTRANTES - A COMPARTIR -", "description": "1. Clotxina valenciana al vapor\n2. Patatas bravas en tempura" },
+        { "name": "PRINCIPAL - A ESCOGER -", "description": "1. Arroz de carrillera y pimientos del piquillo (min. 2 pax)\n2. Bacalao confitado con esgarradet y emulsión de kalamata\n3. Magro en salsa con patatas al montón y emulsión de pimiento" },
+        { "name": "POSTRE - A ESCOGER -", "description": "1. Brownie con helado de yogur y polvo de nocilla\n2. Piña asada con helado de caramelo\n3. Fruta de temporada" },
+        { "name": "SERVICIO DE AGUA Y PAN INCLUIDO" }
       ]
     },
     {
-      "name": "MENÚ DE GRUPO",
+      "name": "MENÚS DE GRUPO",
       "items": [
         {
           "number": 1,
-          "name": "MENÚ LA DÁRSENA",
-          "description": "Snack en mesa: Almendras trufadas y servicio de cesta de pan tostado con alioli y tomate.\n\nEntrante para compartir: Chipironcitos fritos con huevo de corral.\n\nEntrante individual: Ensaladilla marinera con quisquilla fresca.\n\nPrincipal: Arroz de panceta y calabaza con alcachofitas.\n\nPostre: Tarta de queso casera con esencia de fresa."
+          "name": "LA DÁRSENA",
+          "description": "**Aperitivo**\nAlmendras trufadas y servicio de cesta de pan tostado con alioli y tomate.\n\n**Entrante para compartir**\nChipironcitos fritos con huevo de corral.\n\n**Entrante individual**\nEnsaladilla marinera con quisquilla fresca.\n\n**Principal**\nArroz de panceta y calabaza con alcachofitas.\n\n**Postre**\nTarta de queso casera con esencia de fresa."
         },
         {
           "number": 2,
-          "name": "MENÚ DOCK",
-          "description": "Entrante centro mesa: Tomate dulce tricolor con burrata, pesto cítrico de albahaca y pimiento al caramelo | Ceviche de lubina con cebollada morada, camote, gamba cristal y ají amarillo.\n\nEntrante individual: Tosta de ensaladilla marinera con ventresca, anchoa y piparra.\n\nPrincipal a elegir:\n1. Meloso de chipirones y alcachofa\n2. Corvina a la brasa con crema de boniato\n3. Picaña con patatas asadas a la brasa, tirabeques y chimichurri.\n\nPostre: Torrija caramelizada con frutos del bosque y helado de leche merengada."
+          "name": "DOCK",
+          "description": "**Entrante centro mesa**\nTomate dulce tricolor con burrata, pesto cítrico de albahaca y pimiento al caramelo.\nCeviche de lubina con cebollada morada, camote, gamba cristal y ají amarillo.\n\n**Entrante individual**\nTosta de ensaladilla marinera con ventresca, anchoa y piparra.\n\n**Principal a elegir**\nMeloso de chipirones y alcachofa\nCorvina a la brasa con crema de boniato\nPicaña con patatas asadas a la brasa, tirabeques y chimichurri.\n\n**Postre**\nTorrija caramelizada con frutos del bosque y helado de leche merengada."
         },
         {
           "number": 3,
-          "name": "MENÚ ALTAMAR",
-          "description": "Entrante centro mesa:\n1. Steak tartar de vaca con patatas crujientes y tostas artesanales\n2. Gamba blanca al ajillo.\n\nEntrante individual: Alcachofa a la brasa con salsa de pimientos asados y avellana.\n\nPrincipal a elegir:\n1. Meloso de pollo de corral, setas y ajetes tiernos\n2. Corvina a la brasa con verduras salteadas al teriyaki\n3. Carrilleras ibéricas con parmenier de patata trufada.\n\nPostre: Tarta de queso con esencia de fresa.\nIncluye una bebida."
+          "name": "ALTAMAR",
+          "description": "**Entrante centro mesa**\n1. Steak tartar de vaca con patatas crujientes y tostas artesanales\n2. Gamba blanca al ajillo.\n\n**Entrante individual**\nAlcachofa a la brasa con salsa de pimientos asados y avellana.\n\n**Principal a elegir**\nMeloso de pollo de corral, setas y ajetes tiernos\nCorvina a la brasa con verduras salteadas al teriyaki\nCarrilleras ibéricas con cremoso de patata trufada.\n\n**Postre**\nTarta de queso con esencia de fresa.\nIncluye una bebida."
         }
       ]
     }
@@ -155,7 +155,7 @@
   ],
   "notes": [
     "Pan artesanal disponible: normal, integral o sin gluten",
-    "Menú del día disponible de lunes a viernes, 13h-16h",
+    "Menú semanal del chef disponible de lunes a viernes, 13h-16h",
     "Menús de grupo disponibles bajo reserva",
     "Consultar PVP en productos de mercado"
   ]

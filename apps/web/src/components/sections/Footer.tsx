@@ -4,6 +4,8 @@ interface Props {
   lang: 'es' | 'en'
 }
 
+const APP_VERSION = '1.0.1'
+
 const Footer: React.FC<Props> = ({ lang }) => {
   const t =
     lang === 'es'
@@ -16,6 +18,8 @@ const Footer: React.FC<Props> = ({ lang }) => {
           privacy: 'Privacidad',
           cookies: 'Cookies',
           copyright: `© ${new Date().getFullYear()} FRONT THE TERMINAL BAR. Todos los derechos reservados.`,
+          version: `v${APP_VERSION}`,
+          authorLabel: 'Web',
           newsletter: 'Suscríbete para enterarte de todo',
           email: 'Email',
           subscribe: 'Suscribirse',
@@ -23,6 +27,8 @@ const Footer: React.FC<Props> = ({ lang }) => {
           addressLabel: 'Dirección',
           phoneLabel: 'Teléfono',
           emailLabel: 'Email',
+          scanMenu: 'Escanea para ver la carta',
+          viewPdf: 'Ver carta PDF',
         }
       : {
           contact: 'Contact',
@@ -33,6 +39,8 @@ const Footer: React.FC<Props> = ({ lang }) => {
           privacy: 'Privacy',
           cookies: 'Cookies',
           copyright: `© ${new Date().getFullYear()} FRONT THE TERMINAL BAR. All rights reserved.`,
+          version: `v${APP_VERSION}`,
+          authorLabel: 'Web',
           newsletter: 'Subscribe to stay updated',
           email: 'Email',
           subscribe: 'Subscribe',
@@ -40,6 +48,8 @@ const Footer: React.FC<Props> = ({ lang }) => {
           addressLabel: 'Address',
           phoneLabel: 'Phone',
           emailLabel: 'Email',
+          scanMenu: 'Scan to view the menu',
+          viewPdf: 'View menu PDF',
         }
 
   // Placeholder data – replace with real CMS data as needed
@@ -145,8 +155,7 @@ const Footer: React.FC<Props> = ({ lang }) => {
                 <a href={`mailto:${email}`} className="hover:text-terracotta-400 transition-colors">
                   {email}
                 </a>
-              </li>
-              <li className="pt-2 border-t border-concrete-800">
+                <br />
                 <a href={`mailto:${reservationsEmail}`} className="hover:text-terracotta-400 transition-colors text-xs">
                   {reservationsEmail}
                 </a>
@@ -207,7 +216,7 @@ const Footer: React.FC<Props> = ({ lang }) => {
             </ul>
           </div>
 
-          {/* Social */}
+          {/* Social + QR */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-text-primary mb-4">{t.social}</h3>
             <a
@@ -222,11 +231,45 @@ const Footer: React.FC<Props> = ({ lang }) => {
               </svg>
               @frontvalencia
             </a>
+
+            {/* QR Code */}
+            <div className="mt-6">
+              <p className="text-xs text-text-muted uppercase tracking-wider mb-2">{t.scanMenu}</p>
+              <a
+                href="/files/menu-frontvalencia.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-80 transition-opacity"
+                aria-label={t.viewPdf}
+              >
+                <img
+                  src="/images/qr-menu.png"
+                  alt={t.scanMenu}
+                  width={96}
+                  height={96}
+                  className="w-24 h-24"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-concrete-800 pt-8 text-center">
+        <div className="border-t border-concrete-800 pt-8 text-center space-y-2">
           <p className="text-xs text-text-muted tracking-wider">{t.copyright}</p>
+          <p className="text-xs text-text-muted tracking-wider">
+            {t.version} — {t.authorLabel}:{' '}
+            <a
+              href="https://alexendros.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-terracotta-400 transition-colors underline underline-offset-2 decoration-concrete-600 hover:decoration-terracotta-400"
+            >
+              Alexendros
+            </a>{' '}
+            · Alejandro Domingo Agustí
+          </p>
         </div>
       </div>
     </footer>

@@ -6,7 +6,7 @@
       "items": [
         { "number": 1, "name": "CROISSANT", "price": "2,95€", "allergens": [1, 3, 7] },
         { "number": 2, "name": "ARTISAN TOAST, ORGANIC BUTTER AND HOMEMADE JAM", "price": "3,25€", "allergens": [1, 3, 7], "tags": ["ecologico"] },
-        { "number": 3, "name": "MEDITERRANEAN TOAST, FRESH TOMATO AND EXTRA VIRGIN OLIVE OIL", "price": "3,50€", "allergens": [1, 7] },
+        { "number": 3, "name": "MEDITERRANEAN TOAST, FRESH TOMATO AND EXTRA VIRGIN OLIVE OIL", "price": "3,50€", "allergens": [1, 7], "tags": ["vegano"] },
         { "number": 4, "name": "CLASSIC IBERIAN HAM TOAST WITH GRATED TOMATO", "price": "6,00€", "allergens": [1] },
         { "number": 5, "name": "NORWEGIAN SALMON TOAST, AVOCADO, DILL CREAM CHEESE AND SPROUTS", "price": "8,20€", "allergens": [1, 4, 7] }
       ]
@@ -29,7 +29,7 @@
         { "number": 1, "name": "CLASSIC CAESAR WITH CRISPY CHICKEN", "price": "13,50€", "allergens": [1, 3, 4, 7] },
         { "number": 2, "name": "MEDITERRANEAN POKE BOWL", "price": "14,30€", "allergens": [1, 4, 6, 11] },
         { "number": 3, "name": "LAND AND SEA: TOMATO, MOZZARELLA, VENTRESCA, NECTARINE AND GHERKINS", "price": "15,50€", "allergens": [4, 7] },
-        { "number": 4, "name": "TRICOLOUR SWEET TOMATOES, BURRATA AND PESTO", "price": "16,25€", "allergens": [7, 8] }
+        { "number": 4, "name": "TRICOLOUR SWEET TOMATOES, BURRATA AND PESTO", "price": "16,25€", "allergens": [7, 8], "tags": ["vegetariano"] }
       ]
     },
     {
@@ -38,7 +38,7 @@
         { "number": 1, "name": "HAM CROQUETTE (UD)", "price": "3,30€", "allergens": [1, 3, 7] },
         { "number": 2, "name": "GILDA FRONT", "price": "5,00€", "allergens": [4] },
         { "number": 3, "name": "RUSSIAN SALAD (ENSALADILLA RUSA)", "price": "13,00€", "allergens": [3, 4] },
-        { "number": 4, "name": "FRONT'S SOUFFLÉD BRAVAS, CREAMY AND CRISPY", "price": "11,00€", "allergens": [3] },
+        { "number": 4, "name": "FRONT'S SOUFFLÉD BRAVAS, CREAMY AND CRISPY", "price": "11,00€", "allergens": [3], "tags": ["vegetariano"] },
         { "number": 5, "name": "CUTTLEFISH WITH LIME AND AJÍ AMARILLO MAYO", "price": "16,00€", "allergens": [13, 14] },
         { "number": 6, "name": "CRISPY VEGETABLE MEDLEY WITH SRIRACHA MAYO", "price": "12,00€", "allergens": [3], "tags": ["picante"] },
         { "number": 7, "name": "CUTTLEFISH WITH ONIONS AND SHOESTRING POTATOES WITH GARLIC AND PARSLEY", "price": "16,00€", "allergens": [14] },
@@ -54,17 +54,17 @@
     {
       "name": "TO SHARE, GRILL FLAVOUR",
       "items": [
-        { "number": 1, "name": "FLAME-ROASTED AUBERGINE", "price": "12,00€", "note": "If served with sauce, contains egg (3)" },
+        { "number": 1, "name": "FLAME-ROASTED AUBERGINE", "price": "12,00€" },
         { "number": 2, "name": "WHITE PRAWNS IN GARLIC", "price": "21,50€", "allergens": [2] },
-        { "number": 3, "name": "SEASONAL ARTICHOKE FROM THE GARDEN", "note": "Please ask for price" },
-        { "number": 4, "name": "VALENCIAN CLAMS, COCKLES, RAZOR CLAMS", "note": "Please ask for price, varies by market", "allergens": [14] },
-        { "number": 5, "name": "GRILLED OR ANDALUSIAN-STYLE SQUID", "price": "22,00€", "allergens": [1, 14] }
+        { "number": 3, "name": "SEASONAL ARTICHOKE FROM THE GARDEN", "price": "Market price" },
+        { "number": 4, "name": "VALENCIAN CLAMS, COCKLES, RAZOR CLAMS", "price": "Market price", "allergens": [13] },
+        { "number": 5, "name": "GRILLED OR ANDALUSIAN-STYLE SQUID", "price": "22,00€", "allergens": [1, 13] }
       ]
     },
     {
       "name": "GRILLED FISH",
       "items": [
-        { "number": 1, "name": "FRESH CATCH OF THE DAY", "note": "Price according to market", "allergens": [4] },
+        { "number": 1, "name": "FRESH CATCH OF THE DAY", "price": "Market price", "allergens": [4] },
         { "number": 2, "name": "CONFIT COD, ESGARRAET AND KALAMATA EMULSION", "price": "21,50€", "allergens": [3, 4] }
       ]
     },
@@ -74,7 +74,7 @@
         { "number": 1, "name": "CHESTNUT-FED PORK CHOP", "price": "17,50€" },
         { "number": 2, "name": "FRONT CACHOPO WITH IBERIAN PLUMA", "price": "21,50€", "allergens": [1, 3, 7] },
         { "number": 3, "name": "BEEF SIRLOIN", "price": "24,50€" },
-        { "number": 4, "name": "AGED BEEF BURGER", "price": "14,95€", "allergens": [1], "note": "If served with cheese, contains dairy (7)" },
+        { "number": 4, "name": "AGED BEEF BURGER", "price": "14,95€", "allergens": [1] },
         { "number": 5, "name": "FREE-RANGE CHICKEN CANNELLONI", "price": "16,50€", "allergens": [1, 3, 7] }
       ]
     },
@@ -82,8 +82,8 @@
       "name": "SIDES",
       "items": [
         { "number": 1, "name": "CREAMY POTATOES", "price": "5,00€", "allergens": [7] },
-        { "number": 2, "name": "GREEN SALAD AND SPRING ONION", "price": "4,50€" },
-        { "number": 3, "name": "CONFIT PIQUILLO PEPPERS", "price": "5,00€" },
+        { "number": 2, "name": "GREEN SALAD AND SPRING ONION", "price": "4,50€", "tags": ["vegano"] },
+        { "number": 3, "name": "CONFIT PIQUILLO PEPPERS", "price": "5,00€", "tags": ["vegano"] },
         { "number": 4, "name": "ARTISAN FOCACCIA BREAD", "price": "4,00€", "allergens": [1] }
       ]
     },
@@ -107,33 +107,33 @@
       ]
     },
     {
-      "name": "DAILY LUNCH MENU",
-      "note": "Available Monday to Friday",
+      "name": "CHEF'S WEEKLY MENU",
+      "price": "25,00€",
       "items": [
-        { "number": 1, "name": "CHEF'S BITES - CHOOSE -", "description": "1. Ceviche, toasted corn and boniato\n2. Ham croquettes" },
-        { "number": 2, "name": "STARTERS - TO SHARE -", "description": "1. Steamed Valencian clams (clotxina)\n2. Tempura bravas potatoes" },
-        { "number": 3, "name": "MAIN COURSE - CHOOSE -", "description": "1. Cheek rice with piquillo peppers (min. 2 pax)\n2. Confit cod with esgarradet and kalamata emulsion\n3. Pork in sauce with patatas al montón and pickled pepper emulsion" },
-        { "number": 4, "name": "DESSERT - CHOOSE -", "description": "1. Brownie with yogurt ice cream and nocilla dust\n2. Roasted pineapple with caramel ice cream\n3. Seasonal fruit" },
-        { "number": 5, "name": "WATER AND BREAD SERVICE INCLUDED" }
+        { "name": "CHEF'S BITES - CHOOSE -", "description": "1. Ceviche, toasted corn and boniato\n2. Ham croquettes" },
+        { "name": "STARTERS - TO SHARE -", "description": "1. Steamed Valencian clams (clotxina)\n2. Tempura bravas potatoes" },
+        { "name": "MAIN COURSE - CHOOSE -", "description": "1. Cheek rice with piquillo peppers (min. 2 pax)\n2. Confit cod with esgarradet and kalamata emulsion\n3. Pork in sauce with patatas al montón and pickled pepper emulsion" },
+        { "name": "DESSERT - CHOOSE -", "description": "1. Brownie with yogurt ice cream and nocilla dust\n2. Roasted pineapple with caramel ice cream\n3. Seasonal fruit" },
+        { "name": "WATER AND BREAD SERVICE INCLUDED" }
       ]
     },
     {
-      "name": "GROUP MENU",
+      "name": "GROUP MENUS",
       "items": [
         {
           "number": 1,
-          "name": "LA DÁRSENA MENU",
-          "description": "Table snack: Truffled almonds and toasted bread basket with alioli and tomato.\n\nStarter to share: Fried baby squid with free-range egg.\n\nIndividual starter: Ensaladilla marinera with fresh shrimp.\n\nMain: Pork belly and pumpkin rice with baby artichokes.\n\nDessert: Homemade cheesecake with strawberry essence."
+          "name": "LA DÁRSENA",
+          "description": "**Aperitif**\nTruffled almonds and toasted bread basket with alioli and tomato.\n\n**Starter to share**\nFried baby squid with free-range egg.\n\n**Individual starter**\nEnsaladilla marinera with fresh shrimp.\n\n**Main**\nPork belly and pumpkin rice with baby artichokes.\n\n**Dessert**\nHomemade cheesecake with strawberry essence."
         },
         {
           "number": 2,
-          "name": "DOCK MENU",
-          "description": "Centre-table starter: Tricolour sweet tomato with burrata, citrus basil pesto and caramelised pepper | Sea bass ceviche with purple onion, boniato, crystal prawn and ají amarillo.\n\nIndividual starter: Ensaladilla marinera toast with tuna belly, anchovy and pepper.\n\nMain course to choose:\n1. Meloso of squid and artichoke\n2. Grilled corvina with boniato cream\n3. Picaña with roast potatoes, mangetout and chimichurri.\n\nDessert: Caramelised torrija with forest fruits and milk meringue ice cream."
+          "name": "DOCK",
+          "description": "**Centre-table starter**\nTricolour sweet tomato with burrata, citrus basil pesto and caramelised pepper.\nSea bass ceviche with purple onion, boniato, crystal prawn and ají amarillo.\n\n**Individual starter**\nEnsaladilla marinera toast with tuna belly, anchovy and pepper.\n\n**Main course to choose**\nMeloso of squid and artichoke\nGrilled corvina with boniato cream\nPicaña with roast potatoes, mangetout and chimichurri.\n\n**Dessert**\nCaramelised torrija with forest fruits and milk meringue ice cream."
         },
         {
           "number": 3,
-          "name": "ALTAMAR MENU",
-          "description": "Centre-table starter:\n1. Beef steak tartare with crispy potatoes and artisan toast\n2. White prawns in garlic.\n\nIndividual starter: Grilled artichoke with roasted pepper sauce and hazelnut.\n\nMain course to choose:\n1. Meloso of free-range chicken with mushrooms and spring onions\n2. Grilled corvina with teriyaki vegetables\n3. Iberian cheeks with truffle potato parmentier.\n\nDessert: Cheesecake with strawberry essence.\nIncludes one drink."
+          "name": "ALTAMAR",
+          "description": "**Centre-table starter**\n1. Beef steak tartare with crispy potatoes and artisan toast\n2. White prawns in garlic.\n\n**Individual starter**\nGrilled artichoke with roasted pepper sauce and hazelnut.\n\n**Main course to choose**\nMeloso of free-range chicken with mushrooms and spring onions\nGrilled corvina with teriyaki vegetables\nIberian cheeks with creamy truffle potato.\n\n**Dessert**\nCheesecake with strawberry essence.\nIncludes one drink."
         }
       ]
     }
@@ -156,7 +156,7 @@
   ],
   "notes": [
     "Artisan bread available: regular, wholemeal or gluten-free",
-    "Daily lunch menu available Monday to Friday, 1 PM - 4 PM",
+    "Chef's weekly menu available Monday to Friday, 1 PM - 4 PM",
     "Group menus available by reservation",
     "Please ask for prices on market-fresh products",
     "Valencian culinary terms (esmorzaret, titaina, coca de dacsa, senyoret, esgarraet, clotxina, turrón, torrija, tocino de cielo) are kept in their original language to preserve their cultural identity"

@@ -11,6 +11,7 @@ const menuCollection = defineCollection({
           name: z.string(),
           time: z.string().optional(),
           note: z.string().optional(),
+          price: z.string().optional(),
           items: z.array(
             z.object({
               number: z.number().optional(),
@@ -18,7 +19,7 @@ const menuCollection = defineCollection({
               description: z.string().optional(),
               price: z.string().optional(),
               allergens: z.array(z.number()).optional(),
-              tags: z.array(z.enum(['ecologico', 'sin-gluten', 'vegano', 'picante'])).optional(),
+              tags: z.array(z.enum(['ecologico', 'sin-gluten', 'vegano', 'vegetariano', 'picante'])).optional(),
               note: z.string().optional(),
             }),
           ),

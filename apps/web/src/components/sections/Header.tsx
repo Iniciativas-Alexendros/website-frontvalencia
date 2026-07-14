@@ -9,17 +9,23 @@ interface Props {
 }
 
 export default function Header({ lang, isHome = false, site }: Props) {
+  const careersUrl = 'https://grupoelalto-1738067471.teamtailor.com/'
+
   const navItems =
     lang === 'es'
       ? [
           { label: 'Carta', href: '#carta' },
           { label: 'Espacio', href: '#espacio' },
           { label: 'Localización', href: '#localizacion' },
+          { label: 'Contacto', href: '#localizacion' },
+          { label: 'Talento', href: careersUrl, external: true },
         ]
       : [
           { label: 'Menu', href: '#carta' },
-          { label: 'Space', href: '#space' },
-          { label: 'Location', href: '#location' },
+          { label: 'Space', href: '#espacio' },
+          { label: 'Location', href: '#localizacion' },
+          { label: 'Contact', href: '#localizacion' },
+          { label: 'Careers', href: careersUrl, external: true },
         ]
 
   const otherLang = lang === 'es' ? 'en' : 'es'
@@ -29,8 +35,6 @@ export default function Header({ lang, isHome = false, site }: Props) {
       : lang === 'es'
         ? '/en/'
         : '/es/'
-
-  const clubUrl = site?.externalLinks?.club ?? 'https://front.feending.io/'
 
   const [mobileOpen, setMobileOpen] = useState(false)
   const headerRef = useRef<HTMLHeadElement>(null)
@@ -123,35 +127,39 @@ export default function Header({ lang, isHome = false, site }: Props) {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="relative text-sm font-medium tracking-[0.15em] uppercase transition-colors duration-200 py-1 text-concrete-300 hover:text-text-primary"
-              onClick={(e) => handleAnchorClick(e, item.href)}
-            >
-              {item.label}
-            </a>
-          ))}
-          <a
-            href={clubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium tracking-[0.15em] uppercase text-concrete-300 hover:text-text-primary transition-colors duration-200 flex items-center gap-1"
-          >
-            The Club
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-          </a>
+          {navItems.map((item) =>
+            item.external ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative text-sm font-medium tracking-[0.15em] uppercase transition-colors duration-200 py-1 text-concrete-300 hover:text-text-primary flex items-center gap-1"
+              >
+                {item.label}
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className="relative text-sm font-medium tracking-[0.15em] uppercase transition-colors duration-200 py-1 text-concrete-300 hover:text-text-primary"
+                onClick={(e) => handleAnchorClick(e, item.href)}
+              >
+                {item.label}
+              </a>
+            ),
+          )}
         </div>
 
-        {/* Right side: Lang toggle + Reservas CTA */}
+        {/* Right side: Lang toggle + Contactar CTA */}
         <div className="flex items-center gap-4 shrink-0">
           <a
             href={otherLangHref}
@@ -161,11 +169,11 @@ export default function Header({ lang, isHome = false, site }: Props) {
             {lang === 'es' ? 'EN' : 'ES'}
           </a>
           <a
-            href={lang === 'es' ? '#reservas' : '#book'}
+            href="#localizacion"
             className="inline-flex items-center gap-2 bg-terracotta-500 hover:bg-terracotta-400 text-white text-sm font-semibold uppercase tracking-wider px-5 py-2 transition-colors duration-200"
-            onClick={(e) => handleAnchorClick(e, lang === 'es' ? '#reservas' : '#book')}
+            onClick={(e) => handleAnchorClick(e, '#localizacion')}
           >
-            {lang === 'es' ? 'Reserva' : 'Book'}
+            {lang === 'es' ? 'Contactar' : 'Contact'}
           </a>
         </div>
 
@@ -193,38 +201,42 @@ export default function Header({ lang, isHome = false, site }: Props) {
         }`}
       >
         <div className="px-4 py-6 space-y-4">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="block text-lg font-medium uppercase tracking-wider text-concrete-300 hover:text-text-primary"
-              onClick={(e) => handleAnchorClick(e, item.href)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.external ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-lg font-medium uppercase tracking-wider text-concrete-300 hover:text-text-primary flex items-center gap-2"
+              >
+                {item.label}
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className="block text-lg font-medium uppercase tracking-wider text-concrete-300 hover:text-text-primary"
+                onClick={(e) => handleAnchorClick(e, item.href)}
+              >
+                {item.label}
+              </a>
+            ),
+          )}
           <a
-            href={clubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-lg font-medium uppercase tracking-wider text-concrete-300 hover:text-text-primary flex items-center gap-2"
-          >
-            The Club
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-          </a>
-          <a
-            href={lang === 'es' ? '#reservas' : '#book'}
+            href={lang === 'es' ? '#localizacion' : '#localizacion'}
             className="block text-lg font-medium uppercase tracking-wider text-concrete-300 hover:text-text-primary bg-terracotta-500 hover:bg-terracotta-400 text-white px-4 py-2 text-center"
-            onClick={(e) => handleAnchorClick(e, lang === 'es' ? '#reservas' : '#book')}
+            onClick={(e) => handleAnchorClick(e, '#localizacion')}
           >
-            {lang === 'es' ? 'Reserva' : 'Book'}
+            {lang === 'es' ? 'Contactar' : 'Contact'}
           </a>
         </div>
       </div>
