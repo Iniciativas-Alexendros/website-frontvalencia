@@ -29,7 +29,7 @@ const allergenLegend = menuData.allergenLegend ?? [];
     <EspacioSection lang="en" />
     <ClubBanner lang="en" />
     <LocalizacionSection lang="en" site={siteData} />
-    <ReservasSection lang="en" site={siteData} />
+    <ReservasSection lang="en" site={siteData} client:load />
   </main>
   <Footer lang="en" client:load />
   <CookieConsent lang="en" client:idle />

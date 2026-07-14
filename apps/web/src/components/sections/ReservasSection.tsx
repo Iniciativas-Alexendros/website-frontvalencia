@@ -1,3 +1,5 @@
+import { useState, useEffect, useCallback } from 'react'
+
 interface Props {
   lang: 'es' | 'en'
   site?: {
@@ -14,6 +16,9 @@ interface Props {
 }
 
 export default function ReservasSection({ lang, site }: Props) {
+  const [modalOpen, setModalOpen] = useState(false)
+  const [iframeLoaded, setIframeLoaded] = useState(false)
+
   const reservasText =
     lang === 'es'
       ? {
@@ -21,6 +26,8 @@ export default function ReservasSection({ lang, site }: Props) {
           tagline: 'FRONT · COMER BIEN FRENTE A LA MARINA',
           description:
             'Menú de mediodía entre semana · Carta disponible todos los días · Menús de grupo disponibles bajo reserva.',
+          cta: 'Reservar mesa',
+          ctaSubtitle: 'Elige fecha, hora y comensales',
           schedule: 'Horario',
           weekday: 'De lunes a viernes: 9:00 a 19:00.',
           weekend: 'Sábados, domingos y festivos: 11:30 a 19:00.',
@@ -37,11 +44,14 @@ export default function ReservasSection({ lang, site }: Props) {
           moreInfo: 'Ver condiciones completas',
           whatsappCta: 'WhatsApp',
           loadingWidget: 'Cargando sistema de reservas…',
+          closeModal: 'Cerrar',
         }
       : {
           heading: 'BOOK',
           tagline: 'FRONT · EAT WELL BY THE MARINA',
           description: 'Weekday lunch menu · Full menu available daily · Group menus available by reservation.',
+          cta: 'Book a table',
+          ctaSubtitle: 'Choose date, time and party size',
           schedule: 'Hours',
           weekday: 'Monday to Friday: 9:00 - 19:00.',
           weekend: 'Saturdays, Sundays & Holidays: 11:30 - 19:00.',
@@ -58,6 +68,7 @@ export default function ReservasSection({ lang, site }: Props) {
           moreInfo: 'View full conditions',
           whatsappCta: 'WhatsApp',
           loadingWidget: 'Loading booking system…',
+          closeModal: 'Close',
         }
 
   const widgetSrc =
@@ -72,115 +83,200 @@ export default function ReservasSection({ lang, site }: Props) {
   const eventsEmail = site?.contact?.eventsEmail ?? 'eventos@frontvalencia.com'
   const reservationsEmail = site?.contact?.reservationsEmail ?? 'reservas@frontvalencia.com'
 
+  const handleOpen = useCallback(() => {
+    setModalOpen(true)
+    setIframeLoaded(false)
+    document.body.style.overflow = 'hidden'
+  }, [])
+
+  const handleClose = useCallback(() => {
+    setModalOpen(false)
+    document.body.style.overflow = ''
+  }, [])
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && modalOpen) handleClose()
+    }
+    document.addEventListener('keydown', handleEsc)
+    return () => document.removeEventListener('keydown', handleEsc)
+  }, [modalOpen, handleClose])
+
   return (
-    <section
-      className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto"
-      id={lang === 'es' ? 'reservas' : 'book'}
-      aria-label={reservasText.heading}
-    >
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-black uppercase tracking-tight text-text-primary">{reservasText.heading}</h2>
-        <div className="mt-4 mx-auto w-16 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
-        <p className="mt-6 text-xl text-terracotta-400 font-light tracking-widest uppercase">{reservasText.tagline}</p>
-        <p className="mt-3 text-base text-text-secondary max-w-2xl mx-auto">{reservasText.description}</p>
-      </div>
-
-      {/* CoverManager Widget */}
-      <div
-        className="mb-12 relative bg-concrete-900 border border-concrete-800 overflow-visible"
-        id="reservas-widget-container"
-        style={{ minHeight: '750px' }}
+    <>
+      <section
+        className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto"
+        id={lang === 'es' ? 'reservas' : 'book'}
+        aria-label={reservasText.heading}
       >
-        <div
-          id="reservas-skeleton"
-          className="absolute inset-0 flex items-center justify-center bg-concrete-900 z-20"
-          aria-hidden="true"
-        >
-          <div className="text-center">
-            <div className="w-8 h-8 border-2 border-concrete-700 border-t-terracotta-400 rounded-full animate-spin mx-auto mb-3"></div>
-            <p className="text-xs uppercase tracking-widest text-text-muted">{reservasText.loadingWidget}</p>
-          </div>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-black uppercase tracking-tight text-text-primary">{reservasText.heading}</h2>
+          <div className="mt-4 mx-auto w-16 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
+          <p className="mt-6 text-xl text-terracotta-400 font-light tracking-widest uppercase">
+            {reservasText.tagline}
+          </p>
+          <p className="mt-3 text-base text-text-secondary max-w-2xl mx-auto">{reservasText.description}</p>
         </div>
-        <iframe
-          title={reservasText.heading}
-          src={widgetSrc}
-          className="w-full border-0 relative z-10"
-          style={{ height: '750px' }}
-          referrerPolicy="no-referrer"
-          onLoad={() => {
-            const skeleton = document.getElementById('reservas-skeleton')
-            if (skeleton) skeleton.style.display = 'none'
-          }}
-        ></iframe>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `setTimeout(function(){var s=document.getElementById('reservas-skeleton');if(s&&s.style.display!=='none')s.style.display='none';},5000);`,
-          }}
-        />
-      </div>
 
-      {/* Info */}
-      <div className="grid md:grid-cols-2 gap-8 text-sm">
-        <div className="bg-concrete-900 p-6 border border-concrete-800 space-y-4">
-          <div className="w-10 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
-          <h3 className="text-lg font-semibold text-text-primary uppercase tracking-[0.15em]">
-            {reservasText.schedule}
-          </h3>
-          <ul className="space-y-1.5 text-text-secondary">
-            <li>{reservasText.weekday}</li>
-            <li>{reservasText.weekend}</li>
-            <li className="text-terracotta-400 font-semibold">{reservasText.nights}</li>
-          </ul>
-          <p className="text-text-muted leading-relaxed">
-            {reservasText.groups}{' '}
-            <a
-              href={`mailto:${eventsEmail}`}
-              className="text-terracotta-400 hover:text-terracotta-300 underline underline-offset-2"
+        {/* CTA Card */}
+        <div className="mb-16 reveal">
+          <div className="relative bg-concrete-900 border border-concrete-800 p-8 sm:p-12 text-center group hover:border-terracotta-400/30 transition-colors duration-500">
+            {/* Decorative line */}
+            <div className="w-12 h-[2px] bg-terracotta-400 mx-auto mb-6" aria-hidden="true"></div>
+
+            {/* Icon */}
+            <div className="mx-auto mb-6 w-16 h-16 flex items-center justify-center border border-concrete-700 group-hover:border-terracotta-400/50 transition-colors duration-500">
+              <svg
+                className="w-8 h-8 text-terracotta-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                />
+              </svg>
+            </div>
+
+            <p className="text-sm text-text-muted uppercase tracking-widest mb-8">{reservasText.ctaSubtitle}</p>
+
+            <button
+              onClick={handleOpen}
+              className="inline-flex items-center gap-3 bg-terracotta-500 hover:bg-terracotta-400 text-white font-bold text-lg uppercase tracking-widest px-10 py-4 transition-all duration-300 hover:px-12 focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-400 focus-visible:ring-offset-2 focus-visible:ring-offset-concrete-900"
+              aria-haspopup="dialog"
             >
-              {eventsEmail}
-            </a>
-          </p>
-          <p className="text-text-muted leading-relaxed">
-            {reservasText.contact}{' '}
-            <a href={`tel:${phoneClean}`} className="text-terracotta-400 hover:text-terracotta-300 font-semibold">
-              {phone}
-            </a>
-          </p>
-          {/* WhatsApp button */}
-          <a
-            href={`https://wa.me/${phoneClean}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 border border-concrete-600 hover:border-terracotta-400 text-concrete-200 hover:text-terracotta-400 font-semibold text-sm uppercase tracking-widest transition-colors"
-          >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-            </svg>
-            {reservasText.whatsappCta}
-          </a>
+              {reservasText.cta}
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div className="bg-concrete-900 p-6 border border-concrete-800 space-y-4">
-          <div className="w-10 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
-          <h3 className="text-lg font-semibold text-text-primary uppercase tracking-[0.15em]">
-            {reservasText.conditions}
-          </h3>
-          {/* Conditions displayed directly, one per line */}
-          <div className="space-y-3">
-            {reservasText.conditionsText.map((clause, idx) => (
-              <p key={idx} className="text-text-secondary leading-relaxed">
-                {clause}
-              </p>
-            ))}
+        {/* Info Grid */}
+        <div className="grid md:grid-cols-2 gap-8 text-sm">
+          {/* Schedule */}
+          <div className="bg-concrete-900 p-6 border border-concrete-800 space-y-4 reveal">
+            <div className="w-10 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
+            <h3 className="text-lg font-semibold text-text-primary uppercase tracking-[0.15em]">
+              {reservasText.schedule}
+            </h3>
+            <ul className="space-y-1.5 text-text-secondary">
+              <li>{reservasText.weekday}</li>
+              <li>{reservasText.weekend}</li>
+              <li className="text-terracotta-400 font-semibold">{reservasText.nights}</li>
+            </ul>
+            <p className="text-text-muted leading-relaxed">
+              {reservasText.groups}{' '}
+              <a
+                href={`mailto:${eventsEmail}`}
+                className="text-terracotta-400 hover:text-terracotta-300 underline underline-offset-2"
+              >
+                {eventsEmail}
+              </a>
+            </p>
+            <p className="text-text-muted leading-relaxed">
+              {reservasText.contact}{' '}
+              <a href={`tel:${phoneClean}`} className="text-terracotta-400 hover:text-terracotta-300 font-semibold">
+                {phone}
+              </a>
+            </p>
+            <a
+              href={`https://wa.me/${phoneClean}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 border border-concrete-600 hover:border-terracotta-400 text-concrete-200 hover:text-terracotta-400 font-semibold text-sm uppercase tracking-widest transition-colors"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
+              {reservasText.whatsappCta}
+            </a>
           </div>
-          <a
-            href={lang === 'es' ? '/es/condiciones-reserva' : '/en/booking-conditions'}
-            className="inline-block text-terracotta-400 hover:text-terracotta-300 underline underline-offset-2 text-sm"
-          >
-            {reservasText.moreInfo} →
-          </a>
+
+          {/* Conditions */}
+          <div className="bg-concrete-900 p-6 border border-concrete-800 space-y-4 reveal">
+            <div className="w-10 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
+            <h3 className="text-lg font-semibold text-text-primary uppercase tracking-[0.15em]">
+              {reservasText.conditions}
+            </h3>
+            <div className="space-y-3">
+              {reservasText.conditionsText.map((clause, idx) => (
+                <p key={idx} className="text-text-secondary leading-relaxed">
+                  {clause}
+                </p>
+              ))}
+            </div>
+            <a
+              href={lang === 'es' ? '/es/condiciones-reserva' : '/en/booking-conditions'}
+              className="inline-block text-terracotta-400 hover:text-terracotta-300 underline underline-offset-2 text-sm"
+            >
+              {reservasText.moreInfo} →
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Booking Modal */}
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label={reservasText.heading}
+        >
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-concrete-950/90 backdrop-blur-sm"
+            onClick={handleClose}
+            aria-hidden="true"
+          />
+
+          {/* Modal */}
+          <div className="relative w-full max-w-2xl bg-concrete-900 border border-concrete-700 shadow-2xl max-h-[90vh] flex flex-col">
+            {/* Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-concrete-800 shrink-0">
+              <div>
+                <h3 className="text-lg font-bold uppercase tracking-wide text-text-primary">{reservasText.heading}</h3>
+                <p className="text-xs text-text-muted mt-0.5">{reservasText.ctaSubtitle}</p>
+              </div>
+              <button
+                onClick={handleClose}
+                className="w-10 h-10 flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-concrete-800 transition-colors"
+                aria-label={reservasText.closeModal}
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Iframe container */}
+            <div className="relative flex-1 min-h-0">
+              {!iframeLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-concrete-900 z-10">
+                  <div className="text-center">
+                    <div className="w-8 h-8 border-2 border-concrete-700 border-t-terracotta-400 rounded-full animate-spin mx-auto mb-3"></div>
+                    <p className="text-xs uppercase tracking-widest text-text-muted">{reservasText.loadingWidget}</p>
+                  </div>
+                </div>
+              )}
+              <iframe
+                title={reservasText.heading}
+                src={widgetSrc}
+                className="w-full h-full border-0"
+                style={{ minHeight: '500px' }}
+                referrerPolicy="no-referrer"
+                onLoad={() => setIframeLoaded(true)}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
