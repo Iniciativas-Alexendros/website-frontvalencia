@@ -85,14 +85,15 @@ export default function ReservasSection({ lang, site }: Props) {
         <p className="mt-3 text-base text-text-secondary max-w-2xl mx-auto">{reservasText.description}</p>
       </div>
 
-      {/* CoverManager Widget (with skeleton) */}
+      {/* CoverManager Widget */}
       <div
-        className="mb-12 relative bg-concrete-900 border border-concrete-800 min-h-[600px] overflow-visible"
+        className="mb-12 relative bg-concrete-900 border border-concrete-800 overflow-hidden"
         id="reservas-widget-container"
+        style={{ minHeight: '750px' }}
       >
         <div
           id="reservas-skeleton"
-          className="absolute inset-0 flex items-center justify-center bg-concrete-900"
+          className="absolute inset-0 flex items-center justify-center bg-concrete-900 z-20"
           aria-hidden="true"
         >
           <div className="text-center">
@@ -103,12 +104,16 @@ export default function ReservasSection({ lang, site }: Props) {
         <iframe
           title={reservasText.heading}
           src={widgetSrc}
-          className="w-full h-full border-0 relative z-10"
+          className="w-full border-0 relative z-10"
+          style={{ height: '750px' }}
           loading="lazy"
           referrerPolicy="no-referrer"
+          scrolling="no"
           onLoad={() => {
             const skeleton = document.getElementById('reservas-skeleton')
-            if (skeleton) skeleton.remove()
+            if (skeleton) {
+              skeleton.style.display = 'none'
+            }
           }}
         ></iframe>
       </div>
