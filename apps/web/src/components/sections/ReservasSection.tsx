@@ -87,7 +87,7 @@ export default function ReservasSection({ lang, site }: Props) {
 
       {/* CoverManager Widget */}
       <div
-        className="mb-12 relative bg-concrete-900 border border-concrete-800 overflow-hidden"
+        className="mb-12 relative bg-concrete-900 border border-concrete-800 overflow-visible"
         id="reservas-widget-container"
         style={{ minHeight: '750px' }}
       >
@@ -107,7 +107,6 @@ export default function ReservasSection({ lang, site }: Props) {
           className="w-full border-0 relative z-10"
           style={{ height: '750px' }}
           referrerPolicy="no-referrer"
-          scrolling="no"
           onLoad={() => {
             const skeleton = document.getElementById('reservas-skeleton')
             if (skeleton) skeleton.style.display = 'none'
