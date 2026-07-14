@@ -1,20 +1,20 @@
 import type { APIRoute } from 'astro'
 
 export const GET: APIRoute = () => {
-  const site = 'https://frontvalencia.com'
+  const site = import.meta.env.PUBLIC_SITE_URL || 'https://website-frontvalencia.vercel.app'
   const now = new Date().toISOString().split('T')[0]
 
   const routes = [
     { path: '/es/', priority: '1.0', changefreq: 'weekly' },
     { path: '/en/', priority: '1.0', changefreq: 'weekly' },
-    { path: '/es/carta', priority: '0.9', changefreq: 'monthly' },
-    { path: '/en/menu', priority: '0.9', changefreq: 'monthly' },
-    { path: '/es/espacio', priority: '0.8', changefreq: 'monthly' },
-    { path: '/en/space', priority: '0.8', changefreq: 'monthly' },
-    { path: '/es/localizacion', priority: '0.7', changefreq: 'monthly' },
-    { path: '/en/location', priority: '0.7', changefreq: 'monthly' },
-    { path: '/es/reservas', priority: '0.8', changefreq: 'monthly' },
-    { path: '/en/book', priority: '0.8', changefreq: 'monthly' },
+    { path: '/es/#carta', priority: '0.9', changefreq: 'monthly' },
+    { path: '/en/#carta', priority: '0.9', changefreq: 'monthly' },
+    { path: '/es/#espacio', priority: '0.8', changefreq: 'monthly' },
+    { path: '/en/#espacio', priority: '0.8', changefreq: 'monthly' },
+    { path: '/es/#localizacion', priority: '0.7', changefreq: 'monthly' },
+    { path: '/en/#localizacion', priority: '0.7', changefreq: 'monthly' },
+    { path: '/es/#reservas', priority: '0.8', changefreq: 'monthly' },
+    { path: '/en/#reservas', priority: '0.8', changefreq: 'monthly' },
     { path: '/es/legal-advice', priority: '0.3', changefreq: 'yearly' },
     { path: '/en/legal-advice', priority: '0.3', changefreq: 'yearly' },
     { path: '/es/privacy-policy', priority: '0.3', changefreq: 'yearly' },

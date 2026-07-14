@@ -3,7 +3,6 @@
   "categories": [
     {
       "name": "BREAKFAST BY THE SEA",
-      "time": "9:00 AM",
       "items": [
         { "number": 1, "name": "CROISSANT", "price": "2,95€", "allergens": [1, 3, 7] },
         { "number": 2, "name": "ARTISAN TOAST, ORGANIC BUTTER AND HOMEMADE JAM", "price": "3,25€", "allergens": [1, 3, 7], "tags": ["ecologico"] },
@@ -14,7 +13,6 @@
     },
     {
       "name": "ESMORZARET",
-      "time": "9:00 AM",
       "note": "Traditional Valencian mid-morning meal",
       "items": [
         { "number": 1, "name": "SPANISH TORTILLA OF THE DAY", "price": "7,00€", "allergens": [3] },
@@ -27,7 +25,6 @@
     },
     {
       "name": "GARDEN SALADS",
-      "time": "FROM 1 PM",
       "items": [
         { "number": 1, "name": "CLASSIC CAESAR WITH CRISPY CHICKEN", "price": "13,50€", "allergens": [1, 3, 4, 7] },
         { "number": 2, "name": "MEDITERRANEAN POKE BOWL", "price": "14,30€", "allergens": [1, 4, 6, 11] },
@@ -37,7 +34,6 @@
     },
     {
       "name": "VICENTE PATIÑO'S TAPAS",
-      "time": "FROM 1 PM",
       "items": [
         { "number": 1, "name": "HAM CROQUETTE (UD)", "price": "3,30€", "allergens": [1, 3, 7] },
         { "number": 2, "name": "GILDA FRONT", "price": "5,00€", "allergens": [4] },
@@ -57,7 +53,6 @@
     },
     {
       "name": "TO SHARE, GRILL FLAVOUR",
-      "time": "FROM 1 PM",
       "items": [
         { "number": 1, "name": "FLAME-ROASTED AUBERGINE", "price": "12,00€", "note": "If served with sauce, contains egg (3)" },
         { "number": 2, "name": "WHITE PRAWNS IN GARLIC", "price": "21,50€", "allergens": [2] },
@@ -68,7 +63,6 @@
     },
     {
       "name": "GRILLED FISH",
-      "time": "FROM 1 PM",
       "items": [
         { "number": 1, "name": "FRESH CATCH OF THE DAY", "note": "Price according to market", "allergens": [4] },
         { "number": 2, "name": "CONFIT COD, ESGARRAET AND KALAMATA EMULSION", "price": "21,50€", "allergens": [3, 4] }
@@ -76,7 +70,6 @@
     },
     {
       "name": "GRILLED MEAT",
-      "time": "FROM 1 PM",
       "items": [
         { "number": 1, "name": "CHESTNUT-FED PORK CHOP", "price": "17,50€" },
         { "number": 2, "name": "FRONT CACHOPO WITH IBERIAN PLUMA", "price": "21,50€", "allergens": [1, 3, 7] },
@@ -87,7 +80,6 @@
     },
     {
       "name": "SIDES",
-      "time": "FROM 1 PM",
       "items": [
         { "number": 1, "name": "CREAMY POTATOES", "price": "5,00€", "allergens": [7] },
         { "number": 2, "name": "GREEN SALAD AND SPRING ONION", "price": "4,50€" },
@@ -96,8 +88,7 @@
       ]
     },
     {
-      "name": "TRAY-BAKED RICE (MIN. 2 PAX)",
-      "time": "FROM 1 PM",
+      "name": "TRAY-BAKED RICE (Mínimo 2 portions)",
       "items": [
         { "number": 1, "name": "SENYORET (FRESH FISH AND SHELLFISH)", "price": "19,90€", "allergens": [2, 4, 14] },
         { "number": 2, "name": "CHESTNUT-FED PORK CHOP, PIQUILLO PEPPERS AND ROAST GARLIC ON THE GRILL", "price": "21,00€" }
@@ -105,7 +96,6 @@
     },
     {
       "name": "SWEET TREATS BEFORE SETTING SAIL",
-      "time": "FROM 1 PM",
       "items": [
         { "number": 1, "name": "SMOKED VANILLA FLAN", "price": "6,50€", "allergens": [3, 7] },
         { "number": 2, "name": "GRILLED PINEAPPLE, CARAMEL ICE CREAM, BISCUIT CRUNCH", "price": "6,00€", "allergens": [1, 7] },
@@ -118,7 +108,6 @@
     },
     {
       "name": "DAILY LUNCH MENU",
-      "time": "1 PM - 4 PM",
       "note": "Available Monday to Friday",
       "items": [
         { "number": 1, "name": "CHEF'S BITES - CHOOSE -", "description": "1. Ceviche, toasted corn and boniato | 2. Ham croquettes" },
@@ -134,17 +123,17 @@
         {
           "number": 1,
           "name": "LA DÁRSENA MENU",
-          "description": "Table snack: Truffled almonds and toasted bread basket with alioli and tomato. Starter to share: Fried baby squid with free-range egg. Individual starter: Ensaladilla marinera with fresh shrimp. Main: Pork belly and pumpkin rice with baby artichokes. Dessert: Homemade cheesecake with strawberry essence."
+          "description": "Table snack: Truffled almonds and toasted bread basket with alioli and tomato.\nStarter to share: Fried baby squid with free-range egg.\nIndividual starter: Ensaladilla marinera with fresh shrimp.\nMain: Pork belly and pumpkin rice with baby artichokes.\nDessert: Homemade cheesecake with strawberry essence."
         },
         {
           "number": 2,
           "name": "DOCK MENU",
-          "description": "Centre-table starter: Tricolour sweet tomato with burrata, citrus basil pesto and caramelised pepper | Sea bass ceviche with purple onion, boniato, crystal prawn and ají amarillo. Individual starter: Ensaladilla marinera toast with tuna belly, anchovy and pepper. Main course to choose: 1. Meloso of squid and artichoke | 2. Grilled corvina with boniato cream | 3. Picaña with roast potatoes, mangetout and chimichurri. Dessert: Caramelised torrija with forest fruits and milk meringue ice cream."
+          "description": "Centre-table starter: Tricolour sweet tomato with burrata, citrus basil pesto and caramelised pepper | Sea bass ceviche with purple onion, boniato, crystal prawn and ají amarillo.\nIndividual starter: Ensaladilla marinera toast with tuna belly, anchovy and pepper.\nMain course to choose:\n1. Meloso of squid and artichoke\n2. Grilled corvina with boniato cream\n3. Picaña with roast potatoes, mangetout and chimichurri.\nDessert: Caramelised torrija with forest fruits and milk meringue ice cream."
         },
         {
           "number": 3,
           "name": "ALTAMAR MENU",
-          "description": "Centre-table starter: 1. Beef steak tartare with crispy potatoes and artisan toast | 2. White prawns in garlic. Individual starter: Grilled artichoke with roasted pepper sauce and hazelnut. Main course to choose: 1. Meloso of free-range chicken with mushrooms and spring onions | 2. Grilled corvina with teriyaki vegetables | 3. Iberian cheeks with truffle potato parmentier. Dessert: Cheesecake with strawberry essence. Includes one drink."
+          "description": "Centre-table starter:\n1. Beef steak tartare with crispy potatoes and artisan toast\n2. White prawns in garlic.\nIndividual starter: Grilled artichoke with roasted pepper sauce and hazelnut.\nMain course to choose:\n1. Meloso of free-range chicken with mushrooms and spring onions\n2. Grilled corvina with teriyaki vegetables\n3. Iberian cheeks with truffle potato parmentier.\nDessert: Cheesecake with strawberry essence.\nIncludes one drink."
         }
       ]
     }

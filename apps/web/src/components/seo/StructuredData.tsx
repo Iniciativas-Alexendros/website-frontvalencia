@@ -8,7 +8,7 @@ interface Props {
 }
 
 const StructuredData: React.FC<Props> = ({ lang, page, eventName, eventDate }) => {
-  const siteUrl = 'https://frontvalencia.com'
+  const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://website-frontvalencia.vercel.app'
   const locale = lang === 'es' ? 'es-ES' : 'en-US'
 
   // --- Organization ---
@@ -107,28 +107,28 @@ const StructuredData: React.FC<Props> = ({ lang, page, eventName, eventDate }) =
       { name: lang === 'es' ? 'Inicio' : 'Home', item: siteUrl },
       {
         name: lang === 'es' ? 'Carta' : 'Menu',
-        item: `${siteUrl}/${lang}/carta`,
+        item: `${siteUrl}/${lang}/#carta`,
       },
     ],
     space: [
       { name: lang === 'es' ? 'Inicio' : 'Home', item: siteUrl },
       {
         name: lang === 'es' ? 'Espacio' : 'Space',
-        item: `${siteUrl}/${lang}/espacio`,
+        item: `${siteUrl}/${lang}/#espacio`,
       },
     ],
     location: [
       { name: lang === 'es' ? 'Inicio' : 'Home', item: siteUrl },
       {
         name: lang === 'es' ? 'Localización' : 'Location',
-        item: `${siteUrl}/${lang}/localizacion`,
+        item: `${siteUrl}/${lang}/#localizacion`,
       },
     ],
     book: [
       { name: lang === 'es' ? 'Inicio' : 'Home', item: siteUrl },
       {
         name: lang === 'es' ? 'Reservas' : 'Book',
-        item: `${siteUrl}/${lang}/reservas`,
+        item: `${siteUrl}/${lang}/#reservas`,
       },
     ],
   }

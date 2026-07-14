@@ -102,7 +102,7 @@ const EspacioSection: React.FC<Props> = ({ lang }) => {
   return (
     <section
       className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto"
-      id="espacio"
+      id={lang === 'es' ? 'espacio' : 'space'}
       aria-label={lang === 'es' ? 'Espacio' : 'Space'}
     >
       <div className="text-center mb-12">
@@ -137,9 +137,9 @@ const EspacioSection: React.FC<Props> = ({ lang }) => {
             <p className="text-sm text-text-muted mb-3">{text.cta}</p>
             <a
               href="mailto:eventos@frontvalencia.com"
-              className="text-terracotta-400 hover:text-terracotta-300 font-semibold uppercase tracking-wider text-sm underline underline-offset-4 transition-colors"
+              className="inline-flex items-center justify-center px-5 py-2.5 bg-terracotta-500 hover:bg-terracotta-400 text-white font-semibold rounded uppercase tracking-wider text-sm transition-colors"
             >
-              eventos@frontvalencia.com →
+              {text.contact}
             </a>
           </div>
         </div>

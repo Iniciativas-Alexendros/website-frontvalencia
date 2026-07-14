@@ -70,7 +70,7 @@ export default function LocalizacionSection({ lang, site }: Props) {
   return (
     <section
       className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto"
-      id="localizacion"
+      id={lang === 'es' ? 'localizacion' : 'location'}
       aria-label={locationData.heading}
     >
       <div className="text-center mb-12">

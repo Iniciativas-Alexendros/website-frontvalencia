@@ -30,6 +30,10 @@ const page = path.match(/carta|menu/) ? 'menu'
 
 const alternateEs = Astro.url.pathname.replace(/^\/en/, '/es') || '/es/';
 const alternateEn = Astro.url.pathname.replace(/^\/es/, '/en') || '/en/';
+
+const isHomePage = page === 'home'
+const reservesHref = lang === 'es' ? '/es/#reservas' : '/en/#book'
+const reservesLabel = lang === 'es' ? 'Reserva ahora tu mesa' : 'Book your table now'
 ---
 
 <!doctype html>
@@ -63,7 +67,7 @@ const alternateEn = Astro.url.pathname.replace(/^\/es/, '/en') || '/en/';
     <meta name="theme-color" content="#d4634a" />
     <meta name="msapplication-TileColor" content="#d4634a" />
 
-    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="canonical" href={canonical || Astro.url.href} />
     <link rel="alternate" hreflang="es" href={new URL(alternateEs, Astro.site).href} />
     <link rel="alternate" hreflang="en" href={new URL(alternateEn, Astro.site).href} />
     <link rel="alternate" hreflang="x-default" href={new URL('/es/', Astro.site).href} />
@@ -81,8 +85,33 @@ const alternateEn = Astro.url.pathname.replace(/^\/es/, '/en') || '/en/';
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:bg-terracotta-500 focus:text-white focus:px-4 focus:py-2">
       {lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}
     </a>
+    {isHomePage && (
+      <a
+        href={reservesHref}
+        class="fixed top-4 right-4 z-50 bg-terracotta-500 hover:bg-terracotta-400 text-white px-4 py-2 rounded font-semibold opacity-0 pointer-events-none transition-opacity duration-300"
+        id="sticky-reservas-btn"
+        aria-label={reservesLabel}
+      >
+        {reservesLabel}
+      </a>
+    )}
     <slot />
-    <script>
+    <script is:inline>
+      // Sticky reservas button visibility after scroll > 100px
+      const stickyBtn = document.getElementById('sticky-reservas-btn')
+      if (stickyBtn) {
+        const toggleSticky = () => {
+          if (window.scrollY > 100) {
+            stickyBtn.classList.remove('opacity-0', 'pointer-events-none')
+            stickyBtn.classList.add('opacity-100')
+          } else {
+            stickyBtn.classList.add('opacity-0', 'pointer-events-none')
+            stickyBtn.classList.remove('opacity-100')
+          }
+        }
+        window.addEventListener('scroll', toggleSticky, { passive: true })
+        toggleSticky()
+      }
       // Scroll reveal via IntersectionObserver
       const observer = new IntersectionObserver(
         (entries) => {

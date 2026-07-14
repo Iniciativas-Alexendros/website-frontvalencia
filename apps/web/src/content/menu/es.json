@@ -3,7 +3,6 @@
   "categories": [
     {
       "name": "DESAYUNO FRENTE AL MAR",
-      "time": "9:00H",
       "items": [
         { "number": 1, "name": "CROISSANT", "price": "2,95€", "allergens": [1, 3, 7] },
         { "number": 2, "name": "TOSTADA ARTESANAL, MANTEQUILLA ECOLÓGICA Y MERMELADA CASERA", "price": "3,25€", "allergens": [1, 3, 7], "tags": ["ecologico"] },
@@ -14,7 +13,6 @@
     },
     {
       "name": "ESMORZARET",
-      "time": "9:00H",
       "items": [
         { "number": 1, "name": "TORTILLA DEL DÍA", "price": "7,00€", "allergens": [3] },
         { "number": 2, "name": "ENCEBOLLADO DE HABITAS, LONGANIZA Y SALSA DE CHIMICHURRI", "price": "7,50€", "allergens": [1, 12] },
@@ -26,7 +24,6 @@
     },
     {
       "name": "ENSALADAS DE LA HUERTA",
-      "time": "DESDE LAS 13H",
       "items": [
         { "number": 1, "name": "LA CLÁSICA CÉSAR CON POLLO CRUJIENTE", "price": "13,50€", "allergens": [1, 3, 4, 7] },
         { "number": 2, "name": "MEDITERRÁNEA POKE BOWL", "price": "14,30€", "allergens": [1, 4, 6, 11] },
@@ -36,7 +33,6 @@
     },
     {
       "name": "LAS TAPAS DE VICENTE PATIÑO",
-      "time": "DESDE LAS 13H",
       "items": [
         { "number": 1, "name": "CROQUETA DE JAMÓN (UD)", "price": "3,30€", "allergens": [1, 3, 7] },
         { "number": 2, "name": "GILDA FRONT", "price": "5,00€", "allergens": [4] },
@@ -56,7 +52,6 @@
     },
     {
       "name": "PARA PICAR CON SABOR A BRASA",
-      "time": "DESDE LAS 13H",
       "items": [
         { "number": 1, "name": "BERENJENA A LA LLAMA", "price": "12,00€", "note": "Si lleva salsa contiene huevo (3)" },
         { "number": 2, "name": "GAMBA BLANCA AL AJILLO", "price": "21,50€", "allergens": [2] },
@@ -67,7 +62,6 @@
     },
     {
       "name": "EL PESCADO A LA BRASA",
-      "time": "DESDE LAS 13H",
       "items": [
         { "number": 1, "name": "DE LONJA DEL DÍA", "note": "PVP según mercado", "allergens": [4] },
         { "number": 2, "name": "BACALAO CONFITADO, ESGARRAET Y EMULSIÓN DE KALAMATA", "price": "21,50€", "allergens": [3, 4] }
@@ -75,7 +69,6 @@
     },
     {
       "name": "LA CARNE A LA BRASA",
-      "time": "DESDE LAS 13H",
       "items": [
         { "number": 1, "name": "CHULETA DE CERDO DE CASTAÑA", "price": "17,50€" },
         { "number": 2, "name": "CACHOPO FRONT DE PLUMA IBÉRICA", "price": "21,50€", "allergens": [1, 3, 7] },
@@ -86,7 +79,6 @@
     },
     {
       "name": "GUARNICIONES",
-      "time": "DESDE LAS 13H",
       "items": [
         { "number": 1, "name": "CREMOSO DE PATATAS", "price": "5,00€", "allergens": [7] },
         { "number": 2, "name": "ENSALADA VERDE Y CEBOLLETA", "price": "4,50€" },
@@ -95,8 +87,7 @@
       ]
     },
     {
-      "name": "LOS ARROCES EN LLAUNA (MÍN. 2PAX)",
-      "time": "DESDE LAS 13H",
+      "name": "LOS ARROCES EN LLAUNA (Mínimo 2 raciones)",
       "items": [
         { "number": 1, "name": "SENYORET (PESCADO DE LONJA Y MARISCO)", "price": "19,90€", "allergens": [2, 4, 14] },
         { "number": 2, "name": "CHULETA DE CERDO DE CASTAÑA, PIMIENTOS DEL PIQUILLO Y AJO ASADO A LA BRASA", "price": "21,00€" }
@@ -104,7 +95,6 @@
     },
     {
       "name": "EL DULCE ANTES DE ZARPAR",
-      "time": "DESDE LAS 13H",
       "items": [
         { "number": 1, "name": "FLAN AHUMADO DE VAINILLA", "price": "6,50€", "allergens": [3, 7] },
         { "number": 2, "name": "PIÑA A LA BRASA, HELADO DE CARAMELO, CROCANTI DE GALLETA", "price": "6,00€", "allergens": [1, 7] },
@@ -117,7 +107,6 @@
     },
     {
       "name": "MENÚ DEL DÍA",
-      "time": "13H-16H",
       "note": "Disponible de Lunes a Viernes",
       "items": [
         { "number": 1, "name": "BOCADOS DEL CHEF - A ELEGIR -", "description": "1. Ceviche, maíz tostado y boniato | 2. Croquetas de jamón" },
@@ -133,17 +122,17 @@
         {
           "number": 1,
           "name": "MENÚ LA DÁRSENA",
-          "description": "Snack en mesa: Almendras trufadas y servicio de cesta de pan tostado con alioli y tomate. Entrante para compartir: Chipironcitos fritos con huevo de corral. Entrante individual: Ensaladilla marinera con quisquilla fresca. Principal: Arroz de panceta y calabaza con alcachofitas. Postre: Tarta de queso casera con esencia de fresa."
+          "description": "Snack en mesa: Almendras trufadas y servicio de cesta de pan tostado con alioli y tomate.\nEntrante para compartir: Chipironcitos fritos con huevo de corral.\nEntrante individual: Ensaladilla marinera con quisquilla fresca.\nPrincipal: Arroz de panceta y calabaza con alcachofitas.\nPostre: Tarta de queso casera con esencia de fresa."
         },
         {
           "number": 2,
           "name": "MENÚ DOCK",
-          "description": "Entrante centro mesa: Tomate dulce tricolor con burrata, pesto cítrico de albahaca y pimiento al caramelo | Ceviche de lubina con cebollada morada, camote, gamba cristal y ají amarillo. Entrante individual: Tosta de ensaladilla marinera con ventresca, anchoa y piparra. Principal a elegir: 1. Meloso de chipirones y alcachofa | 2. Corvina a la brasa con crema de boniato | 3. Picaña con patatas asadas a la brasa, tirabeques y chimichurri. Postre: Torrija caramelizada con frutos del bosque y helado de leche merengada."
+          "description": "Entrante centro mesa: Tomate dulce tricolor con burrata, pesto cítrico de albahaca y pimiento al caramelo | Ceviche de lubina con cebollada morada, camote, gamba cristal y ají amarillo.\nEntrante individual: Tosta de ensaladilla marinera con ventresca, anchoa y piparra.\nPrincipal a elegir:\n1. Meloso de chipirones y alcachofa\n2. Corvina a la brasa con crema de boniato\n3. Picaña con patatas asadas a la brasa, tirabeques y chimichurri.\nPostre: Torrija caramelizada con frutos del bosque y helado de leche merengada."
         },
         {
           "number": 3,
           "name": "MENÚ ALTAMAR",
-          "description": "Entrante centro mesa: 1. Steak tartar de vaca con patatas crujientes y tostas artesanales | 2. Gamba blanca al ajillo. Entrante individual: Alcachofa a la brasa con salsa de pimientos asados y avellana. Principal a elegir: 1. Meloso de pollo de corral, setas y ajetes tiernos | 2. Corvina a la brasa con verduras salteadas al teriyaki | 3. Carrilleras ibéricas con parmenier de patata trufada. Postre: Tarta de queso con esencia de fresa. Incluye una bebida."
+          "description": "Entrante centro mesa:\n1. Steak tartar de vaca con patatas crujientes y tostas artesanales\n2. Gamba blanca al ajillo.\nEntrante individual: Alcachofa a la brasa con salsa de pimientos asados y avellana.\nPrincipal a elegir:\n1. Meloso de pollo de corral, setas y ajetes tiernos\n2. Corvina a la brasa con verduras salteadas al teriyaki\n3. Carrilleras ibéricas con parmenier de patata trufada.\nPostre: Tarta de queso con esencia de fresa.\nIncluye una bebida."
         }
       ]
     }

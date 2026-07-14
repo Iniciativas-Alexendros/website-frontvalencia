@@ -12,14 +12,14 @@ export default function Header({ lang, isHome = false, site }: Props) {
   const navItems =
     lang === 'es'
       ? [
-          { label: 'Carta', href: '/es/carta' },
-          { label: 'Espacio', href: '/es/espacio' },
-          { label: 'Localización', href: '/es/localizacion' },
+          { label: 'Carta', href: '#carta' },
+          { label: 'Espacio', href: '#espacio' },
+          { label: 'Localización', href: '#localizacion' },
         ]
       : [
-          { label: 'Menu', href: '/en/menu' },
-          { label: 'Space', href: '/en/space' },
-          { label: 'Location', href: '/en/location' },
+          { label: 'Menu', href: '#carta' },
+          { label: 'Space', href: '#space' },
+          { label: 'Location', href: '#location' },
         ]
 
   const otherLang = lang === 'es' ? 'en' : 'es'
@@ -39,6 +39,19 @@ export default function Header({ lang, isHome = false, site }: Props) {
   // Mobile menu toggle
   const toggleMenu = () => {
     setMobileOpen(!mobileOpen)
+  }
+
+  // Smooth scroll to anchor
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const targetId = href.startsWith('#') ? href.slice(1) : null
+    if (targetId) {
+      e.preventDefault()
+      const target = document.getElementById(targetId)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+      if (mobileOpen) setMobileOpen(false)
+    }
   }
 
   // Header scroll-aware background (only on home)
@@ -110,28 +123,16 @@ export default function Header({ lang, isHome = false, site }: Props) {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => {
-            const isActive = typeof window !== 'undefined' && window.location.pathname === item.href
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                className={[
-                  'relative text-sm font-medium tracking-[0.15em] uppercase transition-colors duration-200 py-1',
-                  isActive ? 'text-text-primary' : 'text-concrete-300 hover:text-text-primary',
-                ].join(' ')}
-                aria-current={isActive ? 'page' : undefined}
-              >
-                {item.label}
-                {isActive && (
-                  <span
-                    className="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-terracotta-400"
-                    aria-hidden="true"
-                  ></span>
-                )}
-              </a>
-            )
-          })}
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="relative text-sm font-medium tracking-[0.15em] uppercase transition-colors duration-200 py-1 text-concrete-300 hover:text-text-primary"
+              onClick={(e) => handleAnchorClick(e, item.href)}
+            >
+              {item.label}
+            </a>
+          ))}
           <a
             href={clubUrl}
             target="_blank"
@@ -160,8 +161,9 @@ export default function Header({ lang, isHome = false, site }: Props) {
             {lang === 'es' ? 'EN' : 'ES'}
           </a>
           <a
-            href={lang === 'es' ? '/es/reservas' : '/en/book'}
+            href={lang === 'es' ? '#reservas' : '#book'}
             className="inline-flex items-center gap-2 bg-terracotta-500 hover:bg-terracotta-400 text-white text-sm font-semibold uppercase tracking-wider px-5 py-2 transition-colors duration-200"
+            onClick={(e) => handleAnchorClick(e, lang === 'es' ? '#reservas' : '#book')}
           >
             {lang === 'es' ? 'Reserva' : 'Book'}
           </a>
@@ -196,6 +198,7 @@ export default function Header({ lang, isHome = false, site }: Props) {
               key={item.href}
               href={item.href}
               className="block text-lg font-medium uppercase tracking-wider text-concrete-300 hover:text-text-primary"
+              onClick={(e) => handleAnchorClick(e, item.href)}
             >
               {item.label}
             </a>
@@ -215,6 +218,13 @@ export default function Header({ lang, isHome = false, site }: Props) {
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
             </svg>
+          </a>
+          <a
+            href={lang === 'es' ? '#reservas' : '#book'}
+            className="block text-lg font-medium uppercase tracking-wider text-concrete-300 hover:text-text-primary bg-terracotta-500 hover:bg-terracotta-400 text-white px-4 py-2 text-center"
+            onClick={(e) => handleAnchorClick(e, lang === 'es' ? '#reservas' : '#book')}
+          >
+            {lang === 'es' ? 'Reserva' : 'Book'}
           </a>
         </div>
       </div>

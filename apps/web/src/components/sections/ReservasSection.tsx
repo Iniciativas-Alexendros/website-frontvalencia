@@ -28,9 +28,12 @@ export default function ReservasSection({ lang, site }: Props) {
           groups: 'Para grupos o eventos, también abrimos fuera de este horario. Consulta disponibilidad en',
           contact: 'Y si tienes cualquier duda, contáctanos por WhatsApp o teléfono en el',
           conditions: 'CONDICIONES DE RESERVA',
-          conditionsSummary: 'Lee las condiciones antes de reservar',
-          conditionsText:
-            'Guardaremos tu mesa hasta 15 minutos después de la hora reservada por cortesía; pasado este tiempo, quedará liberada. No gestionamos reservas a través de redes sociales. Para grupos de más de 8 personas, contáctanos en reservas@frontvalencia.com. Para eventos privados y de empresa, escríbenos a eventos@frontvalencia.com o llámanos al +34 965 020 349.',
+          conditionsText: [
+            'Guardaremos tu mesa hasta 15 minutos después de la hora reservada por cortesía; pasado este tiempo, quedará liberada.',
+            'No gestionamos reservas a través de redes sociales.',
+            'Para grupos de más de 8 personas, contáctanos en reservas@frontvalencia.com.',
+            'Para eventos privados y de empresa, escríbenos a eventos@frontvalencia.com o llámanos al +34 965 020 349.',
+          ],
           moreInfo: 'Ver condiciones completas',
           whatsappCta: 'WhatsApp',
           loadingWidget: 'Cargando sistema de reservas…',
@@ -46,9 +49,12 @@ export default function ReservasSection({ lang, site }: Props) {
           groups: 'For groups or events, we also open outside these hours. Check availability at',
           contact: 'For any questions, contact us by WhatsApp or phone at',
           conditions: 'BOOKING CONDITIONS',
-          conditionsSummary: 'Read the conditions before booking',
-          conditionsText:
-            'We will hold your table for 15 minutes past the reserved time as a courtesy; after that, it will be released. We do not manage reservations through social media. For groups of more than 8 people, contact reservas@frontvalencia.com. For private and corporate events, write to eventos@frontvalencia.com or call +34 965 020 349.',
+          conditionsText: [
+            'We will hold your table for 15 minutes past the reserved time as a courtesy; after that, it will be released.',
+            'We do not manage reservations through social media.',
+            'For groups of more than 8 people, contact reservas@frontvalencia.com.',
+            'For private and corporate events, write to eventos@frontvalencia.com or call +34 965 020 349.',
+          ],
           moreInfo: 'View full conditions',
           whatsappCta: 'WhatsApp',
           loadingWidget: 'Loading booking system…',
@@ -67,7 +73,11 @@ export default function ReservasSection({ lang, site }: Props) {
   const reservationsEmail = site?.contact?.reservationsEmail ?? 'reservas@frontvalencia.com'
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto" id="reservas" aria-label={reservasText.heading}>
+    <section
+      className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto"
+      id={lang === 'es' ? 'reservas' : 'book'}
+      aria-label={reservasText.heading}
+    >
       <div className="text-center mb-12">
         <h2 className="text-4xl font-black uppercase tracking-tight text-text-primary">{reservasText.heading}</h2>
         <div className="mt-4 mx-auto w-16 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
@@ -77,7 +87,7 @@ export default function ReservasSection({ lang, site }: Props) {
 
       {/* CoverManager Widget (with skeleton) */}
       <div
-        className="mb-12 relative bg-concrete-900 border border-concrete-800 min-h-[600px]"
+        className="mb-12 relative bg-concrete-900 border border-concrete-800 min-h-[600px] overflow-visible"
         id="reservas-widget-container"
       >
         <div
@@ -93,7 +103,7 @@ export default function ReservasSection({ lang, site }: Props) {
         <iframe
           title={reservasText.heading}
           src={widgetSrc}
-          className="w-full h-[600px] border-0 relative z-10"
+          className="w-full h-full border-0 relative z-10"
           loading="lazy"
           referrerPolicy="no-referrer"
           onLoad={() => {
@@ -149,21 +159,14 @@ export default function ReservasSection({ lang, site }: Props) {
           <h3 className="text-lg font-semibold text-text-primary uppercase tracking-[0.15em]">
             {reservasText.conditions}
           </h3>
-          {/* Accordion: conditions summary collapsed by default */}
-          <details className="group">
-            <summary className="cursor-pointer text-text-secondary hover:text-terracotta-400 font-medium text-sm transition-colors list-none flex items-center justify-between">
-              <span>{reservasText.conditionsSummary}</span>
-              <svg
-                className="w-4 h-4 transition-transform group-open:rotate-180"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <p className="mt-3 text-text-secondary leading-relaxed">{reservasText.conditionsText}</p>
-          </details>
+          {/* Conditions displayed directly, one per line */}
+          <div className="space-y-3">
+            {reservasText.conditionsText.map((clause, idx) => (
+              <p key={idx} className="text-text-secondary leading-relaxed">
+                {clause}
+              </p>
+            ))}
+          </div>
           <a
             href={lang === 'es' ? '/es/condiciones-reserva' : '/en/booking-conditions'}
             className="inline-block text-terracotta-400 hover:text-terracotta-300 underline underline-offset-2 text-sm"
