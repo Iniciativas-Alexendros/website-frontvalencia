@@ -56,12 +56,6 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
     return index === 2
   }
 
-  // Check if this is the daily menu category
-  const isDailyMenuCategory = (categoryName: string) => {
-    const upperName = categoryName.toUpperCase()
-    return upperName.includes('MENÚ DEL DÍA') || upperName.includes('DAILY LUNCH MENU')
-  }
-
   // Check if this is the rice category
   const isRiceCategory = (categoryName: string) => {
     const upperName = categoryName.toUpperCase()
@@ -116,19 +110,18 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
     </div>
   )
 
-  // Render item name with special handling for "- A ELEGIR -" and "- A COMPARTIR -"
+  // Render item name with special handling for markers
   const renderItemName = (name: string) => {
-    // Split on markers like "- A ELEGIR -", "- A COMPARTIR -", "- CHOOSE -", "- TO SHARE -"
-    const parts = name.split(/\s*(-\s*(?:A ELEGIR|A COMPARTIR|CHOOSE|TO SHARE)\s*-)\s*/i)
+    const parts = name.split(/\s*(-\s*(?:A ESCOGER|A ELEGIR|A COMPARTIR|CHOOSE|TO SHARE)\s*-)\s*/i)
     if (parts.length === 1) return <span>{name}</span>
     return (
       <span>
         {parts.map((part, i) => {
-          const isMarker = /^-\s*(?:A ELEGIR|A COMPARTIR|CHOOSE|TO SHARE)\s*-/i.test(part)
+          const isMarker = /^-\s*(?:A ESCOGER|A ELEGIR|A COMPARTIR|CHOOSE|TO SHARE)\s*-/i.test(part)
           return isMarker ? (
             <span key={i}>
               <br />
-              <span className="text-[0.5em] font-normal text-text-muted tracking-wider">{part}</span>
+              <span className="text-[0.6em] font-normal text-text-muted tracking-wider">{part}</span>
             </span>
           ) : (
             <span key={i}>{part}</span>
@@ -140,9 +133,6 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
 
   // Render regular menu category as list
   const renderRegularMenu = (category: MenuCategory, cIdx: number) => {
-    const isDailyMenu = isDailyMenuCategory(category.name)
-    const dailyMenuPrice = category.items.find((item) => item.number === 5)?.price
-
     return (
       <div key={cIdx} className="reveal">
         <div className="border-b border-concrete-700 pb-3 mb-8">
@@ -150,11 +140,6 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
           <div className="flex items-baseline justify-between gap-4 flex-wrap">
             <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-wide text-text-primary">
               {renderCategoryName(category.name, isRiceCategory(category.name))}
-              {isDailyMenu && dailyMenuPrice && (
-                <span className="ml-3 text-terracotta-400 font-bold text-lg sm:text-xl normal-case tracking-normal">
-                  {dailyMenuPrice}
-                </span>
-              )}
             </h3>
             {category.time && (
               <span className="text-xs font-semibold text-terracotta-400 uppercase tracking-[0.2em]">
@@ -205,7 +190,9 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
                     )}
                   </div>
                   {item.description && (
-                    <p className="mt-1 text-sm text-text-secondary leading-relaxed">{item.description}</p>
+                    <p className="mt-1 text-sm text-text-secondary leading-relaxed whitespace-pre-line">
+                      {item.description}
+                    </p>
                   )}
                   {item.note && <p className="mt-1 text-xs text-text-muted italic">{item.note}</p>}
                   {item.allergens && item.allergens.length > 0 && (
@@ -262,18 +249,16 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
                 {isBreakfast && cIdx === 0 && (
                   <div className="text-center mb-12">
                     <div className="w-10 h-[2px] bg-terracotta-400 mx-auto mb-4" aria-hidden="true"></div>
-                    <p className="text-lg sm:text-xl font-light text-text-secondary italic tracking-wide max-w-xl mx-auto">
-                      {lang === 'es'
-                        ? 'Abrimos la mañana a las 9:00h con\u2026'
-                        : 'We open the morning at 9:00am with\u2026'}
+                    <p className="text-sm font-semibold text-terracotta-400 uppercase tracking-[0.2em] max-w-xl mx-auto">
+                      {lang === 'es' ? 'A partir de las 9:00h' : 'From 9:00am'}
                     </p>
                   </div>
                 )}
                 {isFirstLunch && (
                   <div className="text-center mb-12">
                     <div className="w-10 h-[2px] bg-terracotta-400 mx-auto mb-4" aria-hidden="true"></div>
-                    <p className="text-lg sm:text-xl font-light text-text-secondary italic tracking-wide max-w-xl mx-auto">
-                      {lang === 'es' ? 'Y a partir de las 13:00h\u2026' : 'And from 1:00pm\u2026'}
+                    <p className="text-sm font-semibold text-terracotta-400 uppercase tracking-[0.2em] max-w-xl mx-auto">
+                      {lang === 'es' ? 'Disponible desde las 13:00h' : 'Available from 1:00pm'}
                     </p>
                   </div>
                 )}

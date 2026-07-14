@@ -110,11 +110,11 @@
       "name": "DAILY LUNCH MENU",
       "note": "Available Monday to Friday",
       "items": [
-        { "number": 1, "name": "CHEF'S BITES - CHOOSE -", "description": "1. Ceviche, toasted corn and boniato | 2. Ham croquettes" },
-        { "number": 2, "name": "STARTERS - TO SHARE -", "description": "1. Steamed Valencian clams (clotxina) | 2. Tempura bravas potatoes" },
-        { "number": 3, "name": "MAIN COURSE - CHOOSE -", "description": "1. Cheek rice with piquillo peppers (min. 2 pax) | 2. Confit cod with esgarradet and kalamata emulsion | 3. Pork in sauce with patatas al montón and pickled pepper emulsion" },
-        { "number": 4, "name": "DESSERT - CHOOSE -", "description": "1. Brownie with yogurt ice cream and nocilla dust | 2. Roasted pineapple with caramel ice cream | 3. Seasonal fruit" },
-        { "number": 5, "name": "WATER AND BREAD SERVICE INCLUDED", "price": "25,00€" }
+        { "number": 1, "name": "CHEF'S BITES - CHOOSE -", "description": "1. Ceviche, toasted corn and boniato\n2. Ham croquettes" },
+        { "number": 2, "name": "STARTERS - TO SHARE -", "description": "1. Steamed Valencian clams (clotxina)\n2. Tempura bravas potatoes" },
+        { "number": 3, "name": "MAIN COURSE - CHOOSE -", "description": "1. Cheek rice with piquillo peppers (min. 2 pax)\n2. Confit cod with esgarradet and kalamata emulsion\n3. Pork in sauce with patatas al montón and pickled pepper emulsion" },
+        { "number": 4, "name": "DESSERT - CHOOSE -", "description": "1. Brownie with yogurt ice cream and nocilla dust\n2. Roasted pineapple with caramel ice cream\n3. Seasonal fruit" },
+        { "number": 5, "name": "WATER AND BREAD SERVICE INCLUDED" }
       ]
     },
     {

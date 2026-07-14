@@ -37,11 +37,12 @@ export default function ReservasSection({ lang, site }: Props) {
           conditions: 'CONDICIONES DE RESERVA',
           conditionsText: [
             'Guardaremos tu mesa hasta 15 minutos después de la hora reservada por cortesía; pasado este tiempo, quedará liberada.',
-            'No gestionamos reservas a través de redes sociales.',
+            'No gestionamos reservas a través de redes sociales. Todas las reservas deben realizarse a través de nuestro sistema oficial (CoverManager) o contactando directamente con el restaurante.',
             'Para grupos de más de 8 personas, contáctanos en reservas@frontvalencia.com.',
             'Para eventos privados y de empresa, escríbenos a eventos@frontvalencia.com o llámanos al +34 965 020 349.',
+            'Si necesitas cancelar o modificar tu reserva, por favor hazlo con al menos 24 horas de antelación a través del enlace que recibirás en tu email de confirmación.',
+            'El menú del día está disponible de lunes a viernes (13:00-16:00). Los menús de grupo están disponibles bajo reserva previa para grupos de 8 o más personas.',
           ],
-          moreInfo: 'Ver condiciones completas',
           whatsappCta: 'WhatsApp',
           loadingWidget: 'Cargando sistema de reservas…',
           closeModal: 'Cerrar',
@@ -61,11 +62,12 @@ export default function ReservasSection({ lang, site }: Props) {
           conditions: 'BOOKING CONDITIONS',
           conditionsText: [
             'We will hold your table for 15 minutes past the reserved time as a courtesy; after that, it will be released.',
-            'We do not manage reservations through social media.',
+            'We do not manage reservations through social media. All reservations must be made through our official system (CoverManager) or by contacting the restaurant directly.',
             'For groups of more than 8 people, contact reservas@frontvalencia.com.',
             'For private and corporate events, write to eventos@frontvalencia.com or call +34 965 020 349.',
+            'If you need to cancel or modify your reservation, please do so at least 24 hours in advance via the link in your confirmation email.',
+            'The daily menu is available Monday to Friday (13:00-16:00). Group menus are available by prior reservation for groups of 8 or more.',
           ],
-          moreInfo: 'View full conditions',
           whatsappCta: 'WhatsApp',
           loadingWidget: 'Loading booking system…',
           closeModal: 'Close',
@@ -211,12 +213,6 @@ export default function ReservasSection({ lang, site }: Props) {
                 </p>
               ))}
             </div>
-            <a
-              href={lang === 'es' ? '/es/condiciones-reserva' : '/en/booking-conditions'}
-              className="inline-block text-terracotta-400 hover:text-terracotta-300 underline underline-offset-2 text-sm"
-            >
-              {reservasText.moreInfo} →
-            </a>
           </div>
         </div>
       </section>

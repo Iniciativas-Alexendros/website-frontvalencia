@@ -109,11 +109,11 @@
       "name": "MENÚ DEL DÍA",
       "note": "Disponible de Lunes a Viernes",
       "items": [
-        { "number": 1, "name": "BOCADOS DEL CHEF - A ELEGIR -", "description": "1. Ceviche, maíz tostado y boniato | 2. Croquetas de jamón" },
-        { "number": 2, "name": "ENTRANTES - A COMPARTIR -", "description": "1. Clotxina valenciana al vapor | 2. Patatas bravas en tempura" },
-        { "number": 3, "name": "PRINCIPAL - A ELEGIR -", "description": "1. Arroz de carrillera y pimientos del piquillo (min. 2 pax) | 2. Bacalao confitado con esgarradet y emulsión de kalamata | 3. Magro en salsa con patatas al montón y emulsión de pimiento" },
-        { "number": 4, "name": "POSTRE - A ELEGIR -", "description": "1. Brownie con helado de yogur y polvo de nocilla | 2. Piña asada con helado de caramelo | 3. Fruta de temporada" },
-        { "number": 5, "name": "SERVICIO DE AGUA Y PAN INCLUIDO", "price": "25,00€" }
+        { "number": 1, "name": "BOCADOS DEL CHEF - A ESCOGER -", "description": "1. Ceviche, maíz tostado y boniato\n2. Croquetas de jamón" },
+        { "number": 2, "name": "ENTRANTES - A COMPARTIR -", "description": "1. Clotxina valenciana al vapor\n2. Patatas bravas en tempura" },
+        { "number": 3, "name": "PRINCIPAL - A ESCOGER -", "description": "1. Arroz de carrillera y pimientos del piquillo (min. 2 pax)\n2. Bacalao confitado con esgarradet y emulsión de kalamata\n3. Magro en salsa con patatas al montón y emulsión de pimiento" },
+        { "number": 4, "name": "POSTRE - A ESCOGER -", "description": "1. Brownie con helado de yogur y polvo de nocilla\n2. Piña asada con helado de caramelo\n3. Fruta de temporada" },
+        { "number": 5, "name": "SERVICIO DE AGUA Y PAN INCLUIDO" }
       ]
     },
     {
