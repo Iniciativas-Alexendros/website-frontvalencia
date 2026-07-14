@@ -4,116 +4,115 @@
     {
       "name": "BREAKFAST BY THE SEA",
       "items": [
-        { "number": 1, "name": "CROISSANT", "price": "2,95€", "allergens": [1, 3, 7] },
-        { "number": 2, "name": "ARTISAN TOAST, ORGANIC BUTTER AND HOMEMADE JAM", "price": "3,25€", "allergens": [1, 3, 7], "tags": ["ecologico"] },
-        { "number": 3, "name": "MEDITERRANEAN TOAST, FRESH TOMATO AND EXTRA VIRGIN OLIVE OIL", "price": "3,50€", "allergens": [1, 7], "tags": ["vegano"] },
-        { "number": 4, "name": "CLASSIC IBERIAN HAM TOAST WITH GRATED TOMATO", "price": "6,00€", "allergens": [1] },
-        { "number": 5, "name": "NORWEGIAN SALMON TOAST, AVOCADO, DILL CREAM CHEESE AND SPROUTS", "price": "8,20€", "allergens": [1, 4, 7] }
+        { "name": "CROISSANT", "price": "2,95€", "allergens": [1, 3, 7] },
+        { "name": "ARTISAN TOAST, ORGANIC BUTTER AND HOMEMADE JAM", "price": "3,25€", "allergens": [1, 3, 7], "tags": ["ecologico"] },
+        { "name": "MEDITERRANEAN TOAST, FRESH TOMATO AND EXTRA VIRGIN OLIVE OIL", "price": "3,50€", "allergens": [1, 7], "tags": ["vegano"] },
+        { "name": "CLASSIC IBERIAN HAM TOAST WITH GRATED TOMATO", "price": "6,00€", "allergens": [1] },
+        { "name": "NORWEGIAN SALMON TOAST, AVOCADO, DILL CREAM CHEESE AND SPROUTS", "price": "8,20€", "allergens": [1, 4, 7] }
       ]
     },
     {
-      "name": "ESMORZARET",
-      "note": "Traditional Valencian mid-morning meal",
+      "name": "VALENCIAN ESMORZARET",
       "items": [
-        { "number": 1, "name": "SPANISH TORTILLA OF THE DAY", "price": "7,00€", "allergens": [3] },
-        { "number": 2, "name": "STEWED BROAD BEANS, SAUSAGE AND CHIMICHURRI SAUCE", "price": "7,50€", "allergens": [1, 12] },
-        { "number": 3, "name": "PORK LOIN WITH TOMATO AND AIOLI", "price": "8,00€", "allergens": [3] },
-        { "number": 4, "name": "ROAST LOIN, PATATAS 'AL MONTÓN' AND GARLIC", "price": "8,00€", "allergens": [12] },
-        { "number": 5, "name": "TUNA, TOMATO, ANCHOVIES AND OLIVES", "price": "8,00€", "allergens": [1, 4] },
-        { "number": 6, "name": "PEPITO DE TERNERA WITH SPICED BUTTER", "price": "9,75€", "allergens": [1, 7] }
+        { "name": "SPANISH TORTILLA OF THE DAY", "price": "7,00€", "allergens": [3] },
+        { "name": "STEWED BROAD BEANS, SAUSAGE AND CHIMICHURRI SAUCE", "price": "7,50€", "allergens": [1, 12] },
+        { "name": "PORK LOIN WITH TOMATO AND AIOLI", "price": "8,00€", "allergens": [3] },
+        { "name": "ROAST LOIN, PATATAS 'AL MONTÓN' AND GARLIC", "price": "8,00€", "allergens": [12] },
+        { "name": "TUNA, TOMATO, ANCHOVIES AND OLIVES", "price": "8,00€", "allergens": [1, 4] },
+        { "name": "PEPITO DE TERNERA WITH SPICED BUTTER", "price": "9,75€", "allergens": [1, 7] }
       ]
     },
     {
       "name": "GARDEN SALADS",
       "items": [
-        { "number": 1, "name": "CLASSIC CAESAR WITH CRISPY CHICKEN", "price": "13,50€", "allergens": [1, 3, 4, 7] },
-        { "number": 2, "name": "MEDITERRANEAN POKE BOWL", "price": "14,30€", "allergens": [1, 4, 6, 11] },
-        { "number": 3, "name": "LAND AND SEA: TOMATO, MOZZARELLA, VENTRESCA, NECTARINE AND GHERKINS", "price": "15,50€", "allergens": [4, 7] },
-        { "number": 4, "name": "TRICOLOUR SWEET TOMATOES, BURRATA AND PESTO", "price": "16,25€", "allergens": [7, 8], "tags": ["vegetariano"] }
+        { "name": "CLASSIC CAESAR WITH CRISPY CHICKEN", "price": "13,50€", "allergens": [1, 3, 4, 7] },
+        { "name": "MEDITERRANEAN POKE BOWL", "price": "14,30€", "allergens": [1, 4, 6, 11] },
+        { "name": "LAND AND SEA: TOMATO, MOZZARELLA, VENTRESCA, NECTARINE AND GHERKINS", "price": "15,50€", "allergens": [4, 7] },
+        { "name": "TRICOLOUR SWEET TOMATOES, BURRATA AND PESTO", "price": "16,25€", "allergens": [7, 8], "tags": ["vegetariano"] }
       ]
     },
     {
       "name": "VICENTE PATIÑO'S TAPAS",
       "items": [
-        { "number": 1, "name": "HAM CROQUETTE (UD)", "price": "3,30€", "allergens": [1, 3, 7] },
-        { "number": 2, "name": "GILDA FRONT", "price": "5,00€", "allergens": [4] },
-        { "number": 3, "name": "RUSSIAN SALAD (ENSALADILLA RUSA)", "price": "13,00€", "allergens": [3, 4] },
-        { "number": 4, "name": "FRONT'S SOUFFLÉD BRAVAS, CREAMY AND CRISPY", "price": "11,00€", "allergens": [3], "tags": ["vegetariano"] },
-        { "number": 5, "name": "CUTTLEFISH WITH LIME AND AJÍ AMARILLO MAYO", "price": "16,00€", "allergens": [13, 14] },
-        { "number": 6, "name": "CRISPY VEGETABLE MEDLEY WITH SRIRACHA MAYO", "price": "12,00€", "allergens": [3], "tags": ["picante"] },
-        { "number": 7, "name": "CUTTLEFISH WITH ONIONS AND SHOESTRING POTATOES WITH GARLIC AND PARSLEY", "price": "16,00€", "allergens": [14] },
-        { "number": 8, "name": "FRIED FISH WITH TARTAR SAUCE AND PICKLED RED ONION", "price": "14,00€", "allergens": [1, 3, 4] },
-        { "number": 9, "name": "TITAINA DEL CABANYAL WITH SEMI-CURED TUNA AND NUT PRALINE", "price": "15,00€", "allergens": [4, 8] },
-        { "number": 10, "name": "COD MEATBALLS WITH GRILLED GARLIC CREAM", "price": "3,25€", "allergens": [1, 3, 4] },
-        { "number": 11, "name": "PORK WITH TOMATO (MARAVELLA GARDEN), POTATO AND PICKLED PEPPER EMULSION", "price": "13,25€", "allergens": [3] },
-        { "number": 12, "name": "SEARED MACKEREL CEVICHE", "price": "16,00€", "allergens": [4] },
-        { "number": 13, "name": "COCA DE DACSA WITH TITAINA, EGG AND ANCHOVIES", "price": "11,00€", "allergens": [3, 4] },
-        { "number": 14, "name": "COCA DE DACSA WITH MORTADELLA, BURRATA, DRIED TOMATO AND PISTACHIOS", "price": "12,00€", "allergens": [7, 8] }
+        { "name": "HAM CROQUETTE (Unit)", "price": "3,30€", "allergens": [1, 3, 7] },
+        { "name": "COD FRITTER WITH BRAISED GARLIC CREAM (unit)", "price": "3,25€", "allergens": [1, 3, 4] },
+        { "name": "GILDA FRONT", "price": "5,00€", "allergens": [4] },
+        { "name": "RUSSIAN SALAD (ENSALADILLA RUSA)", "price": "13,00€", "allergens": [3, 4] },
+        { "name": "FRONT'S SOUFFLÉD BRAVAS, CREAMY AND CRISPY", "price": "11,00€", "allergens": [3], "tags": ["vegetariano"] },
+        { "name": "CUTTLEFISH WITH LIME AND AJÍ AMARILLO MAYO", "price": "16,00€", "allergens": [13, 14], "tags": ["picante"] },
+        { "name": "JAPANESE TEMPURA VEGETABLES WITH FERMENTED CHILE MAYO", "price": "12,00€", "allergens": [3], "tags": ["picante"] },
+        { "name": "CUTTLEFISH WITH ONIONS AND SHOESTRING POTATOES WITH GARLIC AND PARSLEY", "price": "16,00€", "allergens": [14] },
+        { "name": "FRIED FISH WITH TARTAR SAUCE AND PICKLED RED ONION", "price": "14,00€", "allergens": [1, 3, 4] },
+        { "name": "TITAINA DEL CABANYAL WITH SEMI-CURED TUNA AND NUT PRALINE", "price": "15,00€", "allergens": [4, 8] },
+        { "name": "PORK WITH TOMATO, POTATO AND PICKLED PEPPER EMULSION", "price": "13,25€", "allergens": [3] },
+        { "name": "SEARED MACKEREL CEVICHE", "price": "16,00€", "allergens": [4] },
+        { "name": "COCA DE DACSA WITH TITAINA, EGG AND ANCHOVIES", "price": "11,00€", "allergens": [3, 4] },
+        { "name": "COCA DE DACSA WITH MORTADELLA, BURRATA, DRIED TOMATO AND PISTACHIOS", "price": "12,00€", "allergens": [7, 8] }
       ]
     },
     {
       "name": "TO SHARE, GRILL FLAVOUR",
       "items": [
-        { "number": 1, "name": "FLAME-ROASTED AUBERGINE", "price": "12,00€" },
-        { "number": 2, "name": "WHITE PRAWNS IN GARLIC", "price": "21,50€", "allergens": [2] },
-        { "number": 3, "name": "SEASONAL ARTICHOKE FROM THE GARDEN", "price": "Market price" },
-        { "number": 4, "name": "VALENCIAN CLAMS, COCKLES, RAZOR CLAMS", "price": "Market price", "allergens": [13] },
-        { "number": 5, "name": "GRILLED OR ANDALUSIAN-STYLE SQUID", "price": "22,00€", "allergens": [1, 13] }
+        { "name": "FLAME-ROASTED AUBERGINE WITH PORK CRACKLING", "price": "12,00€" },
+        { "name": "WHITE PRAWNS IN GARLIC", "price": "21,50€", "allergens": [2] },
+        { "name": "SEASONAL ARTICHOKE FROM THE GARDEN", "price": "Market price" },
+        { "name": "VALENCIAN CLAMS, COCKLES, RAZOR CLAMS", "price": "Market price", "allergens": [13] },
+        { "name": "SQUID: GRILLED OR ANDALUSIAN-STYLE", "price": "22,00€", "allergens": [13] }
       ]
     },
     {
       "name": "GRILLED FISH",
       "items": [
-        { "number": 1, "name": "FRESH CATCH OF THE DAY", "price": "Market price", "allergens": [4] },
-        { "number": 2, "name": "CONFIT COD, ESGARRAET AND KALAMATA EMULSION", "price": "21,50€", "allergens": [3, 4] }
+        { "name": "GRILLED WHOLE FRESH FISH OF THE DAY", "price": "Market price", "allergens": [4] },
+        { "name": "CONFIT COD, ESGARRAET AND KALAMATA EMULSION", "price": "21,50€", "allergens": [3, 4] }
       ]
     },
     {
       "name": "GRILLED MEAT",
       "items": [
-        { "number": 1, "name": "CHESTNUT-FED PORK CHOP", "price": "17,50€" },
-        { "number": 2, "name": "FRONT CACHOPO WITH IBERIAN PLUMA", "price": "21,50€", "allergens": [1, 3, 7] },
-        { "number": 3, "name": "BEEF SIRLOIN", "price": "24,50€" },
-        { "number": 4, "name": "AGED BEEF BURGER", "price": "14,95€", "allergens": [1] },
-        { "number": 5, "name": "FREE-RANGE CHICKEN CANNELLONI", "price": "16,50€", "allergens": [1, 3, 7] }
+        { "name": "CHESTNUT-FED PORK CHOP", "price": "17,50€" },
+        { "name": "FRONT CACHOPO WITH IBERIAN PLUMA", "price": "21,50€", "allergens": [1, 3, 7] },
+        { "name": "BEEF SIRLOIN", "price": "24,50€" },
+        { "name": "AGED BEEF BURGER", "price": "14,95€", "allergens": [1] },
+        { "name": "FREE-RANGE CHICKEN CANNELLONI", "price": "16,50€", "allergens": [1, 3, 7] }
       ]
     },
     {
       "name": "SIDES",
       "items": [
-        { "number": 1, "name": "CREAMY POTATOES", "price": "5,00€", "allergens": [7] },
-        { "number": 2, "name": "GREEN SALAD AND SPRING ONION", "price": "4,50€", "tags": ["vegano"] },
-        { "number": 3, "name": "CONFIT PIQUILLO PEPPERS", "price": "5,00€", "tags": ["vegano"] },
-        { "number": 4, "name": "ARTISAN FOCACCIA BREAD", "price": "4,00€", "allergens": [1] }
+        { "name": "CREAMY POTATOES", "price": "5,00€", "allergens": [7] },
+        { "name": "GREEN SALAD AND SPRING ONION", "price": "4,50€", "tags": ["vegano"] },
+        { "name": "CONFIT PIQUILLO PEPPERS", "price": "5,00€", "tags": ["vegano"] },
+        { "name": "ARTISAN FOCACCIA BREAD", "price": "4,00€", "allergens": [1] }
       ]
     },
     {
-      "name": "TRAY-BAKED RICE (Mínimo 2 portions)",
+      "name": "TRAY-BAKED RICE (Min. 2 portions)",
       "items": [
-        { "number": 1, "name": "SENYORET (FRESH FISH AND SHELLFISH)", "price": "19,90€", "allergens": [2, 4, 14] },
-        { "number": 2, "name": "CHESTNUT-FED PORK CHOP, PIQUILLO PEPPERS AND ROAST GARLIC ON THE GRILL", "price": "21,00€" }
+        { "name": "CUTTLEFISH AND RED PRAWN SENYORET", "price": "19,90€", "allergens": [2, 4, 13] },
+        { "name": "CHESTNUT-FED PORK CHOP, PIQUILLO PEPPERS AND ROAST GARLIC ON THE GRILL", "price": "21,00€" }
       ]
     },
     {
       "name": "SWEET TREATS BEFORE SETTING SAIL",
       "items": [
-        { "number": 1, "name": "SMOKED VANILLA FLAN", "price": "6,50€", "allergens": [3, 7] },
-        { "number": 2, "name": "GRILLED PINEAPPLE, CARAMEL ICE CREAM, BISCUIT CRUNCH", "price": "6,00€", "allergens": [1, 7] },
-        { "number": 3, "name": "FRONT'S CHEESECAKE", "price": "7,25€", "allergens": [1, 3, 7] },
-        { "number": 4, "name": "TOCINO DE CIELO WITH CITRUS SORBET", "price": "7,25€", "allergens": [3] },
-        { "number": 5, "name": "XL TURRÓN", "price": "8,00€", "allergens": [3, 8] },
-        { "number": 6, "name": "CARAMELISED BRIOCHE TORRIJA", "price": "7,50€", "allergens": [1, 3, 7] },
-        { "number": 7, "name": "BROWNIE WITH NOCILLA DUST AND YOGURT ICE CREAM", "price": "7,50€", "allergens": [1, 3, 6, 7, 8] }
+        { "name": "SMOKED VANILLA FLAN", "price": "6,50€", "allergens": [3, 7] },
+        { "name": "GRILLED PINEAPPLE, CARAMEL ICE CREAM, BISCUIT CRUNCH", "price": "6,00€", "allergens": [1, 7] },
+        { "name": "OUR CHEESECAKE", "price": "7,25€", "allergens": [1, 3, 7] },
+        { "name": "TOCINO DE CIELO WITH CITRUS SORBET", "price": "7,25€", "allergens": [3] },
+        { "name": "XL TURRÓN", "price": "8,00€", "allergens": [3, 8] },
+        { "name": "CARAMELISED BRIOCHE TORRIJA WITH WHISKY CREAM", "price": "7,50€", "allergens": [1, 3, 7] },
+        { "name": "BROWNIE WITH NOCILLA DUST AND YOGURT ICE CREAM", "price": "7,50€", "allergens": [1, 3, 6, 7, 8] }
       ]
     },
     {
       "name": "CHEF'S WEEKLY MENU",
       "price": "25,00€",
       "items": [
-        { "name": "CHEF'S BITES - CHOOSE -", "description": "1. Ceviche, toasted corn and boniato\n2. Ham croquettes" },
-        { "name": "STARTERS - TO SHARE -", "description": "1. Steamed Valencian clams (clotxina)\n2. Tempura bravas potatoes" },
-        { "name": "MAIN COURSE - CHOOSE -", "description": "1. Cheek rice with piquillo peppers (min. 2 pax)\n2. Confit cod with esgarradet and kalamata emulsion\n3. Pork in sauce with patatas al montón and pickled pepper emulsion" },
-        { "name": "DESSERT - CHOOSE -", "description": "1. Brownie with yogurt ice cream and nocilla dust\n2. Roasted pineapple with caramel ice cream\n3. Seasonal fruit" },
+        { "name": "CHEF'S BITES - CHOOSE -", "description": "Ceviche, toasted corn and boniato\nHam croquettes" },
+        { "name": "STARTERS - TO SHARE -", "description": "Steamed Valencian clams (clotxina)\nTempura bravas potatoes" },
+        { "name": "MAIN COURSE - CHOOSE -", "description": "Cheek rice with piquillo peppers (min. 2 pax)\nConfit cod with esgarradet and kalamata emulsion\nPork in sauce with patatas al montón and pickled pepper emulsion" },
+        { "name": "DESSERT - CHOOSE -", "description": "Brownie with yogurt ice cream and nocilla dust\nRoasted pineapple with caramel ice cream\nSeasonal fruit" },
         { "name": "WATER AND BREAD SERVICE INCLUDED" }
       ]
     },
@@ -133,7 +132,7 @@
         {
           "number": 3,
           "name": "ALTAMAR",
-          "description": "**Centre-table starter**\n1. Beef steak tartare with crispy potatoes and artisan toast\n2. White prawns in garlic.\n\n**Individual starter**\nGrilled artichoke with roasted pepper sauce and hazelnut.\n\n**Main course to choose**\nMeloso of free-range chicken with mushrooms and spring onions\nGrilled corvina with teriyaki vegetables\nIberian cheeks with creamy truffle potato.\n\n**Dessert**\nCheesecake with strawberry essence.\nIncludes one drink."
+          "description": "**Centre-table starter**\nBeef steak tartare with crispy potatoes and artisan toast\nWhite prawns in garlic.\n\n**Individual starter**\nGrilled artichoke with roasted pepper sauce and hazelnut.\n\n**Main course to choose**\nMeloso of free-range chicken with mushrooms and spring onions\nGrilled corvina with teriyaki vegetables\nIberian cheeks with creamy truffle potato.\n\n**Dessert**\nCheesecake with strawberry essence.\nIncludes one drink."
         }
       ]
     }

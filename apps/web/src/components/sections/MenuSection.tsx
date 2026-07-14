@@ -57,7 +57,7 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
   }
 
   // Check if this is the first lunch category (index 2 = ENSALADAS / GARDEN SALADS)
-  const isFirstLunchCategory = (categoryName: string, index: number) => {
+  const isFirstLunchCategory = (_categoryName: string, index: number) => {
     return index === 2
   }
 
@@ -149,9 +149,6 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
             className="relative p-6 bg-concrete-900/30 border border-concrete-700 hover:border-terracotta-400/50 hover:bg-concrete-900/50 transition-all duration-300"
           >
             <div className="mb-4">
-              {item.number && (
-                <span className="text-xs font-mono text-terracotta-400 uppercase tracking-[0.15em]">{item.number}</span>
-              )}
               <h4 className="mt-1 text-lg font-bold text-text-primary leading-snug">{item.name}</h4>
             </div>
             {item.description && (
@@ -227,11 +224,6 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
                 className="group relative pl-4 pr-2 py-3 -ml-4 hover:bg-concrete-900/40 border-l-2 border-transparent hover:border-l-terracotta-400 transition-all duration-200"
               >
                 <div className="flex items-start gap-4">
-                  {item.number && !isWaterBread && (
-                    <span className="text-xs font-mono text-text-muted mt-1 tabular-nums w-5 text-right shrink-0">
-                      {String(item.number)}
-                    </span>
-                  )}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-baseline gap-3">
                       <h4
@@ -364,6 +356,7 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>

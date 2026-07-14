@@ -83,7 +83,6 @@ export default function ReservasSection({ lang, site }: Props) {
   const phone = site?.contact?.phone ?? '+34 965 020 349'
   const phoneClean = (site?.contact?.whatsapp ?? '34965020349').replace(/\D/g, '')
   const eventsEmail = site?.contact?.eventsEmail ?? 'eventos@frontvalencia.com'
-  const reservationsEmail = site?.contact?.reservationsEmail ?? 'reservas@frontvalencia.com'
 
   const handleOpen = useCallback(() => {
     setModalOpen(true)

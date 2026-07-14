@@ -19,7 +19,7 @@ const Footer: React.FC<Props> = ({ lang }) => {
           cookies: 'Cookies',
           copyright: `© ${new Date().getFullYear()} FRONT THE TERMINAL BAR. Todos los derechos reservados.`,
           version: `v${APP_VERSION}`,
-          authorLabel: 'Web',
+          authorLabel: 'Diseño web a cargo de',
           newsletter: 'Suscríbete para enterarte de todo',
           email: 'Email',
           subscribe: 'Suscribirse',
@@ -40,7 +40,7 @@ const Footer: React.FC<Props> = ({ lang }) => {
           cookies: 'Cookies',
           copyright: `© ${new Date().getFullYear()} FRONT THE TERMINAL BAR. All rights reserved.`,
           version: `v${APP_VERSION}`,
-          authorLabel: 'Web',
+          authorLabel: 'Web design by',
           newsletter: 'Subscribe to stay updated',
           email: 'Email',
           subscribe: 'Subscribe',
@@ -254,6 +254,19 @@ const Footer: React.FC<Props> = ({ lang }) => {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Full logo as page closer */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/images/logos/LOGO_MV_SVG.svg"
+            alt="FRONT"
+            width="200"
+            height="49"
+            className="h-12 w-auto opacity-80"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <div className="border-t border-concrete-800 pt-8 text-center space-y-2">

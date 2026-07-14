@@ -3,12 +3,9 @@ import { useEffect, useRef, useState } from 'react'
 interface Props {
   lang: 'es' | 'en'
   isHome?: boolean
-  site?: {
-    externalLinks?: { club?: string }
-  }
 }
 
-export default function Header({ lang, isHome = false, site }: Props) {
+export default function Header({ lang, isHome = false }: Props) {
   const careersUrl = 'https://grupoelalto-1738067471.teamtailor.com/'
 
   const navItems =
@@ -17,14 +14,12 @@ export default function Header({ lang, isHome = false, site }: Props) {
           { label: 'Carta', href: '#carta' },
           { label: 'Espacio', href: '#espacio' },
           { label: 'Localización', href: '#localizacion' },
-          { label: 'Contacto', href: '#localizacion' },
           { label: 'Talento', href: careersUrl, external: true },
         ]
       : [
           { label: 'Menu', href: '#carta' },
           { label: 'Space', href: '#espacio' },
           { label: 'Location', href: '#localizacion' },
-          { label: 'Contact', href: '#localizacion' },
           { label: 'Careers', href: careersUrl, external: true },
         ]
 
@@ -106,20 +101,11 @@ export default function Header({ lang, isHome = false, site }: Props) {
           aria-label="FRONT — Home"
         >
           <img
-            src="/images/logos/logo-icon.png"
-            alt="FRONT"
-            width="64"
-            height="32"
-            className="h-8 w-auto"
-            loading="eager"
-            decoding="async"
-          />
-          <img
-            src="/images/logos/from-logo.svg"
+            src="/images/logos/LOGO_MV_SVG.svg"
             alt="FRONT La Marina de Valencia"
-            width="80"
-            height="20"
-            className="h-5 w-auto hidden sm:block"
+            width="120"
+            height="40"
+            className="h-8 w-auto"
             loading="eager"
             decoding="async"
           />

@@ -8,7 +8,7 @@ const EspacioSection: React.FC<Props> = ({ lang }) => {
   const text =
     lang === 'es'
       ? {
-          heading: 'COMER FRENTE AL MAR, DENTRO DE UNA JOYA BRUTALISTA.',
+          heading: 'COMER FRENTE AL MAR, EN UNA JOYA CON ARQUITECTURA DE ESTILO BRUTALISTA.',
           intro:
             'La Marina de Valencia vibra con un nuevo actor en su ecosistema de innovación. No es un proyecto tech más: es diseño, gastronomía y creatividad disruptiva. Grupo El Alto y Groovelives Team se han unido para dar vida a FRONT, el nuevo espacio gastronómico que marca tendencia en The Terminal Hub.',
           desc: 'Groovelives Team, expertos en crear experiencias donde se cruzan música, arte y cultura, junto a El Alto, con más de 40 años de trayectoria en gastronomía sostenible, presentan una propuesta que va más allá de la comida. FRONT se integra con la arquitectura brutalista del edificio y lo transforma en un lugar para disfrutar frente al mar, conectar y formar parte de la Valencia creativa.',
@@ -137,7 +137,7 @@ const EspacioSection: React.FC<Props> = ({ lang }) => {
             <p className="text-sm text-text-muted mb-3">{text.cta}</p>
             <a
               href="mailto:eventos@frontvalencia.com"
-              className="inline-flex items-center justify-center px-5 py-2.5 bg-terracotta-500 hover:bg-terracotta-400 text-white font-semibold rounded uppercase tracking-wider text-sm transition-colors"
+              className="inline-flex items-center justify-center px-5 py-2.5 bg-terracotta-500 hover:bg-terracotta-400 text-white font-semibold uppercase tracking-wider text-sm transition-colors"
             >
               {text.contact}
             </a>
@@ -173,6 +173,7 @@ const EspacioSection: React.FC<Props> = ({ lang }) => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={1.5}
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
