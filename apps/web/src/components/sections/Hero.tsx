@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 interface Props {
   lang: 'es' | 'en'
@@ -26,105 +26,43 @@ export default function Hero({ lang }: Props) {
           cta2: 'Contact',
         }
 
-  const parallaxRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [isIntersecting, setIsIntersecting] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
-    if (video) {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      const conn = (navigator as any).connection
-      const saveData = conn?.saveData
-      const isSlow = conn?.effectiveType && /2g|slow-2g/.test(conn.effectiveType)
-      if (prefersReducedMotion || saveData || isSlow) {
-        video.pause()
-        video.removeAttribute('autoPlay')
-      }
-    }
-
-    const parallaxEl = parallaxRef.current
-    if (!parallaxEl) return
+    if (!video) return
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReducedMotion) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsIntersecting(true)
-          } else {
-            setIsIntersecting(false)
-          }
-        })
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0,
-      },
-    )
-
-    observer.observe(parallaxEl)
-
-    const handleScroll = () => {
-      if (!isIntersecting || !parallaxEl) return
-
-      const scrolled = window.scrollY
-      const rate = scrolled * 0.3
-      parallaxEl.style.transform = `translate3d(0, ${rate}px, 0)`
+    const conn = (navigator as any).connection
+    const saveData = conn?.saveData
+    const isSlow = conn?.effectiveType && /2g|slow-2g/.test(conn.effectiveType)
+    if (prefersReducedMotion || saveData || isSlow) {
+      video.pause()
+      video.removeAttribute('autoPlay')
     }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-
-    return () => {
-      observer.disconnect()
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [isIntersecting])
+  }, [])
 
   return (
-    <section className="relative h-screen w-full overflow-hidden" aria-label="Hero">
-      {/* Parallax Background Image (hero-poster.jpg) - Main LCP element */}
-      <div ref={parallaxRef} className="absolute inset-0 -z-10 will-change-transform" aria-hidden="true">
-        <img
-          src="/images/hero-poster.jpg"
-          alt=""
-          width="1920"
-          height="1080"
-          className="w-full h-full object-cover"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-        />
-        {/* Dark gradient overlay for text readability */}
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-concrete-950/95 via-concrete-950/70 to-concrete-950/40"
-          aria-hidden="true"
-        ></div>
-      </div>
-
-      {/* Optional Video Background (paused by default on reduced motion/slow connection) */}
+    <section className="relative h-screen w-full overflow-hidden bg-concrete-950" aria-label="Hero">
+      {/* Video Background */}
       <div className="absolute inset-0">
         <video
           ref={videoRef}
           id="hero-video"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-          poster="/images/hero-poster.jpg"
           aria-hidden="true"
         >
           <source src="/video/vid-mob.mp4" type="video/mp4" media="(max-width: 768px)" />
           <source src="/video/vid-desk.mp4" type="video/mp4" media="(min-width: 769px)" />
         </video>
-        {/* Additional subtle overlay for video blending */}
+        {/* Gradient overlay for text readability */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-concrete-950/60 via-transparent to-concrete-950/30"
+          className="absolute inset-0 bg-gradient-to-b from-concrete-950/90 via-concrete-950/60 to-concrete-950/80"
           aria-hidden="true"
         ></div>
       </div>
