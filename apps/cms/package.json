@@ -1,6 +1,6 @@
 {
   "name": "cms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "description": "Payload CMS for Front Valencia — menu, space, events, allergens, site config",
