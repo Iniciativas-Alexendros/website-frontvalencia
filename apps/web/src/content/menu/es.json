@@ -122,17 +122,17 @@
         {
           "number": 1,
           "name": "MENÚ LA DÁRSENA",
-          "description": "Snack en mesa: Almendras trufadas y servicio de cesta de pan tostado con alioli y tomate.\nEntrante para compartir: Chipironcitos fritos con huevo de corral.\nEntrante individual: Ensaladilla marinera con quisquilla fresca.\nPrincipal: Arroz de panceta y calabaza con alcachofitas.\nPostre: Tarta de queso casera con esencia de fresa."
+          "description": "Snack en mesa: Almendras trufadas y servicio de cesta de pan tostado con alioli y tomate.\n\nEntrante para compartir: Chipironcitos fritos con huevo de corral.\n\nEntrante individual: Ensaladilla marinera con quisquilla fresca.\n\nPrincipal: Arroz de panceta y calabaza con alcachofitas.\n\nPostre: Tarta de queso casera con esencia de fresa."
         },
         {
           "number": 2,
           "name": "MENÚ DOCK",
-          "description": "Entrante centro mesa: Tomate dulce tricolor con burrata, pesto cítrico de albahaca y pimiento al caramelo | Ceviche de lubina con cebollada morada, camote, gamba cristal y ají amarillo.\nEntrante individual: Tosta de ensaladilla marinera con ventresca, anchoa y piparra.\nPrincipal a elegir:\n1. Meloso de chipirones y alcachofa\n2. Corvina a la brasa con crema de boniato\n3. Picaña con patatas asadas a la brasa, tirabeques y chimichurri.\nPostre: Torrija caramelizada con frutos del bosque y helado de leche merengada."
+          "description": "Entrante centro mesa: Tomate dulce tricolor con burrata, pesto cítrico de albahaca y pimiento al caramelo | Ceviche de lubina con cebollada morada, camote, gamba cristal y ají amarillo.\n\nEntrante individual: Tosta de ensaladilla marinera con ventresca, anchoa y piparra.\n\nPrincipal a elegir:\n1. Meloso de chipirones y alcachofa\n2. Corvina a la brasa con crema de boniato\n3. Picaña con patatas asadas a la brasa, tirabeques y chimichurri.\n\nPostre: Torrija caramelizada con frutos del bosque y helado de leche merengada."
         },
         {
           "number": 3,
           "name": "MENÚ ALTAMAR",
-          "description": "Entrante centro mesa:\n1. Steak tartar de vaca con patatas crujientes y tostas artesanales\n2. Gamba blanca al ajillo.\nEntrante individual: Alcachofa a la brasa con salsa de pimientos asados y avellana.\nPrincipal a elegir:\n1. Meloso de pollo de corral, setas y ajetes tiernos\n2. Corvina a la brasa con verduras salteadas al teriyaki\n3. Carrilleras ibéricas con parmenier de patata trufada.\nPostre: Tarta de queso con esencia de fresa.\nIncluye una bebida."
+          "description": "Entrante centro mesa:\n1. Steak tartar de vaca con patatas crujientes y tostas artesanales\n2. Gamba blanca al ajillo.\n\nEntrante individual: Alcachofa a la brasa con salsa de pimientos asados y avellana.\n\nPrincipal a elegir:\n1. Meloso de pollo de corral, setas y ajetes tiernos\n2. Corvina a la brasa con verduras salteadas al teriyaki\n3. Carrilleras ibéricas con parmenier de patata trufada.\n\nPostre: Tarta de queso con esencia de fresa.\nIncluye una bebida."
         }
       ]
     }
