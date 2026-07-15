@@ -7,7 +7,7 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
-    "postbuild": "node scripts/generate-menu-pdf.mjs",
+    "menu:generate": "astro build && node scripts/generate-menu-pdf.mjs",
     "dev": "astro dev --host",
     "lint": "astro check",
     "preview": "astro preview",

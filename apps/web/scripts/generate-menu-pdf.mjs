@@ -1,11 +1,17 @@
 /**
  * generate-menu-pdf.mjs
  *
- * Post-build script that generates:
+ * Manual regeneration script (NOT run automatically at build time).
+ * Generates:
  * 1. A pixel-perfect PDF of the menu using Playwright
- * 2. A QR code SVG pointing to the PDF URL
+ * 2. A QR code PNG pointing to the PDF URL
  *
- * Both files are saved to dist/files/ for immediate deployment.
+ * Both files are written to public/ (the committed source of truth) so that
+ * Astro copies them into dist/ on every build and they are always served on
+ * Vercel WITHOUT requiring Playwright/chromium in the deploy environment.
+ *
+ * Run locally with `pnpm --filter frontvalencia-web menu:generate` whenever the
+ * menu content changes, then commit public/files + public/images.
  */
 
 import { chromium } from 'playwright'
@@ -19,8 +25,8 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const ROOT = join(__dirname, '..')
 const DIST = join(ROOT, 'dist')
-const FILES_DIR = join(DIST, 'files')
-const IMAGES_DIR = join(DIST, 'images')
+const FILES_DIR = join(ROOT, 'public', 'files')
+const IMAGES_DIR = join(ROOT, 'public', 'images')
 
 // Read version from package.json
 const packageJson = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf-8'))
