@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 interface Props {
   lang: 'es' | 'en'
   site?: {
@@ -9,6 +11,7 @@ interface Props {
 }
 
 export default function LocalizacionSection({ lang, site }: Props) {
+  const [mapLoaded, setMapLoaded] = useState(false)
   const mapsUrl = site?.location?.mapsUrl ?? 'https://maps.app.goo.gl/FVnSVDYfv5XnNiU16'
   const postalCode = site?.location?.postalCode ?? '46024'
   const locationData =
@@ -73,7 +76,7 @@ export default function LocalizacionSection({ lang, site }: Props) {
       id={lang === 'es' ? 'localizacion' : 'location'}
       aria-label={locationData.heading}
     >
-      <div className="text-center mb-12">
+      <div className="text-center mb-16">
         <h2 className="text-4xl font-black uppercase tracking-tight text-text-primary">{locationData.heading}</h2>
         <div className="mt-4 mx-auto w-16 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
       </div>
@@ -93,10 +96,10 @@ export default function LocalizacionSection({ lang, site }: Props) {
               >
                 <path
                   strokeLinecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                   d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                 />
-                <path strokeLinecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
               {locationData.addressHeading}
             </h3>
@@ -116,7 +119,7 @@ export default function LocalizacionSection({ lang, site }: Props) {
                 strokeWidth="2"
                 aria-hidden="true"
               >
-                <path strokeLinecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               {locationData.hoursHeading}
             </h3>
@@ -139,7 +142,7 @@ export default function LocalizacionSection({ lang, site }: Props) {
               >
                 <path
                   strokeLinecap="round"
-                  stroke-linejoin="round"
+                  strokeLinejoin="round"
                   d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                 />
               </svg>
@@ -153,7 +156,6 @@ export default function LocalizacionSection({ lang, site }: Props) {
                 <ul className="space-y-1 ml-1">
                   {busLines.map((line, i) => (
                     <li key={i} className="leading-relaxed">
-                      {' '}
                       · {line}
                     </li>
                   ))}
@@ -184,7 +186,7 @@ export default function LocalizacionSection({ lang, site }: Props) {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
                 strokeWidth="2"
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
@@ -198,16 +200,14 @@ export default function LocalizacionSection({ lang, site }: Props) {
           id="map-container"
         >
           {/* Skeleton shown until iframe loads */}
-          <div
-            id="map-skeleton"
-            className="absolute inset-0 flex items-center justify-center bg-concrete-900"
-            aria-hidden="true"
-          >
-            <div className="text-center">
-              <div className="w-8 h-8 border-2 border-concrete-700 border-t-terracotta-400 rounded-full animate-spin mx-auto mb-3"></div>
-              <p className="text-xs uppercase tracking-widest text-text-muted">Cargando mapa…</p>
+          {!mapLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-concrete-900" aria-hidden="true">
+              <div className="text-center">
+                <div className="w-8 h-8 border-2 border-concrete-700 border-t-terracotta-400 rounded-full animate-spin mx-auto mb-3"></div>
+                <p className="text-xs uppercase tracking-widest text-text-muted">Cargando mapa…</p>
+              </div>
             </div>
-          </div>
+          )}
           <iframe
             title={locationData.mapLabel}
             className="w-full h-full border-0 relative z-10"
@@ -215,10 +215,7 @@ export default function LocalizacionSection({ lang, site }: Props) {
             referrerPolicy="no-referrer"
             src={embedSrc}
             allowFullScreen
-            onLoad={() => {
-              const skeleton = document.getElementById('map-skeleton')
-              if (skeleton) skeleton.remove()
-            }}
+            onLoad={() => setMapLoaded(true)}
           ></iframe>
         </div>
       </div>

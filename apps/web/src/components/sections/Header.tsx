@@ -149,7 +149,7 @@ export default function Header({ lang, isHome = false }: Props) {
         <div className="flex items-center gap-4 shrink-0">
           <a
             href={otherLangHref}
-            className="text-xs font-bold uppercase tracking-[0.2em] text-concrete-400 hover:text-text-primary transition-colors"
+            className="text-xs font-bold uppercase tracking-[0.2em] text-concrete-400 hover:text-text-primary transition-colors px-2 py-3"
             aria-label={lang === 'es' ? 'Switch to English' : 'Cambiar a español'}
           >
             {lang === 'es' ? 'EN' : 'ES'}
@@ -166,7 +166,7 @@ export default function Header({ lang, isHome = false }: Props) {
         {/* Mobile menu button */}
         <button
           id="mobile-menu-btn"
-          className="md:hidden p-2 text-concrete-300 hover:text-text-primary"
+          className="md:hidden p-3 text-concrete-300 hover:text-text-primary"
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
           aria-label={lang === 'es' ? 'Abrir menú' : 'Open menu'}
@@ -219,7 +219,7 @@ export default function Header({ lang, isHome = false }: Props) {
           )}
           <a
             href={lang === 'es' ? '#localizacion' : '#localizacion'}
-            className="block text-lg font-medium uppercase tracking-wider text-concrete-300 hover:text-text-primary bg-terracotta-500 hover:bg-terracotta-400 text-white px-4 py-2 text-center"
+            className="block text-lg font-medium uppercase tracking-wider hover:text-text-primary bg-terracotta-500 hover:bg-terracotta-400 text-white px-4 py-2 text-center"
             onClick={(e) => handleAnchorClick(e, '#localizacion')}
           >
             {lang === 'es' ? 'Contactar' : 'Contact'}

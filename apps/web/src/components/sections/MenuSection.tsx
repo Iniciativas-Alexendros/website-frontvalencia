@@ -24,7 +24,7 @@ interface Props {
   lang: 'es' | 'en'
 }
 
-const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
+export default function MenuSection({ categories, allergenLegend, lang }: Props) {
   const [allergensOpen, setAllergensOpen] = useState(false)
 
   // Build a code → name map for allergen lookups
@@ -238,7 +238,7 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
                           {item.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="inline-block text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 border border-concrete-600 text-text-muted"
+                              className="inline-block text-[11px] font-bold uppercase tracking-wider px-1.5 py-0.5 border border-concrete-600 text-concrete-300"
                             >
                               {lang === 'es' ? (tagLabels[tag]?.es ?? tag) : (tagLabels[tag]?.en ?? tag)}
                             </span>
@@ -375,5 +375,3 @@ const MenuSection: React.FC<Props> = ({ categories, allergenLegend, lang }) => {
     </section>
   )
 }
-
-export default MenuSection

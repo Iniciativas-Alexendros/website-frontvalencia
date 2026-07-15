@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 interface Props {
   lang: 'es' | 'en'
@@ -6,7 +6,7 @@ interface Props {
 
 const APP_VERSION = '1.0.1'
 
-const Footer: React.FC<Props> = ({ lang }) => {
+export default function Footer({ lang }: Props) {
   const t =
     lang === 'es'
       ? {
@@ -22,7 +22,7 @@ const Footer: React.FC<Props> = ({ lang }) => {
           authorLabel: 'Diseño web a cargo de',
           newsletter: 'Suscríbete para enterarte de todo',
           email: 'Email',
-          subscribe: 'Suscribirse',
+          subscribe: 'Próximamente',
           thanks: '¡Gracias!',
           addressLabel: 'Dirección',
           phoneLabel: 'Teléfono',
@@ -43,7 +43,7 @@ const Footer: React.FC<Props> = ({ lang }) => {
           authorLabel: 'Web design by',
           newsletter: 'Subscribe to stay updated',
           email: 'Email',
-          subscribe: 'Subscribe',
+          subscribe: 'Coming soon',
           thanks: 'Thanks!',
           addressLabel: 'Address',
           phoneLabel: 'Phone',
@@ -67,22 +67,9 @@ const Footer: React.FC<Props> = ({ lang }) => {
 
   useEffect(() => {
     const form = document.getElementById('newsletter-form') as HTMLFormElement | null
-    const feedback = document.getElementById('newsletter-feedback')
-    const btnLabel = document.getElementById('newsletter-btn-label')
     if (!form) return
     const handler = (e: Event) => {
       e.preventDefault()
-      if (!feedback || !btnLabel) return
-      const input = form.querySelector<HTMLInputElement>('#newsletter-email')
-      if (!input || !input.value) return
-      console.info('[newsletter] subscribe request:', input.value)
-      feedback.classList.remove('hidden')
-      btnLabel.textContent = feedback.textContent ?? '✓'
-      input.value = ''
-      setTimeout(() => {
-        feedback.classList.add('hidden')
-        if (btnLabel) btnLabel.textContent = form.dataset.originalLabel ?? btnLabel.textContent ?? ''
-      }, 3000)
     }
     form.addEventListener('submit', handler)
     return () => form?.removeEventListener('submit', handler)
@@ -113,8 +100,8 @@ const Footer: React.FC<Props> = ({ lang }) => {
                 name="email"
                 type="email"
                 placeholder="email@example.com"
-                className="flex-1 min-w-0 bg-concrete-900 border border-concrete-700 px-3 py-2 text-sm text-text-primary placeholder-concrete-500 focus:border-terracotta-400 focus:outline-none transition-colors"
-                required
+                disabled
+                className="flex-1 min-w-0 bg-concrete-900 border border-concrete-700 px-3 py-2 text-sm text-text-primary placeholder-concrete-300 focus:border-terracotta-400 focus:outline-none transition-colors opacity-60"
                 autoComplete="email"
               />
               <button
@@ -124,14 +111,6 @@ const Footer: React.FC<Props> = ({ lang }) => {
                 <span id="newsletter-btn-label">{t.subscribe}</span>
               </button>
             </form>
-            <p
-              id="newsletter-feedback"
-              className="mt-2 text-xs text-terracotta-400 hidden"
-              role="status"
-              aria-live="polite"
-            >
-              {t.thanks}
-            </p>
           </div>
 
           {/* Contact */}
@@ -173,11 +152,22 @@ const Footer: React.FC<Props> = ({ lang }) => {
             <ul className="space-y-3 text-sm text-text-secondary">
               <li>
                 <a
-                  href={lang === 'es' ? '/es/legal-advice' : '/en/legal-advice'}
+                  href={lang === 'es' ? '/es/cookies-policy' : '/en/cookies-policy'}
                   className="hover:text-terracotta-400 transition-colors"
                 >
-                  {t.legalAdvice}
+                  {t.cookies}
                 </a>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    localStorage.removeItem('front-cookie-consent')
+                    window.location.reload()
+                  }}
+                  className="hover:text-terracotta-400 transition-colors text-sm cursor-pointer"
+                >
+                  {lang === 'es' ? 'Configurar cookies' : 'Cookie settings'}
+                </button>
               </li>
               <li>
                 <a
@@ -288,5 +278,3 @@ const Footer: React.FC<Props> = ({ lang }) => {
     </footer>
   )
 }
-
-export default Footer

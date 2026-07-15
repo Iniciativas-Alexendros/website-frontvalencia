@@ -18,6 +18,7 @@ interface Props {
 export default function ReservasSection({ lang, site }: Props) {
   const [modalOpen, setModalOpen] = useState(false)
   const [iframeLoaded, setIframeLoaded] = useState(false)
+  const [iframeTimedOut, setIframeTimedOut] = useState(false)
 
   const reservasText =
     lang === 'es'
@@ -87,8 +88,17 @@ export default function ReservasSection({ lang, site }: Props) {
   const handleOpen = useCallback(() => {
     setModalOpen(true)
     setIframeLoaded(false)
+    setIframeTimedOut(false)
     document.body.style.overflow = 'hidden'
   }, [])
+
+  useEffect(() => {
+    if (!modalOpen) return
+    const timeout = setTimeout(() => {
+      if (!iframeLoaded) setIframeTimedOut(true)
+    }, 15000)
+    return () => clearTimeout(timeout)
+  }, [modalOpen, iframeLoaded])
 
   const handleClose = useCallback(() => {
     setModalOpen(false)
@@ -147,7 +157,7 @@ export default function ReservasSection({ lang, site }: Props) {
 
             <button
               onClick={handleOpen}
-              className="inline-flex items-center gap-3 bg-terracotta-500 hover:bg-terracotta-400 text-white font-bold text-lg uppercase tracking-widest px-10 py-4 transition-all duration-300 hover:px-12 focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-400 focus-visible:ring-offset-2 focus-visible:ring-offset-concrete-900"
+              className="inline-flex items-center gap-3 bg-terracotta-500 hover:bg-terracotta-400 text-white font-bold text-lg uppercase tracking-widest px-10 py-4 transition-all duration-300 hover:px-12 focus:outline-none"
               aria-haspopup="dialog"
             >
               {reservasText.cta}
@@ -252,11 +262,25 @@ export default function ReservasSection({ lang, site }: Props) {
 
             {/* Iframe container */}
             <div className="relative flex-1 min-h-0 bg-white">
-              {!iframeLoaded && (
+              {!iframeLoaded && !iframeTimedOut && (
                 <div className="absolute inset-0 flex items-center justify-center bg-concrete-900 z-10">
                   <div className="text-center">
                     <div className="w-8 h-8 border-2 border-concrete-700 border-t-terracotta-400 rounded-full animate-spin mx-auto mb-3"></div>
                     <p className="text-xs uppercase tracking-widest text-text-muted">{reservasText.loadingWidget}</p>
+                  </div>
+                </div>
+              )}
+              {iframeTimedOut && (
+                <div className="absolute inset-0 flex items-center justify-center bg-concrete-900 z-10 p-8">
+                  <div className="text-center">
+                    <p className="text-sm text-text-secondary mb-3">
+                      {lang === 'es'
+                        ? 'No se ha podido cargar el sistema de reservas.'
+                        : 'Could not load the booking system.'}
+                    </p>
+                    <p className="text-xs text-text-muted">
+                      {lang === 'es' ? `Llama al ${phone} para reservar.` : `Call ${phone} to book.`}
+                    </p>
                   </div>
                 </div>
               )}
@@ -266,7 +290,10 @@ export default function ReservasSection({ lang, site }: Props) {
                 className="w-full h-full border-0"
                 style={{ minHeight: '600px' }}
                 referrerPolicy="no-referrer"
-                onLoad={() => setIframeLoaded(true)}
+                onLoad={() => {
+                  setIframeLoaded(true)
+                  setIframeTimedOut(false)
+                }}
               />
             </div>
           </div>

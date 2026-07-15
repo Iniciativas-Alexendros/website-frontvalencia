@@ -1,10 +1,11 @@
-import React from 'react'
+import { useState } from 'react'
 
 interface Props {
   lang: 'es' | 'en'
 }
 
-const EspacioSection: React.FC<Props> = ({ lang }) => {
+export default function EspacioSection({ lang }: Props) {
+  const [erroredImages, setErroredImages] = useState<Set<number>>(new Set())
   const text =
     lang === 'es'
       ? {
@@ -105,7 +106,7 @@ const EspacioSection: React.FC<Props> = ({ lang }) => {
       id={lang === 'es' ? 'espacio' : 'space'}
       aria-label={lang === 'es' ? 'Espacio' : 'Space'}
     >
-      <div className="text-center mb-12">
+      <div className="text-center mb-16">
         <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-text-primary max-w-3xl mx-auto leading-tight">
           {text.heading}
         </h2>
@@ -156,15 +157,22 @@ const EspacioSection: React.FC<Props> = ({ lang }) => {
             }
             role="listitem"
           >
-            <img
-              src={img.src}
-              alt={img.alt}
-              width={img.w}
-              height={img.h}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
-              decoding="async"
-            />
+            {erroredImages.has(i) ? (
+              <div className="w-full h-full flex items-center justify-center bg-concrete-900 text-text-muted text-xs uppercase tracking-wider">
+                {lang === 'es' ? 'Imagen no disponible' : 'Image unavailable'}
+              </div>
+            ) : (
+              <img
+                src={img.src}
+                alt={img.alt}
+                width={img.w}
+                height={img.h}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+                onError={() => setErroredImages((prev) => new Set(prev).add(i))}
+              />
+            )}
             {/* Hover overlay with magnifier */}
             <div className="absolute inset-0 bg-concrete-950/0 group-hover:bg-concrete-950/40 transition-colors duration-500 flex items-center justify-center pointer-events-none">
               <svg
@@ -188,5 +196,3 @@ const EspacioSection: React.FC<Props> = ({ lang }) => {
     </section>
   )
 }
-
-export default EspacioSection
