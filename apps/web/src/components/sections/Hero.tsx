@@ -85,7 +85,7 @@ export default function Hero({ lang }: Props) {
         </h1>
 
         {/* Decorative terracotta line */}
-        <div className="mt-8 w-20 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
+        <div className="mt-8 w-16 h-[2px] bg-terracotta-400" aria-hidden="true"></div>
 
         <p className="mt-6 text-base sm:text-lg md:text-xl text-concrete-100 max-w-2xl font-normal tracking-[0.2em] uppercase">
           {heroText.tag}
