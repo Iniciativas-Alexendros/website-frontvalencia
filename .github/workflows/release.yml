@@ -34,8 +34,13 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm exec changeset tag && pnpm exec changeset publish
+          # apps/web is a private package, so nothing is published to npm.
+          # `changeset tag` still creates the git tags for the bumped versions,
+          # and changesets/action pushes them and opens a GitHub Release for each.
+          version: pnpm exec changeset version
+          publish: pnpm exec changeset tag
           commit: 'ci: version packages'
           title: 'ci: version packages'
+          createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
