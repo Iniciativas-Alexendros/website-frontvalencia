@@ -1,5 +1,31 @@
 # Plan de Implementación — FRONT Valencia Website
 
+---
+
+## ⚠️ PENDIENTES DE CLIENTE (bloquean el Go-Live)
+
+> Datos reales que faltan por confirmar con el cliente antes de publicar en
+> dominio definitivo. El código ya está preparado; solo hay que sustituir estos
+> valores.
+
+| #   | Dato pendiente                                                       | Dónde se usa                                                                                  | Estado         |
+| --- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | -------------- |
+| 1   | Datos fiscales del titular (razón social, CIF/NIF, domicilio fiscal) | `src/pages/{es,en}/legal-advice.astro` y `privacy-policy.astro` (marcados con `TODO-CONTENT`) | ⛔             |
+| 2   | Dirección postal completa (falta número de calle)                    | `src/content/site.json` → `contact.address` (`"C/Travesía"`), Footer, JSON-LD, Localización   | ⛔             |
+| 3   | URL real del portal de empleo (Teamtailor)                           | `src/components/sections/Header.tsx` y `Footer.tsx` (`careersUrl`)                            | ⚠️ verificar   |
+| 4   | Emails de contacto definitivos (general, reservas, eventos)          | `src/content/site.json`, `Footer.tsx`, `ReservasSection.tsx`, páginas de condiciones          | ⚠️ verificar   |
+| 5   | ID de Meta Pixel / analytics                                         | `src/lib/analytics.ts` (placeholder)                                                          | 🟢 opcional    |
+| 6   | Dominio final + `PUBLIC_SITE_URL`                                    | `astro.config.mjs`, `vercel.json`, sitemap, JSON-LD                                           | ⚠️ al publicar |
+
+**Cómo localizarlos rápido:**
+
+```bash
+grep -rn "TODO-CONTENT" apps/web/src            # textos legales pendientes
+grep -n "address" apps/web/src/content/site.json # dirección incompleta
+```
+
+---
+
 ## Resumen de Cambios (12 puntos)
 
 Este plan descompone los 12 puntos solicitados en fases ejecutables con verificaciones concretas.

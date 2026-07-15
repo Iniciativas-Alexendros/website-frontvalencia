@@ -6,7 +6,7 @@ Este proyecto es la web del restaurante FRONT Valencia, situado en La Marina, fr
 
 ---
 
-![Astro](https://img.shields.io/badge/Astro-7.0-FF5D01?logo=astro&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro-5-FF5D01?logo=astro&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![Payload CMS](https://img.shields.io/badge/Payload_CMS-3-000000?logo=payload&logoColor=white)

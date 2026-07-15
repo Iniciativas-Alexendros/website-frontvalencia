@@ -17,15 +17,15 @@ Auditoría    Arquitectura    CMS    Calidad   CI/CD    SEO
 
 **Entregable actual**: repositorio público listo para publicación inmediata.
 
-| Área                 | Estado | Métricas                                                  |
-| -------------------- | ------ | --------------------------------------------------------- |
-| **Frontend (Astro)** | ✅     | 21 páginas ES/EN, build 1.88s, LCP < 2.5s                 |
-| **CMS (Payload)**    | ✅     | Collections + RBAC + seed data, dockerizado               |
-| **Testing**          | ✅     | 31 tests unitarios, Playwright 3 viewports + axe-core     |
-| **CI/CD**            | ✅     | GitHub Actions: lint → typecheck → test → build → deploy  |
-| **Documentación**    | ✅     | 13 archivos (153KB): README, ADRs, DESIGN, FAQ, etc.      |
-| **SEO**              | ✅     | JSON-LD Restaurant, sitemap, hreflang, performance budget |
-| **Seguridad**        | ✅     | CSP, rate limiting, RBAC, secret validation               |
+| Área                 | Estado | Métricas                                                         |
+| -------------------- | ------ | ---------------------------------------------------------------- |
+| **Frontend (Astro)** | ✅     | 13 páginas ES/EN (SPA + legales), build < 2s, LCP < 2.5s         |
+| **CMS (Payload)**    | ✅     | Collections + RBAC + seed data, dockerizado                      |
+| **Testing**          | ✅     | 19 tests unitarios + 14 E2E (Playwright + axe-core, 2 viewports) |
+| **CI/CD**            | ✅     | GitHub Actions: lint → typecheck → test → build → deploy         |
+| **Documentación**    | ✅     | 13 archivos (153KB): README, ADRs, DESIGN, FAQ, etc.             |
+| **SEO**              | ✅     | JSON-LD Restaurant, sitemap, hreflang, performance budget        |
+| **Seguridad**        | ✅     | CSP, rate limiting, RBAC, secret validation                      |
 
 ---
 
@@ -56,7 +56,7 @@ Auditoría    Arquitectura    CMS    Calidad   CI/CD    SEO
 | Auditoría de seguridad (secretos, CSP, cookies)         | 🔨       | Alto    | ✅     |
 | Mono-repo pnpm + Turborepo                              | 🔨       | Alto    | ✅     |
 | Payload CMS con collections tipadas + RBAC              | 🔨       | Alto    | ✅     |
-| Astro SSG con i18n ES/EN + 21 páginas                   | 🔨       | Alto    | ✅     |
+| Astro SSG con i18n ES/EN + SPA (13 páginas)             | 🔨       | Alto    | ✅     |
 | Docker Compose (Postgres + Payload + Astro)             | 🔨       | Alto    | ✅     |
 | Seed data (14 alérgenos, 8 categorías, 44 platos)       | 🔨       | Alto    | ✅     |
 | Documentación completa (13 archivos)                    | 🔨       | Alto    | ✅     |
@@ -64,7 +64,7 @@ Auditoría    Arquitectura    CMS    Calidad   CI/CD    SEO
 | SEO JSON-LD (Restaurant, WebSite, BreadcrumbList)       | ⚡       | Alto    | ✅     |
 | CI/CD pipeline (7 jobs)                                 | 🔨       | Alto    | ✅     |
 | Precommit validation (Husky + lint-staged + commitlint) | ⚡       | Alto    | ✅     |
-| ESLint flat config + Playwright 3 viewports + axe-core  | ⚡       | Alto    | ✅     |
+| ESLint flat config + Playwright 2 viewports + axe-core  | ⚡       | Alto    | ✅     |
 | Code review con 5 críticos corregidos                   | 🔨       | Alto    | ✅     |
 | Performance budget (LCP < 2.5s, TBT < 200ms, CLS < 0.1) | ⚡       | Alto    | ✅     |
 
