@@ -75,7 +75,7 @@ jobs:
         run: pnpm --filter frontvalencia-web exec playwright test --project=chromium
       - name: Upload report
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-report
           path: apps/web/playwright-report/
