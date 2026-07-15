@@ -37,14 +37,14 @@ Auditoría    Arquitectura    CMS    Calidad   CI/CD    SEO
 
 | #   | Tarea                                                            | Prioridad | Depende de | Estado           |
 | --- | ---------------------------------------------------------------- | --------- | ---------- | ---------------- |
-| A   | Datos fiscales/legales reales (razón social, CIF/NIF, domicilio) | 🔴 P0     | Cliente    | ⛔ bloqueado     |
+| A   | Datos fiscales/legales reales (razón social, CIF/NIF, domicilio) | 🔴 P0     | —          | ✅ hecho         |
 | B   | Dirección postal completa (falta nº de calle en `site.json`)     | 🔴 P0     | Cliente    | ⛔ bloqueado     |
 | C   | Verificar URL real del portal de empleo (Teamtailor)             | 🟡 P1     | Cliente    | ⚠️ por confirmar |
 | D   | Emails de contacto definitivos (general/reservas/eventos)        | 🟡 P1     | Cliente    | ⚠️ por confirmar |
 | E   | Google Maps embed real en Localización                           | 🟡 P1     | ninguno    | ⬜ pendiente     |
 | F   | CoverManager: validar URLs reales de reservas ES/EN              | 🟡 P1     | Cliente    | ⬜ pendiente     |
 | G   | Meta Pixel / analytics condicionado a cookie consent             | 🟢 P2     | #9         | ⬜ pendiente     |
-| H   | Actualizar acciones CI a Node 24 (aviso de deprecación Node 20)  | 🟢 P2     | ninguno    | ⬜ pendiente     |
+| H   | Actualizar acciones CI a Node 24 (aviso de deprecación Node 20)  | 🟢 P2     | #8         | ✅ hecho         |
 
 ### ✅ Resuelto recientemente
 
