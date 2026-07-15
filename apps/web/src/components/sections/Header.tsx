@@ -6,7 +6,8 @@ interface Props {
 }
 
 export default function Header({ lang, isHome = false }: Props) {
-  const careersUrl = 'https://grupoelalto-1738067471.teamtailor.com/'
+  // External links
+  const careersUrl = 'https://grupoelalto-[PHONE].teamtailor.com/'
 
   // Section anchors differ per locale because each section renders a
   // locale-specific id (e.g. #espacio in ES vs #space in EN).

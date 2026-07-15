@@ -77,7 +77,8 @@ export default function LocalizacionSection({ lang, site }: Props) {
         ]
 
   const embedSrc =
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.6!2d-0.3237!3d39.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4b7e4fa7c1%3A0x7e3a4f0d4d1c2f0a!2sMarina+de+Valencia!5e0!3m2!1ses!2ses!4v1719000000000'
+    import.meta.env.PUBLIC_GOOGLE_MAPS_EMBED_URL ??
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3080.6!2d-0.3237!3d39.4501!2m2!1zNzAmNDcnMjUuMiJO!3sMCczOS41MCc1LjMiVw!3m3!1i1024!2i768!4f13.1!3m2!1s0xd604f4b7e4fa7c1%3A0x7e3a4f0d4d1c2f0a!2sThe+Terminal+Hub%2C+La+Marina+de+Valencia!5e0!3m2!1ses!2ses!4v1719000000000'
 
   useEffect(() => {
     if (mapLoaded) return

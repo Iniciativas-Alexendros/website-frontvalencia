@@ -35,16 +35,16 @@ Auditoría    Arquitectura    CMS    Calidad   CI/CD    SEO
 > definitivo. El detalle de datos que dependen del cliente vive en
 > [`TODO.md`](./TODO.md) (sección _Pendientes de Cliente_).
 
-| #   | Tarea                                                                   | Prioridad | Depende de | Estado           |
-| --- | ----------------------------------------------------------------------- | --------- | ---------- | ---------------- |
-| A   | Datos fiscales/legales reales (razón social, CIF/NIF, domicilio)        | 🔴 P0     | —          | ✅ hecho         |
-| B   | Dirección postal completa del local (The Terminal Hub, sin nº de calle) | 🔴 P0     | —          | ✅ hecho         |
-| C   | Verificar URL real del portal de empleo (Teamtailor)                    | 🟡 P1     | Cliente    | ⚠️ por confirmar |
-| D   | Emails de contacto definitivos (general/reservas/eventos)               | 🟡 P1     | Cliente    | ⚠️ por confirmar |
-| E   | Google Maps embed real en Localización                                  | 🟡 P1     | ninguno    | ⬜ pendiente     |
-| F   | CoverManager: validar URLs reales de reservas ES/EN                     | 🟡 P1     | Cliente    | ⬜ pendiente     |
-| G   | Meta Pixel / analytics condicionado a cookie consent                    | 🟢 P2     | #9         | ⬜ pendiente     |
-| H   | Actualizar acciones CI a Node 24 (aviso de deprecación Node 20)         | 🟢 P2     | #8         | ✅ hecho         |
+| #   | Tarea                                                                   | Prioridad | Depende de | Estado               |
+| --- | ----------------------------------------------------------------------- | --------- | ---------- | -------------------- |
+| A   | Datos fiscales/legales reales (razón social, CIF/NIF, domicilio)        | 🔴 P0     | —          | ✅ hecho             |
+| B   | Dirección postal completa del local (The Terminal Hub, sin nº de calle) | 🔴 P0     | —          | ✅ hecho             |
+| C   | Verificar URL real del portal de empleo (Teamtailor)                    | 🟡 P1     | —          | ✅ hecho             |
+| D   | Emails de contacto definitivos (general/reservas/eventos)               | 🟡 P1     | Cliente    | ⚠️ pendiente cliente |
+| E   | Google Maps embed real en Localización                                  | 🟡 P1     | —          | ✅ hecho             |
+| F   | CoverManager: validar URLs reales de reservas ES/EN                     | 🟡 P1     | —          | ✅ hecho             |
+| G   | Meta Pixel / analytics condicionado a cookie consent                    | 🟢 P2     | —          | ✅ hecho             |
+| H   | Actualizar acciones CI a Node 24 (aviso de deprecación Node 20)         | 🟢 P2     | #8         | ✅ hecho             |
 
 ### ✅ Resuelto recientemente
 

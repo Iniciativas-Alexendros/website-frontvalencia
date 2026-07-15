@@ -49,10 +49,40 @@ export function initAnalytics(): void {
       loadScript('https://tracker.metricool.com/resources/be.js', 'metricool-script').catch(() => {})
     }
     if (consent.marketing) {
-      // Meta Pixel (placeholder — actual pixel ID from env)
-      // loadScript('https://connect.facebook.net/en_US/fbevents.js', 'meta-pixel').catch(() => {});
+      // Meta Pixel — only loaded when a pixel ID is configured via env,
+      // and only after the user grants marketing consent.
+      const pixelId = import.meta.env.PUBLIC_META_PIXEL_ID
+      if (pixelId) {
+        loadMetaPixel(pixelId).catch(() => {})
+      }
     }
   }) as EventListener)
+}
+
+function loadMetaPixel(pixelId: string): Promise<void> {
+  return new Promise((resolve) => {
+    if (document.getElementById('meta-pixel')) {
+      resolve()
+      return
+    }
+    // Meta Pixel base code
+    const script = document.createElement('script')
+    script.id = 'meta-pixel'
+    script.innerHTML = `
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '${pixelId}');
+      fbq('track', 'PageView');
+    `
+    document.head.appendChild(script)
+    resolve()
+  })
 }
 
 // Auto-init on script load

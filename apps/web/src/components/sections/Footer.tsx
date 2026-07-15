@@ -4,7 +4,7 @@ interface Props {
   lang: 'es' | 'en'
 }
 
-const APP_VERSION = '1.0.1'
+const APP_VERSION = '1.0.3'
 
 export default function Footer({ lang }: Props) {
   const t =
