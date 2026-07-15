@@ -114,21 +114,21 @@ const StructuredData: React.FC<Props> = ({ lang, page, eventName, eventDate }) =
       { name: lang === 'es' ? 'Inicio' : 'Home', item: siteUrl },
       {
         name: lang === 'es' ? 'Espacio' : 'Space',
-        item: `${siteUrl}/${lang}/#espacio`,
+        item: `${siteUrl}/${lang}/#${lang === 'es' ? 'espacio' : 'space'}`,
       },
     ],
     location: [
       { name: lang === 'es' ? 'Inicio' : 'Home', item: siteUrl },
       {
         name: lang === 'es' ? 'Localización' : 'Location',
-        item: `${siteUrl}/${lang}/#localizacion`,
+        item: `${siteUrl}/${lang}/#${lang === 'es' ? 'localizacion' : 'location'}`,
       },
     ],
     book: [
       { name: lang === 'es' ? 'Inicio' : 'Home', item: siteUrl },
       {
         name: lang === 'es' ? 'Reservas' : 'Book',
-        item: `${siteUrl}/${lang}/#reservas`,
+        item: `${siteUrl}/${lang}/#${lang === 'es' ? 'reservas' : 'book'}`,
       },
     ],
   }

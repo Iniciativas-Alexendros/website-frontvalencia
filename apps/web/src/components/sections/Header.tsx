@@ -8,18 +8,25 @@ interface Props {
 export default function Header({ lang, isHome = false }: Props) {
   const careersUrl = 'https://grupoelalto-1738067471.teamtailor.com/'
 
+  // Section anchors differ per locale because each section renders a
+  // locale-specific id (e.g. #espacio in ES vs #space in EN).
+  const anchors =
+    lang === 'es'
+      ? { carta: '#carta', espacio: '#espacio', localizacion: '#localizacion' }
+      : { carta: '#carta', espacio: '#space', localizacion: '#location' }
+
   const navItems =
     lang === 'es'
       ? [
-          { label: 'Carta', href: '#carta' },
-          { label: 'Espacio', href: '#espacio' },
-          { label: 'Localización', href: '#localizacion' },
+          { label: 'Carta', href: anchors.carta },
+          { label: 'Espacio', href: anchors.espacio },
+          { label: 'Localización', href: anchors.localizacion },
           { label: 'Talento', href: careersUrl, external: true },
         ]
       : [
-          { label: 'Menu', href: '#carta' },
-          { label: 'Space', href: '#espacio' },
-          { label: 'Location', href: '#localizacion' },
+          { label: 'Menu', href: anchors.carta },
+          { label: 'Space', href: anchors.espacio },
+          { label: 'Location', href: anchors.localizacion },
           { label: 'Careers', href: careersUrl, external: true },
         ]
 
@@ -155,9 +162,9 @@ export default function Header({ lang, isHome = false }: Props) {
             {lang === 'es' ? 'EN' : 'ES'}
           </a>
           <a
-            href="#localizacion"
+            href={anchors.localizacion}
             className="inline-flex items-center gap-2 bg-terracotta-500 hover:bg-terracotta-400 text-white text-sm font-semibold uppercase tracking-wider px-5 py-2 transition-colors duration-200"
-            onClick={(e) => handleAnchorClick(e, '#localizacion')}
+            onClick={(e) => handleAnchorClick(e, anchors.localizacion)}
           >
             {lang === 'es' ? 'Contactar' : 'Contact'}
           </a>
@@ -218,9 +225,9 @@ export default function Header({ lang, isHome = false }: Props) {
             ),
           )}
           <a
-            href={lang === 'es' ? '#localizacion' : '#localizacion'}
+            href={anchors.localizacion}
             className="block text-lg font-medium uppercase tracking-wider hover:text-text-primary bg-terracotta-500 hover:bg-terracotta-400 text-white px-4 py-2 text-center"
-            onClick={(e) => handleAnchorClick(e, '#localizacion')}
+            onClick={(e) => handleAnchorClick(e, anchors.localizacion)}
           >
             {lang === 'es' ? 'Contactar' : 'Contact'}
           </a>

@@ -99,7 +99,7 @@ export default function Hero({ lang }: Props) {
             {heroText.cta1}
           </a>
           <a
-            href="#localizacion"
+            href={lang === 'es' ? '#localizacion' : '#location'}
             className="inline-flex items-center justify-center px-8 py-3 border border-concrete-200 hover:border-text-primary text-concrete-100 hover:text-text-primary font-semibold text-sm uppercase tracking-widest transition-all duration-300 hover:px-12"
           >
             {heroText.cta2}
