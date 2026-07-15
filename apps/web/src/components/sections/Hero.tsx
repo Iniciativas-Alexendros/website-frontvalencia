@@ -9,9 +9,9 @@ export default function Hero({ lang }: Props) {
     lang === 'es'
       ? {
           line1: 'ASSABORIX VALÈNCIA',
-          line1sub: 'Saborear Valencia',
+          line1sub: 'Saborea Valencia',
           line2: 'FRONT AL MEDITERRANI',
-          line2sub: 'Frente al Mediterráneo',
+          line2sub: 'frente al Mediterráneo.',
           tag: 'Restaurante y Terraza en La Marina de Valencia',
           cta1: 'Ver Carta',
         }
@@ -71,13 +71,13 @@ export default function Hero({ lang }: Props) {
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-text-primary leading-[0.95]">
             {heroText.line1}
           </span>
-          <span className="block text-xs sm:text-sm font-light italic tracking-[0.25em] text-concrete-400 mt-1.5">
+          <span className="block font-accent text-[0.9rem] sm:text-[1.125rem] md:text-[1.35rem] text-concrete-200/80 mt-2 leading-tight [text-shadow:0_2px_8px_rgba(0,0,0,0.45)]">
             {heroText.line1sub}
           </span>
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-terracotta-400 leading-[0.95] mt-3">
             {heroText.line2}
           </span>
-          <span className="block text-xs sm:text-sm font-light italic tracking-[0.25em] text-concrete-400 mt-1.5">
+          <span className="block font-accent text-[0.9rem] sm:text-[1.125rem] md:text-[1.35rem] text-concrete-200/80 mt-2 leading-tight [text-shadow:0_2px_8px_rgba(0,0,0,0.45)]">
             {heroText.line2sub}
           </span>
         </h1>

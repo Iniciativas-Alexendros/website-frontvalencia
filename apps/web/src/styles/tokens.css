@@ -47,6 +47,9 @@
   --font-display: 'Geist', system-ui, sans-serif;
   --font-body: 'Geist', system-ui, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, monospace;
+  /* Script accent for the hero tagline. 'Marquette' (proprietary) is preferred
+     when its @font-face is present; falls back to the self-hosted Sacramento. */
+  --font-accent: 'Marquette', 'Sacramento', cursive;
 
   --text-xs: clamp(0.75rem, 1.5vw, 0.875rem);
   --text-sm: clamp(0.8125rem, 2vw, 0.9375rem);
