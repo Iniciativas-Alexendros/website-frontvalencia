@@ -78,41 +78,7 @@ export default function Footer({ lang }: Props) {
   return (
     <footer className="bg-concrete-950 border-t border-concrete-800 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Logo + Newsletter */}
-          <div>
-            <img
-              src="/images/logos/LOGO_MV_SVG.svg"
-              alt="FRONT"
-              width={120}
-              height={40}
-              className="h-10 w-auto mb-6"
-              loading="lazy"
-              decoding="async"
-            />
-            <p className="text-sm text-text-muted mb-4">{t.newsletter}</p>
-            <form id="newsletter-form" className="flex gap-2">
-              <label htmlFor="newsletter-email" className="sr-only">
-                {t.email}
-              </label>
-              <input
-                id="newsletter-email"
-                name="email"
-                type="email"
-                placeholder="email@example.com"
-                disabled
-                className="flex-1 min-w-0 bg-concrete-900 border border-concrete-700 px-3 py-2 text-sm text-text-primary placeholder-concrete-300 focus:border-terracotta-400 focus:outline-none transition-colors opacity-60"
-                autoComplete="email"
-              />
-              <button
-                type="submit"
-                className="bg-terracotta-500 hover:bg-terracotta-400 text-white px-4 py-2 text-sm font-semibold uppercase tracking-wider transition-colors shrink-0"
-              >
-                <span id="newsletter-btn-label">{t.subscribe}</span>
-              </button>
-            </form>
-          </div>
-
+        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-10 mb-12">
           {/* Contact */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-text-primary mb-4">{t.contact}</h3>
@@ -152,22 +118,11 @@ export default function Footer({ lang }: Props) {
             <ul className="space-y-3 text-sm text-text-secondary">
               <li>
                 <a
-                  href={lang === 'es' ? '/es/cookies-policy' : '/en/cookies-policy'}
+                  href={lang === 'es' ? '/es/legal-advice' : '/en/legal-advice'}
                   className="hover:text-terracotta-400 transition-colors"
                 >
-                  {t.cookies}
+                  {t.legalAdvice}
                 </a>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    localStorage.removeItem('front-cookie-consent')
-                    window.location.reload()
-                  }}
-                  className="hover:text-terracotta-400 transition-colors text-sm cursor-pointer"
-                >
-                  {lang === 'es' ? 'Configurar cookies' : 'Cookie settings'}
-                </button>
               </li>
               <li>
                 <a
@@ -184,6 +139,17 @@ export default function Footer({ lang }: Props) {
                 >
                   {t.cookies}
                 </a>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    localStorage.removeItem('front-cookie-consent')
+                    window.location.reload()
+                  }}
+                  className="hover:text-terracotta-400 transition-colors text-sm cursor-pointer"
+                >
+                  {lang === 'es' ? 'Configurar cookies' : 'Cookie settings'}
+                </button>
               </li>
               <li>
                 <a
@@ -222,7 +188,7 @@ export default function Footer({ lang }: Props) {
               @frontvalencia
             </a>
 
-            {/* QR Code */}
+            {/* QR Code - Shareable/Printable */}
             <div className="mt-6">
               <p className="text-xs text-text-muted uppercase tracking-wider mb-2">{t.scanMenu}</p>
               <a
@@ -235,13 +201,17 @@ export default function Footer({ lang }: Props) {
                 <img
                   src="/images/qr-menu.png"
                   alt={t.scanMenu}
-                  width={96}
-                  height={96}
-                  className="w-24 h-24"
+                  width={120}
+                  height={120}
+                  className="w-28 h-28"
                   loading="lazy"
                   decoding="async"
                 />
               </a>
+              <p className="mt-2 text-xs text-text-secondary text-center">{t.viewPdf}</p>
+              <p className="mt-1 text-[10px] text-text-muted break-all">
+                website-frontvalencia.vercel.app/files/menu-frontvalencia.pdf
+              </p>
             </div>
           </div>
         </div>
@@ -251,9 +221,9 @@ export default function Footer({ lang }: Props) {
           <img
             src="/images/logos/LOGO_MV_SVG.svg"
             alt="FRONT"
-            width="200"
-            height="49"
-            className="h-12 w-auto opacity-80"
+            width="240"
+            height="59"
+            className="h-14 w-auto opacity-90"
             loading="lazy"
             decoding="async"
           />

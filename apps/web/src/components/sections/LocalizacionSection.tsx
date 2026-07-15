@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface Props {
   lang: 'es' | 'en'
@@ -12,6 +12,15 @@ interface Props {
 
 export default function LocalizacionSection({ lang, site }: Props) {
   const [mapLoaded, setMapLoaded] = useState(false)
+  const [mapTimedOut, setMapTimedOut] = useState(false)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (!mapLoaded) setMapTimedOut(true)
+    }, 15000)
+    return () => clearTimeout(timeout)
+  }, [mapLoaded])
+
   const mapsUrl = site?.location?.mapsUrl ?? 'https://maps.app.goo.gl/FVnSVDYfv5XnNiU16'
   const postalCode = site?.location?.postalCode ?? '46024'
   const locationData =
@@ -69,6 +78,14 @@ export default function LocalizacionSection({ lang, site }: Props) {
 
   const embedSrc =
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.6!2d-0.3237!3d39.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4b7e4fa7c1%3A0x7e3a4f0d4d1c2f0a!2sMarina+de+Valencia!5e0!3m2!1ses!2ses!4v1719000000000'
+
+  useEffect(() => {
+    if (mapLoaded) return
+    const timeout = setTimeout(() => {
+      if (!mapLoaded) setMapTimedOut(true)
+    }, 15000)
+    return () => clearTimeout(timeout)
+  }, [mapLoaded])
 
   return (
     <section
@@ -200,11 +217,28 @@ export default function LocalizacionSection({ lang, site }: Props) {
           id="map-container"
         >
           {/* Skeleton shown until iframe loads */}
-          {!mapLoaded && (
+          {!mapLoaded && !mapTimedOut && (
             <div className="absolute inset-0 flex items-center justify-center bg-concrete-900" aria-hidden="true">
               <div className="text-center">
                 <div className="w-8 h-8 border-2 border-concrete-700 border-t-terracotta-400 rounded-full animate-spin mx-auto mb-3"></div>
                 <p className="text-xs uppercase tracking-widest text-text-muted">Cargando mapa…</p>
+              </div>
+            </div>
+          )}
+          {mapTimedOut && (
+            <div className="absolute inset-0 flex items-center justify-center bg-concrete-900 z-10 p-8">
+              <div className="text-center">
+                <p className="text-sm text-text-secondary mb-3">
+                  {lang === 'es' ? 'No se ha podido cargar el mapa.' : 'Could not load the map.'}
+                </p>
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-terracotta-400 hover:text-terracotta-300 underline"
+                >
+                  {lang === 'es' ? 'Abrir en Google Maps' : 'Open in Google Maps'}
+                </a>
               </div>
             </div>
           )}

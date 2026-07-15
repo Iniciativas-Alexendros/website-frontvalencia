@@ -294,6 +294,10 @@ export default function ReservasSection({ lang, site }: Props) {
                   setIframeLoaded(true)
                   setIframeTimedOut(false)
                 }}
+                onError={() => {
+                  setIframeTimedOut(true)
+                  setIframeLoaded(false)
+                }}
               />
             </div>
           </div>
