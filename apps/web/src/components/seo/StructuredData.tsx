@@ -27,7 +27,7 @@ const StructuredData: React.FC<Props> = ({ lang, page, eventName, eventDate }) =
     priceRange: '€€',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'C/Travesía, La Marina de Valencia',
+      streetAddress: 'The Terminal Hub, La Marina de Valencia',
       addressLocality: 'Valencia',
       postalCode: '46024',
       addressCountry: 'ES',

@@ -58,7 +58,7 @@ export default function Footer({ lang }: Props) {
   const email = 'hello@frontvalencia.com'
   const eventsEmail = 'eventos@frontvalencia.com'
   const reservationsEmail = 'reservas@frontvalencia.com'
-  const address = 'C/Travesía'
+  const address = 'The Terminal Hub, La Marina de Valencia'
   const city = 'Valencia'
   const postal = '46024'
   const area = 'La Marina de Valencia'

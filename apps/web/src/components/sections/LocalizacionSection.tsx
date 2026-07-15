@@ -27,7 +27,7 @@ export default function LocalizacionSection({ lang, site }: Props) {
     lang === 'es'
       ? {
           heading: 'LOCALIZACIÓN',
-          address: 'C/Travesía',
+          address: 'The Terminal Hub, La Marina de Valencia',
           area: 'La Marina de Valencia, The Terminal Hub',
           weekday: 'Lunes a Viernes: 9:00 a 19:00',
           weekend: 'Sábados, Domingos y Festivos: 11:30 a 19:00',
@@ -46,7 +46,7 @@ export default function LocalizacionSection({ lang, site }: Props) {
         }
       : {
           heading: 'LOCATION',
-          address: 'C/Travesía',
+          address: 'The Terminal Hub, La Marina de Valencia',
           area: 'La Marina de Valencia, The Terminal Hub',
           weekday: 'Monday to Friday: 9:00 - 19:00',
           weekend: 'Saturdays, Sundays & Holidays: 11:30 - 19:00',
