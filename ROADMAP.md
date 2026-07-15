@@ -21,11 +21,42 @@ Auditoría    Arquitectura    CMS    Calidad   CI/CD    SEO
 | -------------------- | ------ | ---------------------------------------------------------------- |
 | **Frontend (Astro)** | ✅     | 13 páginas ES/EN (SPA + legales), build < 2s, LCP < 2.5s         |
 | **CMS (Payload)**    | ✅     | Collections + RBAC + seed data, dockerizado                      |
-| **Testing**          | ✅     | 19 tests unitarios + 14 E2E (Playwright + axe-core, 2 viewports) |
+| **Testing**          | ✅     | 19 tests unitarios + 18 E2E (Playwright + axe-core, 2 viewports) |
 | **CI/CD**            | ✅     | GitHub Actions: lint → typecheck → test → build → deploy         |
 | **Documentación**    | ✅     | 13 archivos (153KB): README, ADRs, DESIGN, FAQ, etc.             |
 | **SEO**              | ✅     | JSON-LD Restaurant, sitemap, hreflang, performance budget        |
 | **Seguridad**        | ✅     | CSP, rate limiting, RBAC, secret validation                      |
+
+---
+
+## ⏳ Tareas Pendientes Inmediatas (pre-go-live)
+
+> Estado a día de hoy. Snapshot de lo que queda antes de publicar en el dominio
+> definitivo. El detalle de datos que dependen del cliente vive en
+> [`TODO.md`](./TODO.md) (sección _Pendientes de Cliente_).
+
+| #   | Tarea                                                            | Prioridad | Depende de | Estado           |
+| --- | ---------------------------------------------------------------- | --------- | ---------- | ---------------- |
+| A   | Datos fiscales/legales reales (razón social, CIF/NIF, domicilio) | 🔴 P0     | Cliente    | ⛔ bloqueado     |
+| B   | Dirección postal completa (falta nº de calle en `site.json`)     | 🔴 P0     | Cliente    | ⛔ bloqueado     |
+| C   | Verificar URL real del portal de empleo (Teamtailor)             | 🟡 P1     | Cliente    | ⚠️ por confirmar |
+| D   | Emails de contacto definitivos (general/reservas/eventos)        | 🟡 P1     | Cliente    | ⚠️ por confirmar |
+| E   | Google Maps embed real en Localización                           | 🟡 P1     | ninguno    | ⬜ pendiente     |
+| F   | CoverManager: validar URLs reales de reservas ES/EN              | 🟡 P1     | Cliente    | ⬜ pendiente     |
+| G   | Meta Pixel / analytics condicionado a cookie consent             | 🟢 P2     | #9         | ⬜ pendiente     |
+| H   | Actualizar acciones CI a Node 24 (aviso de deprecación Node 20)  | 🟢 P2     | ninguno    | ⬜ pendiente     |
+
+### ✅ Resuelto recientemente
+
+- **Duplicidad de CTA "Contactar"** entre Hero (bienvenida) y navbar en web y
+  móvil: el Hero deja un único CTA primario ("Ver Carta" → `#carta`) y el
+  "Contactar" queda solo en el navbar (persistente). Cubierto por test de
+  regresión E2E (`hero exposes a single primary CTA`).
+- **Anchors EN** (`#space`/`#location`/`#book`) corregidos en navbar, Hero,
+  JSON-LD y sitemap.
+- **Contraste WCAG AA** de texto atenuado sobre fondos oscuros.
+- **Redirects 301** de rutas antiguas al SPA.
+- **Pre-commit** ejecuta ahora tests unitarios además de lint-staged.
 
 ---
 

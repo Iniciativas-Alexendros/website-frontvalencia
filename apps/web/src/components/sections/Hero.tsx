@@ -14,7 +14,6 @@ export default function Hero({ lang }: Props) {
           line2sub: 'Frente al Mediterráneo',
           tag: 'Restaurante y Terraza en La Marina de Valencia',
           cta1: 'Ver Carta',
-          cta2: 'Contactar',
         }
       : {
           line1: 'EAT WELL',
@@ -23,7 +22,6 @@ export default function Hero({ lang }: Props) {
           line2sub: 'Frente al mar',
           tag: 'Restaurant & Terrace at La Marina de Valencia',
           cta1: 'View Menu',
-          cta2: 'Contact',
         }
 
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -91,18 +89,12 @@ export default function Hero({ lang }: Props) {
           {heroText.tag}
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-4">
+        <div className="mt-10 flex justify-center">
           <a
             href="#carta"
             className="inline-flex items-center justify-center px-8 py-3 bg-terracotta-500 hover:bg-terracotta-400 text-white font-semibold text-sm uppercase tracking-widest transition-all duration-300 hover:px-12"
           >
             {heroText.cta1}
-          </a>
-          <a
-            href={lang === 'es' ? '#localizacion' : '#location'}
-            className="inline-flex items-center justify-center px-8 py-3 border border-concrete-200 hover:border-text-primary text-concrete-100 hover:text-text-primary font-semibold text-sm uppercase tracking-widest transition-all duration-300 hover:px-12"
-          >
-            {heroText.cta2}
           </a>
         </div>
       </div>

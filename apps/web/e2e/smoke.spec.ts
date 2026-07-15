@@ -32,6 +32,13 @@ for (const lang of ['es', 'en'] as const) {
       }
     })
 
+    test('hero exposes a single primary CTA (no duplicate contact button)', async ({ page }) => {
+      await page.goto(`/${lang}/`)
+      const heroCtas = page.locator('section[aria-label="Hero"] a')
+      await expect(heroCtas).toHaveCount(1)
+      await expect(heroCtas.first()).toHaveAttribute('href', '#carta')
+    })
+
     test('has no serious or critical accessibility violations', async ({ page }) => {
       await page.goto(`/${lang}/`)
       const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze()
