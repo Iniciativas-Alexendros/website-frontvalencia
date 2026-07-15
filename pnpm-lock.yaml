@@ -179,6 +179,9 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.3.0
         version: 3.7.3
+      '@axe-core/playwright':
+        specifier: ^4.12.1
+        version: 4.12.1(playwright-core@1.61.1)
       '@playwright/test':
         specifier: ^1.61.1
         version: 1.61.1
@@ -803,7 +806,6 @@ packages:
     dependencies:
       axe-core: 4.12.1
       playwright-core: 1.61.1
-    dev: false
 
   /@babel/code-frame@7.29.7:
     resolution: {integrity: sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw==}
