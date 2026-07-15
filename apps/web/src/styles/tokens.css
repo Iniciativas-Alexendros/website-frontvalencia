@@ -38,7 +38,8 @@
   --color-surface-elevated: var(--color-concrete-900);
   --color-text-primary: var(--color-concrete-50);
   --color-text-secondary: var(--color-concrete-300);
-  --color-text-muted: var(--color-concrete-400);
+  /* Raised from concrete-400 (L=0.5) to meet WCAG AA 4.5:1 on dark surfaces */
+  --color-text-muted: oklch(0.62 0.012 70);
   --color-accent: var(--color-terracotta-400);
   --color-accent-hover: var(--color-terracotta-300);
 

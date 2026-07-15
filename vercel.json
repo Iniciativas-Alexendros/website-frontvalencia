@@ -66,5 +66,31 @@
       ]
     }
   ],
-  "redirects": [{ "source": "/", "destination": "/es/", "permanent": true }]
+  "redirects": [
+    { "source": "/", "destination": "/es/", "permanent": true },
+    { "source": "/es/carta", "destination": "/es/#carta", "permanent": true },
+    { "source": "/en/menu", "destination": "/en/#carta", "permanent": true },
+    {
+      "source": "/es/espacio",
+      "destination": "/es/#espacio",
+      "permanent": true
+    },
+    { "source": "/en/space", "destination": "/en/#space", "permanent": true },
+    {
+      "source": "/es/localizacion",
+      "destination": "/es/#localizacion",
+      "permanent": true
+    },
+    {
+      "source": "/en/location",
+      "destination": "/en/#location",
+      "permanent": true
+    },
+    {
+      "source": "/es/reservas",
+      "destination": "/es/#reservas",
+      "permanent": true
+    },
+    { "source": "/en/book", "destination": "/en/#book", "permanent": true }
+  ]
 }
