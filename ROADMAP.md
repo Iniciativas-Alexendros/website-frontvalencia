@@ -40,11 +40,12 @@ Auditoría    Arquitectura    CMS    Calidad   CI/CD    SEO
 | A   | Datos fiscales/legales reales (razón social, CIF/NIF, domicilio)        | 🔴 P0     | —          | ✅ hecho             |
 | B   | Dirección postal completa del local (The Terminal Hub, sin nº de calle) | 🔴 P0     | —          | ✅ hecho             |
 | C   | Verificar URL real del portal de empleo (Teamtailor)                    | 🟡 P1     | —          | ✅ hecho             |
-| D   | Emails de contacto definitivos (general/reservas/eventos)               | 🟡 P1     | Cliente    | ⚠️ pendiente cliente |
+| D   | **Emails de contacto definitivos (general/reservas/eventos)** — item 4  | 🟡 P1     | Cliente    | ⛔ pendiente cliente |
 | E   | Google Maps embed real en Localización                                  | 🟡 P1     | —          | ✅ hecho             |
 | F   | CoverManager: validar URLs reales de reservas ES/EN                     | 🟡 P1     | —          | ✅ hecho             |
 | G   | Meta Pixel / analytics condicionado a cookie consent                    | 🟢 P2     | —          | ✅ hecho             |
 | H   | Actualizar acciones CI a Node 24 (aviso de deprecación Node 20)         | 🟢 P2     | #8         | ✅ hecho             |
+| I   | **Dominio final + `PUBLIC_SITE_URL`** (env Vercel) — item 6             | 🟡 P1     | Cliente    | ⛔ pendiente cliente |
 
 ### ✅ Resuelto recientemente
 
