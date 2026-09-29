@@ -4,7 +4,7 @@
 
 set -e
 
-REPO="Iniciativas-Alexendros/website-frontvalencia"
+REPO="Soluciones-Alexendros/website-frontvalencia"
 PROD_URL="https://website-frontvalencia.vercel.app"
 
 check_ci() {
