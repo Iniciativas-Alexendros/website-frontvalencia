@@ -11,7 +11,7 @@
 Sitio moderno, rápido y bilingüe (ES/EN), construido como monorepo con Astro + React en el frontend y Payload CMS para que el equipo edite carta, horarios e imágenes sin tocar código.
 
 <p>
-  <a href="https://github.com/Iniciativas-Alexendros/website-frontvalencia/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Iniciativas-Alexendros/website-frontvalencia/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/Soluciones-Alexendros/website-frontvalencia/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Soluciones-Alexendros/website-frontvalencia/actions/workflows/ci.yml/badge.svg"></a>
   <img alt="Astro 5" src="https://img.shields.io/badge/Astro-5-FF5D01?logo=astro&logoColor=white">
   <img alt="TypeScript 5.8" src="https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white">
   <img alt="Payload CMS 3" src="https://img.shields.io/badge/Payload_CMS-3-000000?logo=payload&logoColor=white">
@@ -42,7 +42,7 @@ Sitio moderno, rápido y bilingüe (ES/EN), construido como monorepo con Astro +
 ## Inicio rápido
 
 ```bash
-git clone https://github.com/Iniciativas-Alexendros/website-frontvalencia.git
+git clone https://github.com/Soluciones-Alexendros/website-frontvalencia.git
 cd website-frontvalencia
 pnpm install
 cp .env.example .env      # configura las variables de entorno
