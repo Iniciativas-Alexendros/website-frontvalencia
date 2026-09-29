@@ -22,7 +22,7 @@ Actualmente solo la versión publicada en producción (`main`) recibe actualizac
 
 Si descubres una vulnerabilidad de seguridad en FRONT Valencia, **no** crees un issue público.
 
-1. Preferible: [GitHub Security Advisory](https://github.com/Iniciativas-Alexendros/website-frontvalencia/security/advisories/new) en este repositorio.
+1. Preferible: [GitHub Security Advisory](https://github.com/Soluciones-Alexendros/website-frontvalencia/security/advisories/new) en este repositorio.
 2. Alternativa: correo a [operaciones@alexendros.dev](mailto:operaciones@alexendros.dev).
 
 ### Qué incluir en tu reporte

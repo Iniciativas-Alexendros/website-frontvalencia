@@ -37,7 +37,7 @@ Al participar, aceptas mantener un entorno respetuoso y libre de acoso.
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/Iniciativas-Alexendros/website-frontvalencia.git
+git clone https://github.com/Soluciones-Alexendros/website-frontvalencia.git
 cd website-frontvalencia
 ```
 
